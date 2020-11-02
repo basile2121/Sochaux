@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="BDD">
+      <change afterPath="$PROJECT_DIR$/src/Entity/Championnat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Club.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Commentaire.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Commente.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Contrat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/JoueDans.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Joueur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/JoueurPoste.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Matchs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Participe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Poste.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Tactique.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Tournoi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ChampionnatRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ClubRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CommentaireRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CommenteRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ContratRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/JoueDansRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/JoueurPosteRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/MatchsRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ParticipeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/PosteRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/RapportSpecifiqueRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TactiqueRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,11 +164,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1jJoQ6IFpoTfJCh9xuHvy5jeRJY" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -160,7 +198,11 @@
       <option name="presentableId" value="Default" />
       <updated>1603531535486</updated>
       <workItem from="1603531536663" duration="456000" />
-      <workItem from="1603884895529" duration="2945000" />
+      <workItem from="1603884895529" duration="3727000" />
+      <workItem from="1603889499858" duration="1644000" />
+      <workItem from="1603963168565" duration="17000" />
+      <workItem from="1604303890868" duration="1855000" />
+      <workItem from="1604326412300" duration="8036000" />
     </task>
     <task id="LOCAL-00001" summary="VENDOR">
       <created>1603887220318</created>
@@ -190,23 +232,32 @@
       <option name="project" value="LOCAL" />
       <updated>1603888387461</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=".env">
+      <created>1603888878392</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603888878392</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="VENDOR" />
     <MESSAGE value="VENDOR2" />
     <MESSAGE value="VENDOR3" />
-    <option name="LAST_COMMIT_MESSAGE" value="VENDOR3" />
+    <MESSAGE value=".env" />
+    <option name="LAST_COMMIT_MESSAGE" value=".env" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1066" y="119" key="CommitChangelistDialog2" timestamp="1603888864855">
+    <state x="969" y="95" key="CommitChangelistDialog2" timestamp="1604336730870">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1066" y="119" key="CommitChangelistDialog2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603888864855" />
+    <state x="969" y="95" key="CommitChangelistDialog2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604336730870" />
     <state x="606" y="208" width="698" height="705" key="NewPhpClassDialog" timestamp="1603531557617">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
@@ -219,13 +270,17 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="324" y="104" width="1271" height="912" key="SettingsEditor/0.34.1920.1046@0.34.1920.1046" timestamp="1603531994875" />
-    <state x="1032" y="258" key="Vcs.Push.Dialog.v2" timestamp="1603888392993">
+    <state x="1032" y="258" key="Vcs.Push.Dialog.v2" timestamp="1604336860580">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1032" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603888392993" />
-    <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603888005973">
+    <state x="1032" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604336860580" />
+    <state x="656" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1604326418482">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1603888005973" />
+    <state x="656" y="349" key="com.intellij.ide.util.TipDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604326418482" />
+    <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604303902183">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604303902183" />
   </component>
 </project>
