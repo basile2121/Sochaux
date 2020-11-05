@@ -20,7 +20,7 @@ class Commente
     private $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity=rapportSpecifique::class, inversedBy="commentes")
+     * @ORM\ManyToMany(targetEntity=RapportSpecifique::class, inversedBy="commentes")
      */
     private $rapport_specifique;
 

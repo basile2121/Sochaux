@@ -41,6 +41,16 @@ class User implements UserInterface
      */
     private $commentes;
 
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $username;
+
+    /**
+     * @ORM\Column(name="is_active", type="boolean")
+     */
+    private $isActive;
+
     public function __construct()
     {
         $this->commentes = new ArrayCollection();
@@ -100,12 +110,20 @@ class User implements UserInterface
         return (string) $this->password;
     }
 
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
     public function setPassword(string $password): self
     {
         $this->password = $password;
 
         return $this;
     }
+
 
     /**
      * @see UserInterface
@@ -152,6 +170,17 @@ class User implements UserInterface
             $this->commentes->removeElement($commente);
             $commente->removeUser($this);
         }
+
+        return $this;
+    }
+    public function getIsActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setIsActive(bool $isActive): self
+    {
+        $this->isActive = $isActive;
 
         return $this;
     }
