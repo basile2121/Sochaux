@@ -2,39 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="BDD">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Championnat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Club.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Commentaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Commente.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Contrat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/JoueDans.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Joueur.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/JoueurPoste.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Matchs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Participe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Poste.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Tactique.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Tournoi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ChampionnatRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ClubRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CommentaireRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CommenteRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ContratRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/JoueDansRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/JoueurPosteRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/MatchsRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ParticipeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/PosteRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/RapportSpecifiqueRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/TactiqueRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Sochaux.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sochaux.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +132,9 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jJoQ6IFpoTfJCh9xuHvy5jeRJY" />
@@ -176,7 +150,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Cours_s3/BDD/DM-Septembre/GROUPE_nom_prenom" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -203,6 +177,9 @@
       <workItem from="1603963168565" duration="17000" />
       <workItem from="1604303890868" duration="1855000" />
       <workItem from="1604326412300" duration="8036000" />
+      <workItem from="1604339338677" duration="103000" />
+      <workItem from="1604391565701" duration="49000" />
+      <workItem from="1604839952873" duration="12135000" />
     </task>
     <task id="LOCAL-00001" summary="VENDOR">
       <created>1603887220318</created>
@@ -254,10 +231,18 @@
     <option name="LAST_COMMIT_MESSAGE" value=".env" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604841313903">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604841313903" />
     <state x="969" y="95" key="CommitChangelistDialog2" timestamp="1604336730870">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="969" y="95" key="CommitChangelistDialog2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604336730870" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604391612631">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604391612631" />
     <state x="606" y="208" width="698" height="705" key="NewPhpClassDialog" timestamp="1603531557617">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
@@ -278,9 +263,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="656" y="349" key="com.intellij.ide.util.TipDialog/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604326418482" />
-    <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604303902183">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604839967508">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604303902183" />
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604839967508" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1604848635678">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604848635678" />
   </component>
 </project>
