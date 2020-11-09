@@ -118,23 +118,17 @@ class AppFixtures extends Fixture
 
     public function load_tournois(ObjectManager $manager){
         $tournoi=[
-            [ 'nom' => 'nom_tournoi1'  , 'match_id' => 1 ],
-            [ 'nom' => 'nom_tournoi2'  , 'match_id' => 2 ],
-            [ 'nom' => 'nom_tournoi3'  , 'match_id' => 3 ],
-            [ 'nom' => 'nom_tournoi4'  , 'match_id' => 4 ],
-            [ 'nom' => 'nom_tournoi5'  , 'match_id' => 5 ],
+            [ 'nom' => 'nom_tournoi1'   ],
+            [ 'nom' => 'nom_tournoi2'   ],
+            [ 'nom' => 'nom_tournoi3'   ],
+            [ 'nom' => 'nom_tournoi4'   ],
+            [ 'nom' => 'nom_tournoi5'   ],
         ];
 
         foreach ($tournoi as $tr)
         {
             $new_tournoi = new Tournoi();
             $new_tournoi->setNomTournoi($tr['nom']);
-/*
-            $match = $manager->getRepository(Matchs::class)->findOneBy([
-                'id' => $tr['match_id']],
-                ['id' => 'ASC']);
-            $new_tournoi->addMatch($match);
-*/
             $manager->persist($new_tournoi);
         }
 
@@ -275,23 +269,18 @@ class AppFixtures extends Fixture
 
     public function load_tactiques(ObjectManager $manager){
         $taciques=[
-            [ 'nom' => 'nom_tactique1'  , 'poste_id' => 1 ],
-            [ 'nom' => 'nom_tactique2'  , 'poste_id' => 2 ],
-            [ 'nom' => 'nom_tactique3'  , 'poste_id' => 3 ],
-            [ 'nom' => 'nom_tactique4'  , 'poste_id' => 4 ],
-            [ 'nom' => 'nom_tactique5'  , 'poste_id' => 5 ],
+            [ 'nom' => 'nom_tactique1'  ],
+            [ 'nom' => 'nom_tactique2'  ],
+            [ 'nom' => 'nom_tactique3'  ],
+            [ 'nom' => 'nom_tactique4'  ],
+            [ 'nom' => 'nom_tactique5'  ],
         ];
 
         foreach ($taciques as $t)
         {
             $new_tactique = new Tactique();
             $new_tactique->setNomTactique($t['nom']);
-/*
-            $poste = $manager->getRepository(Poste::class)->findOneBy([
-                'id' => $t['poste_id']],
-                ['id' => 'ASC']);
-            $new_tactique->addPoste($poste);
-*/
+
             $manager->persist($new_tactique);
         }
         $manager->flush();
@@ -452,11 +441,11 @@ class AppFixtures extends Fixture
 
     public function load_users(ObjectManager $manager){
         $users=[
-            [ 'username' => 'username1' , 'email' => 'exemple1@gmail.com' , 'password' => 'password1' , 'role'=> ['ROLE_ADMIN']  , 'is_active' => true , 'commente_id' => 1 ],
-            [ 'username' => 'username2' , 'email' => 'exemple2@gmail.com' , 'password' => 'password2' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true , 'commente_id' => 2 ],
-            [ 'username' => 'username3' , 'email' => 'exemple3@gmail.com' , 'password' => 'password3' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true , 'commente_id' => 3 ],
-            [ 'username' => 'username4' , 'email' => 'exemple4@gmail.com' , 'password' => 'password4' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true , 'commente_id' => 4 ],
-            [ 'username' => 'username5' , 'email' => 'exemple5@gmail.com' , 'password' => 'password5' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true , 'commente_id' => 5 ],
+            [ 'username' => 'username1' , 'email' => 'exemple1@gmail.com' , 'password' => 'password1' , 'role'=> ['ROLE_ADMIN']  , 'is_active' => true  ],
+            [ 'username' => 'username2' , 'email' => 'exemple2@gmail.com' , 'password' => 'password2' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'username3' , 'email' => 'exemple3@gmail.com' , 'password' => 'password3' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'username4' , 'email' => 'exemple4@gmail.com' , 'password' => 'password4' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'username5' , 'email' => 'exemple5@gmail.com' , 'password' => 'password5' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
         ];
 
         foreach ($users as $usr)
