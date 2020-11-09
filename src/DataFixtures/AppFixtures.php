@@ -63,11 +63,11 @@ class AppFixtures extends Fixture
         echo "chargement des fixtures pour l'entité users\n***\n\n";
         $this->load_users($manager);
 
-        echo "chargement des fixtures pour l'entité commente\n***\n\n";
-        $this->load_commente($manager);
-
         echo "chargement des fixtures pour l'entité rapport specifique\n***\n\n";
         $this->load_rapport_specifique($manager);
+
+        echo "chargement des fixtures pour l'entité commente\n***\n\n";
+        $this->load_commente($manager);
 
         $manager->flush();
     }
@@ -299,17 +299,32 @@ class AppFixtures extends Fixture
 
     public function load_participes(ObjectManager $manager){
         $participe=[
-            [ 'score' => 1 ],
-            [ 'score' => 2 ],
-            [ 'score' => 3 ],
-            [ 'score' => 4 ],
-            [ 'score' => 5 ],
+            [ 'score' => 1 , 'club_id' => 1 , 'match_id' => 1 , 'tactique_id' => 1 ],
+            [ 'score' => 2 , 'club_id' => 2 , 'match_id' => 2 , 'tactique_id' => 2 ],
+            [ 'score' => 3 , 'club_id' => 3 , 'match_id' => 3 , 'tactique_id' => 3 ],
+            [ 'score' => 4 , 'club_id' => 4 , 'match_id' => 4 , 'tactique_id' => 4 ],
+            [ 'score' => 5 , 'club_id' => 5 , 'match_id' => 5 , 'tactique_id' => 5 ],
         ];
 
         foreach ($participe as $pa)
         {
             $new_participe = new Participe();
             $new_participe->setScore($pa['score']);
+
+            $club = $manager->getRepository(Club::class)->findOneBy([
+                'id' => $pa['club_id']],
+                ['id' => 'ASC']);
+            $new_participe->addClub($club);
+
+            $match = $manager->getRepository(Matchs::class)->findOneBy([
+                'id' => $pa['match_id']],
+                ['id' => 'ASC']);
+            $new_participe->addMatch($match);
+
+            $tactique = $manager->getRepository(Tactique::class)->findOneBy([
+                'id' => $pa['tactique_id']],
+                ['id' => 'ASC']);
+            $new_participe->addTactique($tactique);
 
             $manager->persist($new_participe);
         }
@@ -365,7 +380,7 @@ class AppFixtures extends Fixture
                 'id' => $jd['joueur_id']],
                 ['id' => 'ASC']);
             $joue_dans->addJoueur($joueur);
-/*
+
             $match = $manager->getRepository(Matchs::class)->findOneBy([
                 'id' => $jd['match_id']],
                 ['id' => 'ASC']);
@@ -375,7 +390,7 @@ class AppFixtures extends Fixture
                 'id' => $jd['poste_id']],
                 ['id' => 'ASC']);
             $joue_dans->addPoste($poste);
-*/
+
             $manager->persist($joue_dans);
         }
         $manager->flush();
@@ -430,12 +445,6 @@ class AppFixtures extends Fixture
                 'id' => $rp['joueur_id']],
                 ['id' => 'ASC']);
             $new_rp->setJoueur($joueur);
-/*
-            $commente = $manager->getRepository(Commente::class)->findOneBy([
-                'id' => $rp['commente_id']],
-                ['id' => 'ASC']);
-            $new_rp->addCommente($commente);
-*/
             $manager->persist($new_rp);
         }
         $manager->flush();
@@ -458,11 +467,7 @@ class AppFixtures extends Fixture
             $newUser->setPassword($usr['password']);
             $newUser->setRoles($usr['role']);
             $newUser->setIsActive($usr['is_active']);
-        /*
-            $commente = $manager->getRepository(Commente::class)->findOneBy([
-                'id' => $usr['commente_id']],
-                ['id' => 'ASC']);
-            $newUser->addCommente($commente);*/
+
             $manager->persist($newUser);
         }
         $manager->flush();
@@ -480,18 +485,16 @@ class AppFixtures extends Fixture
         foreach ($commente as $cm) {
             $newCm = new Commente();
 
-            /*
             $user = $manager->getRepository(User::class)->findOneBy([
                 'id' => $cm['user_id']],
                 ['id' => 'ASC']);
             $newCm->addUser($user);
-            */
-            /*
-            $rapportSpecifique = $manager->getRepository(RapportSpecifique::class)->findOneBy([
+
+            $rapport_specifique = $manager->getRepository(RapportSpecifique::class)->findOneBy([
                 'id' => $cm['rapport_specifique_id']],
                 ['id' => 'ASC']);
-            $newCm->addRapportSpecifique($rapportSpecifique);
-        */
+            $newCm->addRapportSpecifique($rapport_specifique);
+
             $manager->persist($newCm);
         }
         $manager->flush();
