@@ -178,7 +178,7 @@
       <workItem from="1604339338677" duration="103000" />
       <workItem from="1604391565701" duration="49000" />
       <workItem from="1604839952873" duration="12844000" />
-      <workItem from="1604936099867" duration="2359000" />
+      <workItem from="1604936099867" duration="3233000" />
     </task>
     <task id="LOCAL-00001" summary="VENDOR">
       <created>1603887220318</created>
@@ -229,7 +229,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604937679695</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixtures tout bon">
+      <created>1604938488045</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604938488045</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixtures tout bon">
+      <created>1604938498907</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604938498907</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,19 +257,20 @@
     <MESSAGE value=".env" />
     <MESSAGE value="Fixtures" />
     <MESSAGE value="many to many" />
-    <option name="LAST_COMMIT_MESSAGE" value="many to many" />
+    <MESSAGE value="fixtures tout bon" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixtures tout bon" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604841313903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604841313903" />
-    <state x="2889" y="94" key="CommitChangelistDialog2" timestamp="1604938487745">
+    <state x="2889" y="94" key="CommitChangelistDialog2" timestamp="1604938498564">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="969" y="95" key="CommitChangelistDialog2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604336730870" />
     <state x="969" y="94" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604852443992" />
-    <state x="2889" y="94" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604938487745" />
+    <state x="2889" y="94" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604938498564" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604391612631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,12 +287,12 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="324" y="104" width="1271" height="912" key="SettingsEditor/0.34.1920.1046@0.34.1920.1046" timestamp="1603531994875" />
-    <state x="2952" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604938489852">
+    <state x="2952" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604938503972">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1032" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604336860580" />
     <state x="1032" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604852449325" />
-    <state x="2952" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604938489852" />
+    <state x="2952" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604938503972" />
     <state x="656" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1604326418482">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

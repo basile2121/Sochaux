@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Entity\Championnat;
 use App\Entity\Club;
 use App\Entity\Commentaire;
@@ -439,13 +440,20 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
     public function load_users(ObjectManager $manager){
         $users=[
-            [ 'username' => 'username1' , 'email' => 'exemple1@gmail.com' , 'password' => 'password1' , 'role'=> ['ROLE_ADMIN']  , 'is_active' => true  ],
-            [ 'username' => 'username2' , 'email' => 'exemple2@gmail.com' , 'password' => 'password2' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
-            [ 'username' => 'username3' , 'email' => 'exemple3@gmail.com' , 'password' => 'password3' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
-            [ 'username' => 'username4' , 'email' => 'exemple4@gmail.com' , 'password' => 'password4' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
-            [ 'username' => 'username5' , 'email' => 'exemple5@gmail.com' , 'password' => 'password5' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'exemple1@gmail.com' , 'email' => 'exemple1@gmail.com' , 'password' => 'password1' , 'role'=> ['ROLE_ADMIN']  , 'is_active' => true  ],
+            [ 'username' => 'exemple2@gmail.com' , 'email' => 'exemple2@gmail.com' , 'password' => 'password2' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'exemple3@gmail.com' , 'email' => 'exemple3@gmail.com' , 'password' => 'password3' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'exemple4@gmail.com' , 'email' => 'exemple4@gmail.com' , 'password' => 'password4' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'exemple5@gmail.com' , 'email' => 'exemple5@gmail.com' , 'password' => 'password5' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
         ];
 
         foreach ($users as $usr)
@@ -453,7 +461,8 @@ class AppFixtures extends Fixture
             $newUser = new User();
             $newUser->setUsername($usr['username']);
             $newUser->setEmail($usr['email']);
-            $newUser->setPassword($usr['password']);
+            $password = $this->passwordEncoder->encodePassword($newUser,$usr['password']);
+            $newUser->setPassword($password);
             $newUser->setRoles($usr['role']);
             $newUser->setIsActive($usr['is_active']);
 
