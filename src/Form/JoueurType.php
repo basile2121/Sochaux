@@ -36,8 +36,25 @@ class JoueurType extends AbstractType
             ->add('nb_but')
 
             ->add('nationalite')
+            /*
+            ->add('joueurPostes', EntityType::class, array(
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Choisir le poste du Joueur']),
+                ],
+                'required' => false,
+                'class' => JoueurPoste::class,
+                'placeholder' => 'Chosir un poste',
+            ))
 
-
+            ->add('joueDans', EntityType::class, array(
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Choisir le club du Joueur']),
+                ],
+                'required' => false,
+                'class' => JoueDans::class,
+                'placeholder' => 'Chosir le club du joueur',
+            ))
+            */
         ;
     }
 

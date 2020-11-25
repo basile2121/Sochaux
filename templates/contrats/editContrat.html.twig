@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Modifier le Contrat{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Modifier le Contrat</h1>
+
+    {{ include('contrats/_form.html.twig', {'button_label': 'Update'}) }}
+    <br>
+    <a href="{{ path('contrats_show') }}" class="btn btn-warning">Revenir à la liste des contrats</a>
+    <br>
+    {{ include('contrats/deleteContrat.html.twig') }}
+{% endblock %}

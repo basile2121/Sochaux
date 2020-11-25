@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Modifier le Club{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Modifier le Club</h1>
+
+    {{ include('clubs/_form.html.twig', {'button_label': 'Update'}) }}
+    <br>
+    <a href="{{ path('clubs_show') }}" class="btn btn-warning">Revenir à la liste des Clubs</a>
+    <br>
+    {{ include('clubs/deleteClub.html.twig') }}
+{% endblock %}

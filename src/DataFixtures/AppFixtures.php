@@ -95,11 +95,11 @@ class AppFixtures extends Fixture
 
     public function load_clubs(ObjectManager $manager){
         $club=[
-            [ 'nom' => 'nom1' , 'pays' => "pays1" , 'ville' => "ville1" , 'championnat_id' => 1 ],
-            [ 'nom' => 'nom2' , 'pays' => "pays2" , 'ville' => "ville2" , 'championnat_id' => 2 ],
-            [ 'nom' => 'nom3' , 'pays' => "pays3" , 'ville' => "ville3" , 'championnat_id' => 3 ],
-            [ 'nom' => 'nom4' , 'pays' => "pays4" , 'ville' => "ville4" , 'championnat_id' => 4 ],
-            [ 'nom' => 'nom5' , 'pays' => "pays5" , 'ville' => "ville5" , 'championnat_id' => 5 ],
+            [ 'nom' => 'Atheltico Madrid' , 'pays' => "Espagne" , 'ville' => "Madrid" , 'championnat_id' => 1 ],
+            [ 'nom' => 'Juventus Turin' , 'pays' => "Italie" , 'ville' => "Turin" , 'championnat_id' => 2 ],
+            [ 'nom' => 'FC Barcelone' , 'pays' => "Espagne" , 'ville' => "Barcelone" , 'championnat_id' => 3 ],
+            [ 'nom' => 'Paris St Germain' , 'pays' => "France" , 'ville' => "Paris" , 'championnat_id' => 4 ],
+            [ 'nom' => 'Machester United' , 'pays' => "Anglettere" , 'ville' => "Manchester" , 'championnat_id' => 5 ],
         ];
 
         foreach ($club as $cl)
@@ -239,11 +239,11 @@ class AppFixtures extends Fixture
 
     public function load_contrats(ObjectManager $manager){
         $contrats =[
-            [ 'date_debut' => '0001-01-01' , 'date_fin' => '0001-01-06' , 'prix' => 1 , 'joueur_id' => 1 , 'club_id' => 1 ],
-            [ 'date_debut' => '0001-01-02' , 'date_fin' => '0001-01-07' , 'prix' => 2 , 'joueur_id' => 2 , 'club_id' => 2 ],
-            [ 'date_debut' => '0001-01-03' , 'date_fin' => '0001-01-08' , 'prix' => 3 , 'joueur_id' => 3 , 'club_id' => 3 ],
-            [ 'date_debut' => '0001-01-04' , 'date_fin' => '0001-01-09' , 'prix' => 4 , 'joueur_id' => 4 , 'club_id' => 4 ],
-            [ 'date_debut' => '0001-01-05' , 'date_fin' => '0001-01-1'  , 'prix' => 5 , 'joueur_id' => 5 , 'club_id' => 5 ],
+            [ 'date_debut' => '0001-01-01' , 'date_fin' => '0001-01-06' , 'prix' => 200000 , 'joueur_id' => 1 , 'club_id' => 1 ],
+            [ 'date_debut' => '0001-01-02' , 'date_fin' => '0001-01-07' , 'prix' => 100000 , 'joueur_id' => 2 , 'club_id' => 2 ],
+            [ 'date_debut' => '0001-01-03' , 'date_fin' => '0001-01-08' , 'prix' => 345000 , 'joueur_id' => 3 , 'club_id' => 3 ],
+            [ 'date_debut' => '0001-01-04' , 'date_fin' => '0001-01-09' , 'prix' => 24000 , 'joueur_id' => 4 , 'club_id' => 4 ],
+            [ 'date_debut' => '0001-01-05' , 'date_fin' => '0001-01-1'  , 'prix' => 50000 , 'joueur_id' => 5 , 'club_id' => 5 ],
         ];
 
         foreach ($contrats as $c)

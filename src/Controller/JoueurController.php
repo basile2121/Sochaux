@@ -60,7 +60,7 @@ class JoueurController extends AbstractController
             $joueur->setPhoto($fileName);
             $entityManager->persist($joueur);
             $entityManager->flush();
-            $this->addFlash('info_produit','Le joueur ' .$joueur->getNom() . ' vien d etre ajouter !');
+            $this->addFlash('info','Le joueur ' .$joueur->getNom() . ' vien d etre ajouter !');
 
             return $this->redirectToRoute('joueurs_show');
         }
@@ -94,7 +94,7 @@ class JoueurController extends AbstractController
             $joueur->setPhoto($fileName);
 
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('info_produit','Le joueur ' .$joueur->getNom() . ' vien d etre modfifier !');
+            $this->addFlash('info','Le joueur ' .$joueur->getNom() . ' vien d etre modfifier !');
             return $this->redirectToRoute('joueurs_show');
         }
 
@@ -113,7 +113,7 @@ class JoueurController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($joueur);
             $entityManager->flush();
-            $this->addFlash('info_produit','Le joueur vien d etre Supprimer !');
+            $this->addFlash('info','Le joueur vien d etre Supprimer !');
         }
 
         return $this->redirectToRoute('joueurs_show');
