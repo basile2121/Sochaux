@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Ajouter Joueur{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Cree un nouveau Joueur</h1>
+
+    {{ include('joueurs/_form.html.twig') }}
+    <br>
+    <a href="{{ path('joueurs_show') }}" class="btn btn-warning">Revenir a la liste des Joueurs</a>
+{% endblock %}

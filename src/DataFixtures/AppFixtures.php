@@ -188,30 +188,30 @@ class AppFixtures extends Fixture
 
     public function load_joueurs(ObjectManager $manager){
         $joueurs=[
-            [ 'nom' => 'nom_joueur1' , 'prenom' => "prenom_joueur1" , 'poids' => 1 , 'taille' => 1 , 'age' => 1
-                , 'pro' => true , 'titulaire_nombre' => 1 , 'nb_passe_decissive' => 1 , 'nb_carton_rouges' => 0
-                , 'nb_carton_jaunes' => 0 , 'date_naissance' => '0001-01-01' , 'telephone' => 0000000001 , 'numero' => 1
-                , 'photo' => 'photo1' , 'nb_buts' => 1 , 'nationalite' => 'fr' ],
+            [ 'nom' => 'Griezmann' , 'prenom' => "Antoine" , 'poids' => 80 , 'taille' => 160 , 'age' => 29
+                , 'pro' => true , 'titulaire_nombre' => 4 , 'nb_passe_decissive' => 19 , 'nb_carton_rouges' => 0
+                , 'nb_carton_jaunes' => 9 , 'date_naissance' => '0001-01-01' , 'telephone' => 0000000001 , 'numero' => 18
+                , 'photo' => 'griezmann.jpeg' , 'nb_buts' => 19 , 'nationalite' => 'fr' ],
 
-            [ 'nom' => 'nom_joueur2' , 'prenom' => "prenom_joueur2" , 'poids' => 2 , 'taille' => 2 , 'age' => 2
-                , 'pro' => true , 'titulaire_nombre' => 2 , 'nb_passe_decissive' => 2 , 'nb_carton_rouges' => 0
-                , 'nb_carton_jaunes' => 0 , 'date_naissance' => '0001-01-02' , 'telephone' => 0000000002 , 'numero' => 2
-                , 'photo' => 'photo2' , 'nb_buts' => 2 , 'nationalite' => 'fr' ],
+            [ 'nom' => 'Messi' , 'prenom' => "Lionel" , 'poids' => 89 , 'taille' => 140 , 'age' => 20
+                , 'pro' => true , 'titulaire_nombre' => 2 , 'nb_passe_decissive' => 2 , 'nb_carton_rouges' => 90
+                , 'nb_carton_jaunes' => 5 , 'date_naissance' => '0001-01-02' , 'telephone' => 0000000002 , 'numero' => 19
+                , 'photo' => 'messi.jpeg' , 'nb_buts' => 4 , 'nationalite' => 'fr' ],
 
-            [ 'nom' => 'nom_joueur3' , 'prenom' => "prenom_joueur3" , 'poids' => 3 , 'taille' => 3 , 'age' => 3
-                , 'pro' => true , 'titulaire_nombre' => 3 , 'nb_passe_decissive' => 3 , 'nb_carton_rouges' => 1
-                , 'nb_carton_jaunes' => 1 , 'date_naissance' => '0001-01-03' , 'telephone' => 0000000003 , 'numero' => 3
-                , 'photo' => 'photo3' , 'nb_buts' => 3 , 'nationalite' => 'en' ],
+            [ 'nom' => 'Muller' , 'prenom' => "Emanule" , 'poids' => 76 , 'taille' => 189 , 'age' => 30
+                , 'pro' => true , 'titulaire_nombre' => 9 , 'nb_passe_decissive' => 9 , 'nb_carton_rouges' => 2
+                , 'nb_carton_jaunes' => 5 , 'date_naissance' => '0001-01-03' , 'telephone' => 0000000003 , 'numero' => 10
+                , 'photo' => 'muller.jpeg' , 'nb_buts' => 30 , 'nationalite' => 'en' ],
 
-            [ 'nom' => 'nom_joueur4' , 'prenom' => "prenom_joueur4" , 'poids' => 4 , 'taille' => 4 , 'age' => 4
-                , 'pro' => false, 'titulaire_nombre' => 4 , 'nb_passe_decissive' => 4 , 'nb_carton_rouges' => 1
-                , 'nb_carton_jaunes' => 1 , 'date_naissance' => '0001-01-04' , 'telephone' => 0000000004 , 'numero' => 4
-                , 'photo' => 'photo4' , 'nb_buts' => 4 , 'nationalite' => 'en' ],
+            [ 'nom' => 'Neueu' , 'prenom' => "Emmanuelle" , 'poids' => 40 , 'taille' => 199 , 'age' => 40
+                , 'pro' => false, 'titulaire_nombre' => 9 , 'nb_passe_decissive' => 0 , 'nb_carton_rouges' => 9
+                , 'nb_carton_jaunes' => 1 , 'date_naissance' => '0001-01-04' , 'telephone' => 0000000004 , 'numero' => 1
+                , 'photo' => 'neuer.jpeg' , 'nb_buts' => 0 , 'nationalite' => 'en' ],
 
-            [ 'nom' => 'nom_joueur5' , 'prenom' => "prenom_joueur5" , 'poids' => 5 , 'taille' => 5 , 'age' => 5
+            [ 'nom' => 'Ronaldo' , 'prenom' => "Christiano" , 'poids' => 90 , 'taille' => 190 , 'age' => 18
                 , 'pro' => false, 'titulaire_nombre' => 5 , 'nb_passe_decissive' => 5 , 'nb_carton_rouges' => 2
                 , 'nb_carton_jaunes' => 2 , 'date_naissance' => '0001-01-05' , 'telephone' => 0000000005 , 'numero' => 5
-                , 'photo' => 'photo5' , 'nb_buts' => 5 , 'nationalite' => 'en' ],
+                , 'photo' => 'ronaldo.jpeg' , 'nb_buts' => 50 , 'nationalite' => 'en' ],
         ];
         foreach ($joueurs as $j)
         {
