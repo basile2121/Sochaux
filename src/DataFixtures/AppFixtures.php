@@ -449,11 +449,11 @@ class AppFixtures extends Fixture
 
     public function load_users(ObjectManager $manager){
         $users=[
-            [ 'username' => 'exemple1@gmail.com' , 'email' => 'exemple1@gmail.com' , 'password' => 'password1' , 'role'=> ['ROLE_ADMIN']  , 'is_active' => true  ],
-            [ 'username' => 'exemple2@gmail.com' , 'email' => 'exemple2@gmail.com' , 'password' => 'password2' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
-            [ 'username' => 'exemple3@gmail.com' , 'email' => 'exemple3@gmail.com' , 'password' => 'password3' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
-            [ 'username' => 'exemple4@gmail.com' , 'email' => 'exemple4@gmail.com' , 'password' => 'password4' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
-            [ 'username' => 'exemple5@gmail.com' , 'email' => 'exemple5@gmail.com' , 'password' => 'password5' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'admin' , 'email' => 'exemple1@gmail.com' , 'password' => 'password1' , 'role'=> ['ROLE_ADMIN']  , 'is_active' => true  ],
+            [ 'username' => 'client1' , 'email' => 'exemple2@gmail.com' , 'password' => 'password2' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'client2' , 'email' => 'exemple3@gmail.com' , 'password' => 'password3' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'client3' , 'email' => 'exemple4@gmail.com' , 'password' => 'password4' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
+            [ 'username' => 'client4' , 'email' => 'exemple5@gmail.com' , 'password' => 'password5' , 'role'=> ['ROLE_CLIENT'] , 'is_active' => true  ],
         ];
 
         foreach ($users as $usr)
