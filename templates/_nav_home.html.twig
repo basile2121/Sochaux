@@ -1,5 +1,55 @@
 {#https://getbootstrap.com/docs/4.0/components/navbar/#}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Login-Box-En.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+
+
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav" style="background-color: #004b9a;">
+            <div class="container"><img src={{ asset("/logo_fc_sochaux.png") }}><a class="navbar-brand js-scroll-trigger" href="{{path('index_index')}}" style="color: rgb(244,248,33);margin: 14px;">FC SOCHAUX</a>
+                <div class="collapse navbar-collapse" id="navbarResponsive" style="width: 769px;height: 67px;">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" style="color: rgb(244,248,33);">Rapport</a></li>
+                        <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" style="color: rgb(244,248,33);">Joueur</a></li>
+                        <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#" style="color: rgb(244,248,33);background-color: rgba(188,142,24,0);">Effectif</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav ml-auto" style="float:right">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <span class="navbar-text">
+                                Bonjour {{ app.user.username }}
+                                {% if (app.user.roles.0 == "ROLE_ADMIN") %} (role : Admin )
+                                {% else %} (role : Client ) {% endif %}
+                            </span>
+                            <a class="btn btn-outline-success" type="button" href="{{path('app_logout') }}">
+                                Se déconnecter
+                            </a>
+                        {% else %}
+                            <a class="btn btn-outline-success" type="button" href="{{ path('app_login') }}">
+                                Se connecter
+                            </a>
+                            {# <a class="btn btn-outline-success" type="button" href="{{ path('app_register') }}">
+                                s'inscrire
+                            </a> #}
+                            {# <a class="btn btn-outline-success" type="button" href="{{ path('changePassword') }}">
+                                 mot de passe oublié
+                            </a> #}
+                        {% endif %}
+                    </ul>
+                    
+                </div>
+            </div>
+</nav>
+
+<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/freelancer.js"></script>
+
+
+ {# <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">TP web <span style="color:#ff0000;">  Menu Admin </span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,7 +65,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ path("contrats_show") }}"><h4>Contrat</h4></a>
-            </li>
+            </li> #}
 
             {# <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="DropdownCommandes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,7 +88,7 @@
                     </div>
                 </li>
             {% endif %} #}
-        </ul>
+        {# </ul>
 
         <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->
@@ -63,8 +113,9 @@
                 {# <a class="btn btn-outline-success" type="button" href="{{ path('changePassword') }}">
                     mot de passe oublié
                 </a> #}
-            {% endif %}
+            {# {% endif %}
 
         </ul>
     </div>
-</nav>
+</nav> #}
+
