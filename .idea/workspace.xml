@@ -19,31 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Affichage / Creation / Modifcation d'un Contrat et d'un Club + Modification Fixtures">
-      <change afterPath="$PROJECT_DIR$/config/packages/knpu_oauth2_client.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/GoogleAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Sochaux.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sochaux.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="La connexion avec google est possible, ne pas oublier d'installer les bundle associé ainsi que de config le .env.test avec votre BDD (corriger bientot)&#10;+ Correction Bug de connexion&#10;+ Ajout Mineur">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ContratController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContratController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JoueurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_nav_home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_nav_home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/addJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/addJoueur.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clubs/showClub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/showClub.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contrats/showContrat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/showContrat.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +205,7 @@
       <workItem from="1603531536663" duration="456000" />
       <workItem from="1606304012263" duration="23023000" />
       <workItem from="1606374500434" duration="6272000" />
-      <workItem from="1606904687089" duration="2889000" />
+      <workItem from="1606904687089" duration="5094000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -241,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606330776183</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="La connexion avec google est possible, ne pas oublier d'installer les bundle associé ainsi que de config le .env.test avec votre BDD (corriger bientot)&#10;+ Correction Bug de connexion&#10;+ Ajout Mineur">
+      <created>1606907805679</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606907805679</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +250,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club." />
     <MESSAGE value="Affichage / Creation / Modifcation d'un Contrat et d'un Club + Modification Fixtures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Affichage / Creation / Modifcation d'un Contrat et d'un Club + Modification Fixtures" />
+    <MESSAGE value="La connexion avec google est possible, ne pas oublier d'installer les bundle associé ainsi que de config le .env.test avec votre BDD (corriger bientot)&#10;+ Correction Bug de connexion&#10;+ Ajout Mineur" />
+    <option name="LAST_COMMIT_MESSAGE" value="La connexion avec google est possible, ne pas oublier d'installer les bundle associé ainsi que de config le .env.test avec votre BDD (corriger bientot)&#10;+ Correction Bug de connexion&#10;+ Ajout Mineur" />
   </component>
   <component name="WindowStateProjectService">
     <state x="686" y="109" width="529" height="902" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606304694974">
@@ -290,10 +278,10 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="324" y="104" width="1271" height="912" key="SettingsEditor/0.34.1920.1046@0.34.1920.1046" timestamp="1603531994875" />
-    <state x="455" y="221" width="1000" height="671" key="Vcs.Push.Dialog.v2" timestamp="1606330781152">
+    <state x="455" y="221" width="1000" height="671" key="Vcs.Push.Dialog.v2" timestamp="1606907814860">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="455" y="221" width="1000" height="671" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1606330781152" />
+    <state x="455" y="221" width="1000" height="671" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1606907814860" />
     <state x="604" y="84" width="702" height="945" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606318437504">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
