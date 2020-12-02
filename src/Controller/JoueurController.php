@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Contrat;
 use App\Entity\Joueur;
+use App\Form\ContratType;
 use App\Form\JoueurType;
+use App\Repository\ContratRepository;
 use App\Repository\JoueurRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use http\Client\Curl\User;
@@ -22,11 +24,13 @@ class JoueurController extends AbstractController
     /**
      * @Route("/joueurs" , name="joueurs_show", methods={"GET"})
      */
-    public function index(JoueurRepository $joueurRepository): Response
+    public function index(JoueurRepository $joueurRepository , ContratRepository $contratRepository): Response
     {
         $joueurs = $joueurRepository->findBy([],['nom' => 'ASC']);
+        $contrats = $contratRepository->findAll();
         return $this->render('joueurs/showJoueurs.html.twig', [
             'joueurs' => $joueurs,
+            'contrats' => $contrats
         ]);
     }
 
@@ -117,5 +121,30 @@ class JoueurController extends AbstractController
         }
 
         return $this->redirectToRoute('joueurs_show');
+    }
+
+    /**
+     * @Route("/joueurs/contrats/createContrat/{id}", name="joueurs_contrats_add", methods={"GET","POST"})
+     */
+    public function addContratJoueur(Request $request , Joueur $joueur): Response
+    {
+        $contrat = new Contrat();
+        $contrat->setJoueur($joueur);
+        $form = $this->createForm(ContratType::class, $contrat);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contrat);
+            $entityManager->flush();
+            $this->addFlash('info','Le contrat du joueur ' .$contrat->getJoueur()->getNom() . ' vien d etre ajouter !');
+
+            return $this->redirectToRoute('contrats_show');
+        }
+
+        return $this->render('contrats/addContrat.html.twig', [
+            'contrat' => $contrat,
+            'form' => $form->createView(),
+        ]);
     }
 }

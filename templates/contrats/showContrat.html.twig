@@ -9,11 +9,23 @@
         <tbody>
         <tr>
             <th>Nom</th>
-            <td>{{ joueur.nom }}</td>
+            <td>{{ contrat.joueur.nom }}</td>
         </tr>
         <tr>
             <th>Prenom</th>
-            <td>{{ joueur.prenom }}</td>
+            <td>{{ contrat.joueur.prenom }}</td>
+        </tr>
+        <tr>
+            <th>Club</th>
+            <td>{{ contrat.club }}</td>
+        </tr>
+        <tr>
+            <th>Date Debut</th>
+            <td>{{ contrat.dateDebut ? contrat.dateDebut|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Date Fin</th>
+            <td>{{ contrat.dateFin ? contrat.dateFin|date('Y-m-d') : '' }}</td>
         </tr>
         </tbody>
     </table>

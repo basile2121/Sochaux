@@ -50,7 +50,7 @@ class ContratController extends AbstractController
             $entityManager->flush();
             $this->addFlash('info','Le contrat du joueur ' .$contrat->getJoueur()->getNom() . ' vien d etre ajouter !');
 
-            return $this->redirectToRoute('contrats_show');
+            return $this->redirectToRoute('joueurs_show');
         }
 
         return $this->render('contrats/addContrat.html.twig', [

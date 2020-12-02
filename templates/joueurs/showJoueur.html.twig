@@ -5,8 +5,12 @@
 {% block body %}
     <h1>Produit</h1>
 
+    <a href="#" class="btn btn-info">Voir le rapport specifique du joueur</a>
+    <a href="#" class="btn btn-info">Les Video du Joeurus</a>
+
     <table class="table">
         <tbody>
+
         <tr>
             <th>Nom</th>
             <td>{{ joueur.nom }}</td>
@@ -14,6 +18,70 @@
         <tr>
             <th>Prenom</th>
             <td>{{ joueur.prenom }}</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>{{ joueur.age }}</td>
+        </tr>
+        <tr>
+            <th>Satus</th>
+            <td>{{ joueur.pro ? 'Oui' : 'Non' }}</td>
+        </tr>
+        <tr>
+            <th>Photo</th>
+            <td>
+                <img style="width:60px;height:60px;  "  alt="" src="{{ asset('images/') }}{{ joueur.photo }}">
+            </td>
+        </tr>
+        <tr>
+            <th>Poids</th>
+            <td>{{ joueur.poids }}</td>
+        </tr>
+        <tr>
+            <th>Taile</th>
+            <td>{{ joueur.taille }}</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>{{ joueur.age }}</td>
+        </tr>
+
+        <tr>
+            <th>Nombre Titularisation</th>
+            <td>{{ joueur.titulaireNombre }}</td>
+        </tr>
+        <tr>
+            <th>Numero Maillot</th>
+            <td>{{ joueur.numero }}</td>
+        </tr>
+        <tr>
+            <th>Nombre Passe Decisive</th>
+            <td>{{ joueur.nbPasseDecissive }}</td>
+        </tr>
+        <tr>
+            <th>Nombre De carton Rouge</th>
+            <td>{{ joueur.nbCartonRouge }}</td>
+        </tr>
+        <tr>
+            <th>Nombre De carton Jaune</th>
+            <td>{{ joueur.nbCartonJaune }}</td>
+        </tr>
+        <tr>
+            <th>Nombre De But</th>
+            <td>{{ joueur.nbBut }}</td>
+        </tr>
+
+        <tr>
+            <th>Date Naissance</th>
+            <td>{{ joueur.dateNaissance ? joueur.dateNaissance|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Telephone</th>
+            <td>{{ joueur.telephone }}</td>
+        </tr>
+        <tr>
+            <th>Nationalité</th>
+            <td>{{ joueur.nationalite }}</td>
         </tr>
         </tbody>
     </table>

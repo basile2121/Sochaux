@@ -30,7 +30,9 @@
                 <td>
                     <img style="width:60px;height:60px;  "  alt="" src="{{ asset('images/') }}{{ joueur.photo }}">
                 </td>
-                <td>Aucun club </td>
+                <td>
+                        Le Joueur n'as pas de contrat
+                </td>
                 <td>
                     <a class="btn btn-info" href="{{ path('joueur_show', {'id': joueur.id}) }}">Informations</a>
                 </td>
@@ -46,7 +48,7 @@
                     </form>
                 </td>
                 <td>
-                    <a class="btn btn-info" href="#">Ajouter</a>
+                    <a class="btn btn-info" href="{{ path('joueurs_contrats_add' , {'id' : joueur.id}) }}">Ajouter</a>
                 </td>
 
             </tr>
