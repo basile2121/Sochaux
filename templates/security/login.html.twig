@@ -32,8 +32,10 @@
         </div>
         <div class="login-box-seperator"></div>
     </div>
-    <div class="email-login" style="background-color:#ffffff;"><input type="email" class="email-imput form-control" style="margin-top:10px;" required placeholder="Email" minlength="6" /><input type="password" class="password-input form-control" style="margin-top:10px;" required placeholder="Mot de passe" minlength="6"
-        /></div>
+    <div class="email-login" style="background-color:#ffffff;">
+        <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="email-imput form-control" style="margin-top:10px;" required placeholder="Email" minlength="5" required autofocus />
+        <input type="password" name="password" id="inputPassword" class="password-input form-control" style="margin-top:10px;" required placeholder="Mot de passe" minlength="6" required/>
+    </div>
     <input type="hidden" name="_csrf_token"value="{{ csrf_token('authenticate') }}">
     <div class="submit-row" style="margin-bottom:8px;padding-top:0px;"><button class="btn btn-primary btn-block box-shadow" id="submit-id-submit" type="submit">Connexion</button>
         <div class="d-flex justify-content-between">
@@ -87,4 +89,3 @@
         <a href="{{ path('google_connect') }}">Ce connecter avec google</a>
     </p>
 </form> #}
-{% endblock %}
