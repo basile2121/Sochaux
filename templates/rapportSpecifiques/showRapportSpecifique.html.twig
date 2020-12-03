@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Rapport specifique{% endblock %}
+
+{% block body %}
+    <h1>Le Rapport specifique</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Qualite technique</th>
+            <td>{{ rapportSpecifique.qualiteTechnique }}</td>
+        </tr>
+        <tr>
+            <th>Qualite mentale</th>
+            <td>{{ rapportSpecifique.qualiteMentale }}</td>
+        </tr>
+        <tr>
+            <th>Qualite physique</th>
+            <td>{{ rapportSpecifique.qualitePhysique }}</td>
+        </tr>
+        <tr>
+            <th>Qualite tactique</th>
+            <td>{{ rapportSpecifique.qualiteTactique }}</td>
+        </tr>
+        <tr>
+            <th>Nom agent</th>
+            <td>{{ rapportSpecifique.nomAgent }}</td>
+        </tr>
+        <tr>
+            <th>Joueur</th>
+            <td>{{ rapportSpecifique.joueur }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-info" href="#">Convertir en PDF</a>
+{% endblock %}
