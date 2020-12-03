@@ -12,14 +12,14 @@
 
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Deconnexion</a>
         </div>
     {% endif %}
 
 
 
     <div class="login-box-header">
-        <h4 style="color: rgb(139,139,139);margin-bottom: 0px;font-weight: 400;font-size: 27px;padding: 0px;padding-top: 83px;">Connexion</h4>
+        <h4 style="color: rgb(139,139,139);margin-bottom: 0px;font-weight: 400;font-size: 27px;padding-top:10px;">Connexion</h4>
     </div>
     <div class="login-box-content" style="">
         <div class="fb-login box-shadow"></div>
