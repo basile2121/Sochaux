@@ -17,13 +17,16 @@
     {% endif %}
 
 
-
     <div class="login-box-header">
         <h4 style="color: rgb(139,139,139);margin-bottom: 0px;font-weight: 400;font-size: 27px;padding-top:10px;">Connexion</h4>
     </div>
     <div class="login-box-content" style="">
-        <div class="fb-login box-shadow"></div>
-        <div class="gp-login box-shadow"><a class="d-flex flex-row align-items-center social-login-link" style="" href="{{ path('google_connect') }}"><img src="{{ asset('images/google-logo.png') }}" style="color:rgb(255,255,255);width:56px;"></i>Connexion avec Google</a></div>
+        <div class="gp-login box-shadow">
+            <a class="d-flex flex-row align-items-center social-login-link" style="" href="{{ path('google_connect') }}">
+                <img src="{{ asset('images/google-logo.png') }}" style="color:rgb(255,255,255);width:56px;">
+                </i>Connexion avec Google
+            </a>
+        </div>
     </div>
     <div class="d-flex flex-row align-items-center login-box-seperator-container">
         <div class="login-box-seperator"></div>
@@ -37,17 +40,26 @@
         <input type="password" name="password" id="inputPassword" class="password-input form-control" style="margin-top:10px;" required placeholder="Mot de passe" minlength="6" required/>
     </div>
     <input type="hidden" name="_csrf_token"value="{{ csrf_token('authenticate') }}">
-    <div class="submit-row" style="margin-bottom:8px;padding-top:0px;"><button class="btn btn-primary btn-block box-shadow" id="submit-id-submit" type="submit">Connexion</button>
+    <div class="submit-row" style="margin-bottom:8px;padding-top:0px;">
+        <button class="btn btn-primary btn-block box-shadow" id="submit-id-submit" type="submit">Connexion</button>
         <div class="d-flex justify-content-between">
-            <div class="form-check form-check-inline" id="form-check-rememberMe"><input class="form-check-input" type="checkbox" id="formCheck-1" for="remember" style="cursor:pointer;" name="check" /><label class="form-check-label" for="formCheck-1"><span class="label-text">Se rappeler de moi</span></label></div><a id="forgot-password-link"
-                href="#">Mot de passe oublié ?</a></div>
+            <div class="form-check form-check-inline" id="form-check-rememberMe">
+                <input class="form-check-input" type="checkbox" id="formCheck-1" for="remember" style="cursor:pointer;" name="check" />
+                <label class="form-check-label" for="formCheck-1">
+                    <span class="label-text">Se rappeler de moi</span>
+                </label>
+            </div>
+            <a id="forgot-password-link" href="#">Mot de passe oublié ?</a>
+        </div>
     </div>
-    <div id="login-box-footer" style="padding:10px 20px;padding-bottom:23px;padding-top:18px;">
-        <p style="margin-bottom:0px;">Vous n'avez pas de compte ?<a id="register-link" href="#">S'inscrire</a></p>
+    <div id="login-box-footer" style="padding:10px 20px; padding-bottom:23px; padding-top:18px;">
+        <p style="margin-bottom:0px;">Vous n'avez pas de compte ?
+            <a id="register-link" href="#">S'inscrire</a>
+        </p>
     </div>
 </form>
 
-
+{% endblock %}
 
 {# <form method="post">
     {% if error %}

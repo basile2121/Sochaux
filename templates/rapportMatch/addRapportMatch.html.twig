@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Rapport de Match{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Cree un Rapport de Match</h1>
+    <br>
+    <h2 style="text-align: center">Le recapitulatif du match</h2>
+    {{ include('rapportMatch/match/_form.html.twig') }}
+    <br>
+
+    <h2 style="text-align: center">Equipe 1</h2>
+
+    <h2 style="text-align: center">Equipe 2</h2>
+
+
+    <h2 style="text-align: center">Le commentaire</h2>
+    {{ include('rapportMatch/commentaire/_form.html.twig') }}
+
+    <h2 style="text-align: center" class="btn btn-info">Enregistrer le rapport</h2>
+
+{% endblock %}
