@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('rapportSpecifiques_delete', {'id': rapportSpecifique.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce rapport specifique');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ rapportSpecifique.id) }}">
+    <button class="btn btn-warning">Supprimer</button>
+</form>

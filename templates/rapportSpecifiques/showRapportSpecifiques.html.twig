@@ -1,0 +1,62 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Les Rapport specifiques{% endblock %}
+
+{% block body %}
+
+    <h1 style="text-align: center">Listes des Rapport specifiques</h1>
+    <br>
+    <table style="text-align: center" class="table" >
+        <thead>
+        <tr class="table-secondary">
+            <th>Qualite technique</th>
+            <th>Qualite mentale</th>
+            <th>Qualite physique</th>
+            <th>Qualite tactique</th>
+            <th>Nom agent</th>
+            <th>Joueur</th>
+            <th>Rapport specifique</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for rapportSpecifique in rapportSpecifiques %}
+            <tr>
+                <td>{{ rapportSpecifique.qualiteTechnique }}</td>
+                <td>{{ rapportSpecifique.qualiteMentale }}</td>
+                <td>{{ rapportSpecifique.qualitePhysique }}</td>
+                <td>{{ rapportSpecifique.qualiteTactique }}</td>
+                <td>{{ rapportSpecifique.nomAgent }}</td>
+                <td>{{ rapportSpecifique.joueur }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('rapportSpecifique_show', {'id': rapportSpecifique.id}) }}">Informations</a>
+                    <a class="btn btn-info" href="#">Convertir en PDF</a>
+                </td>
+
+                <td>
+                    <a  class="btn btn-info" href="{{ path('rapportSpecifiques_edit', {'id': rapportSpecifique.id}) }}">Modifier</a>
+                    <br>
+                    <br>
+                    <form method="post" action="{{ path('rapportSpecifiques_delete', {'id': rapportSpecifique.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce rapport specifique');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ rapportSpecifique.id) }}">
+                        <button class="btn btn-info">Supprimer</button>
+                    </form>
+                </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun Joueurs de trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-info" href="{{ path('rapportSpecifiques_add') }}">Ajouter</a>
+
+
+{% endblock %}
+
+
