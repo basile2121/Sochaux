@@ -6,53 +6,53 @@
 
     <h1 style="text-align: center">Listes des Rapport specifiques</h1>
     <br>
-    <table style="text-align: center" class="table" >
-        <thead>
+<div class="container-fluid " style="padding:0px 7em; ">
+    <table class="table table-striped table-bordered " style="border-radius: 10px;box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); ">
+        <thead class="thead-dark">
         <tr class="table-secondary">
-            <th>Qualite technique</th>
-            <th>Qualite mentale</th>
-            <th>Qualite physique</th>
-            <th>Qualite tactique</th>
-            <th>Nom agent</th>
-            <th>Joueur</th>
-            <th>Rapport specifique</th>
-            <th>Action</th>
+            <th scope="col">Nom agent</th>
+            <th scope="col">Joueur</th>
+            <th scope="col">Rapport specifique</th>
+            <th scope="col">Modifications</th>
+            <th scope="col">Suppression</th>
+            <th scope="col">PDF</th>
 
         </tr>
         </thead>
         <tbody>
         {% for rapportSpecifique in rapportSpecifiques %}
-            <tr>
-                <td>{{ rapportSpecifique.qualiteTechnique }}</td>
-                <td>{{ rapportSpecifique.qualiteMentale }}</td>
-                <td>{{ rapportSpecifique.qualitePhysique }}</td>
-                <td>{{ rapportSpecifique.qualiteTactique }}</td>
+            <tr class="text-center">
                 <td>{{ rapportSpecifique.nomAgent }}</td>
                 <td>{{ rapportSpecifique.joueur }}</td>
                 <td>
                     <a class="btn btn-info" href="{{ path('rapportSpecifique_show', {'id': rapportSpecifique.id}) }}">Informations</a>
-                    <a class="btn btn-info" href="#">Convertir en PDF</a>
                 </td>
 
                 <td>
                     <a  class="btn btn-info" href="{{ path('rapportSpecifiques_edit', {'id': rapportSpecifique.id}) }}">Modifier</a>
-                    <br>
-                    <br>
+                </td>
+
+                <td>
                     <form method="post" action="{{ path('rapportSpecifiques_delete', {'id': rapportSpecifique.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce rapport specifique');">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ rapportSpecifique.id) }}">
                         <button class="btn btn-info">Supprimer</button>
                     </form>
                 </td>
+                <td>
+                    <a class="btn btn-info" href="#">Convertir en PDF</a>
+                </td>
 
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">Aucun Joueurs de trouvé</td>
+                <td colspan="8">Aucun Rapport de trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
+
 
     <a class="btn btn-info" href="{{ path('rapportSpecifiques_add') }}">Ajouter</a>
 

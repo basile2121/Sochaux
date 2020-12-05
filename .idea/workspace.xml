@@ -19,18 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Correction Mineur debordement de la NavBar">
-      <change afterPath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/CommentaireType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/MatchType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/commentaire/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Debut des rapports de Match + Modification Mineur de la NavBar">
+      <change afterPath="$PROJECT_DIR$/public/images/terrain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CommentaireController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/commentaires/showCommentaires.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/commentaire/showCommentaires.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/_nav_home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_nav_home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contrats/showContrats.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/showContrats.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,16 +195,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/templates/Menu" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/rapportMatch/commentaire" />
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/templates/rapportMatch" />
       <recent name="$PROJECT_DIR$/templates/rapportMatch/match" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/Security" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/templates/Menu" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -218,7 +219,9 @@
       <workItem from="1606304012263" duration="23023000" />
       <workItem from="1606374500434" duration="6272000" />
       <workItem from="1606904687089" duration="21881000" />
-      <workItem from="1606985140611" duration="5522000" />
+      <workItem from="1606985140611" duration="6739000" />
+      <workItem from="1607067886054" duration="1198000" />
+      <workItem from="1607105795838" duration="5364000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -262,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606949315146</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Debut des rapports de Match + Modification Mineur de la NavBar">
+      <created>1606992204228</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606992204228</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,52 +298,7 @@
     <MESSAGE value="Ajout du detail Pour les Joueurs , COntrat et Club du cote back-End" />
     <MESSAGE value="Correction des bugs d'affichage de la NavBar et ajout de l'image lien dessus&#10;Attention Probleme avec la Navbar elle prend l'ecran de body" />
     <MESSAGE value="Correction Mineur debordement de la NavBar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction Mineur debordement de la NavBar" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="686" y="109" width="529" height="902" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606304694974">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="686" y="109" width="529" height="902" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1606304694974" />
-    <state x="627" y="254" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606950945643">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="627" y="254" width="655" height="605" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1606950945643" />
-    <state x="690" y="254" width="530" height="605" key="FileChooserDialogImpl" timestamp="1606952167533">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="690" y="254" width="530" height="605" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1606952167533" />
-    <state x="187" y="117" width="1536" height="879" key="MergeDialog" timestamp="1606988301278">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="187" y="117" width="1536" height="879" key="MergeDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1606988301278" />
-    <state x="606" y="208" width="698" height="705" key="NewPhpClassDialog" timestamp="1603531557617">
-      <screen x="0" y="34" width="1920" height="1046" />
-    </state>
-    <state x="606" y="208" width="698" height="705" key="NewPhpClassDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1603531557617" />
-    <state x="726" y="463" width="458" height="195" key="NewPhpFileDialog" timestamp="1603531568774">
-      <screen x="0" y="34" width="1920" height="1046" />
-    </state>
-    <state x="726" y="463" width="458" height="195" key="NewPhpFileDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1603531568774" />
-    <state x="324" y="104" width="1271" height="912" key="SettingsEditor" timestamp="1603531994875">
-      <screen x="0" y="34" width="1920" height="1046" />
-    </state>
-    <state x="324" y="104" width="1271" height="912" key="SettingsEditor/0.34.1920.1046@0.34.1920.1046" timestamp="1603531994875" />
-    <state x="455" y="221" width="1000" height="671" key="Vcs.Push.Dialog.v2" timestamp="1606949320260">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="455" y="221" width="1000" height="671" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1606949320260" />
-    <state x="604" y="84" width="702" height="945" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606318437504">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="604" y="84" width="702" height="945" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1606318437504" />
-    <state x="701" y="452" width="517" height="209" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606992042214">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="701" y="452" width="517" height="209" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1606992042214" />
-    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1606324576433">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1606324576433" />
+    <MESSAGE value="Debut des rapports de Match + Modification Mineur de la NavBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debut des rapports de Match + Modification Mineur de la NavBar" />
   </component>
 </project>
