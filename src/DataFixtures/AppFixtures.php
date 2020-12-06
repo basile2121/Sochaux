@@ -75,11 +75,11 @@ class AppFixtures extends Fixture
 
     public function load_championnats(ObjectManager $manager){
         $championnat=[
-            [ 'nom' => 'nom1' , 'pays' => "pays1"],
-            [ 'nom' => 'nom2' , 'pays' => "pays2"],
-            [ 'nom' => 'nom3' , 'pays' => "pays3"],
-            [ 'nom' => 'nom4' , 'pays' => "pays4"],
-            [ 'nom' => 'nom5' , 'pays' => "pays5"],
+            [ 'nom' => 'Ligue 1' , 'pays' => "France"],
+            [ 'nom' => 'Lige BFA' , 'pays' => "Espagne"],
+            [ 'nom' => 'Premier Ligue' , 'pays' => "Angletterre"],
+            [ 'nom' => 'Ligue 2' , 'pays' => "France"],
+            [ 'nom' => 'Ligue nouvelle' , 'pays' => "Allemagne"],
         ];
 
         foreach ($championnat as $champ)
@@ -119,11 +119,11 @@ class AppFixtures extends Fixture
 
     public function load_tournois(ObjectManager $manager){
         $tournoi=[
-            [ 'nom' => 'nom_tournoi1'   ],
-            [ 'nom' => 'nom_tournoi2'   ],
-            [ 'nom' => 'nom_tournoi3'   ],
-            [ 'nom' => 'nom_tournoi4'   ],
-            [ 'nom' => 'nom_tournoi5'   ],
+            [ 'nom' => 'Ligue 1'   ],
+            [ 'nom' => 'Coupe de France'   ],
+            [ 'nom' => 'Championne League'   ],
+            [ 'nom' => 'Premiere Ligue'   ],
+            [ 'nom' => 'Ligue 2'   ],
         ];
 
         foreach ($tournoi as $tr)
@@ -138,11 +138,11 @@ class AppFixtures extends Fixture
 
     public function load_matchs(ObjectManager $manager){
         $match =[
-            [ 'lieux' => 'lieux_match1' , 'condition' => 'condition_match1' , 'date' => '0001-01-01' , 'tournoi_id' => 1 ],
-            [ 'lieux' => 'lieux_match2' , 'condition' => 'condition_match2' , 'date' => '0001-01-02' , 'tournoi_id' => 2 ],
-            [ 'lieux' => 'lieux_match3' , 'condition' => 'condition_match3' , 'date' => '0001-01-03' , 'tournoi_id' => 3 ],
-            [ 'lieux' => 'lieux_match4' , 'condition' => 'condition_match4' , 'date' => '0001-01-04' , 'tournoi_id' => 4 ],
-            [ 'lieux' => 'lieux_match5' , 'condition' => 'condition_match5' , 'date' => '0001-01-05' , 'tournoi_id' => 5 ],
+            [ 'lieux' => 'Paris' , 'condition' => 'Pluie' , 'date' => '2020-09-01' , 'tournoi_id' => 1 ],
+            [ 'lieux' => 'Belfort' , 'condition' => 'Orage' , 'date' => '2018-07-02' , 'tournoi_id' => 2 ],
+            [ 'lieux' => 'Marseille' , 'condition' => 'Bonne' , 'date' => '2016-03-03' , 'tournoi_id' => 3 ],
+            [ 'lieux' => 'Milan' , 'condition' => 'Forte Chaleur' , 'date' => '2020-08-04' , 'tournoi_id' => 4 ],
+            [ 'lieux' => 'Madrid' , 'condition' => 'Bonne' , 'date' => '2019-11-05' , 'tournoi_id' => 5 ],
         ];
 
         foreach ($match as $m)
@@ -163,11 +163,11 @@ class AppFixtures extends Fixture
 
     public function load_commentaires(ObjectManager $manager){
         $commentaires =[
-            [ 'texte' => 'texte_com1' , 'minute' => 1 , 'match_id' => 1 ],
-            [ 'texte' => 'texte_com2' , 'minute' => 2 , 'match_id' => 2 ],
-            [ 'texte' => 'texte_com3' , 'minute' => 3 , 'match_id' => 3 ],
-            [ 'texte' => 'texte_com4' , 'minute' => 4 , 'match_id' => 4 ],
-            [ 'texte' => 'texte_com5' , 'minute' => 5 , 'match_id' => 5 ],
+            [ 'texte' => 'Premier but du match' , 'minute' => 10 , 'match_id' => 1 ],
+            [ 'texte' => 'Tres bon jeux de passe ' , 'minute' => 22 , 'match_id' => 2 ],
+            [ 'texte' => 'Carton rouge' , 'minute' => 78 , 'match_id' => 3 ],
+            [ 'texte' => 'Tres bonne occasion ' , 'minute' => 44 , 'match_id' => 4 ],
+            [ 'texte' => 'Occasion pour la premier equipe' , 'minute' => 89 , 'match_id' => 5 ],
         ];
 
         foreach ($commentaires as $com)
@@ -239,11 +239,11 @@ class AppFixtures extends Fixture
 
     public function load_contrats(ObjectManager $manager){
         $contrats =[
-            [ 'date_debut' => '0001-01-01' , 'date_fin' => '0001-01-06' , 'prix' => 200000 , 'joueur_id' => 1 , 'club_id' => 1 ],
-            [ 'date_debut' => '0001-01-02' , 'date_fin' => '0001-01-07' , 'prix' => 100000 , 'joueur_id' => 2 , 'club_id' => 2 ],
-            [ 'date_debut' => '0001-01-03' , 'date_fin' => '0001-01-08' , 'prix' => 345000 , 'joueur_id' => 3 , 'club_id' => 3 ],
-            [ 'date_debut' => '0001-01-04' , 'date_fin' => '0001-01-09' , 'prix' => 24000 , 'joueur_id' => 4 , 'club_id' => 4 ],
-            [ 'date_debut' => '0001-01-05' , 'date_fin' => '0001-01-1'  , 'prix' => 50000 , 'joueur_id' => 5 , 'club_id' => 5 ],
+            [ 'date_debut' => '2020-12-12' , 'date_fin' => '2022-01-06' , 'prix' => 200000 , 'joueur_id' => 1 , 'club_id' => 1 ],
+            [ 'date_debut' => '2018-08-24' , 'date_fin' => '2023-12-07' , 'prix' => 100000 , 'joueur_id' => 2 , 'club_id' => 2 ],
+            [ 'date_debut' => '2018-09-03' , 'date_fin' => '2022-08-08' , 'prix' => 345000 , 'joueur_id' => 3 , 'club_id' => 3 ],
+            [ 'date_debut' => '2019-04-12' , 'date_fin' => '2020-04-09' , 'prix' => 24000 , 'joueur_id' => 4 , 'club_id' => 4 ],
+            [ 'date_debut' => '2020-02-18' , 'date_fin' => '2029-03-01'  , 'prix' => 50000 , 'joueur_id' => 5 , 'club_id' => 5 ],
         ];
 
         foreach ($contrats as $c)
@@ -270,11 +270,11 @@ class AppFixtures extends Fixture
 
     public function load_tactiques(ObjectManager $manager){
         $taciques=[
-            [ 'nom' => 'nom_tactique1'  ],
-            [ 'nom' => 'nom_tactique2'  ],
-            [ 'nom' => 'nom_tactique3'  ],
-            [ 'nom' => 'nom_tactique4'  ],
-            [ 'nom' => 'nom_tactique5'  ],
+            [ 'nom' => '4 4 2'  ],
+            [ 'nom' => '4 3 3'  ],
+            [ 'nom' => '5 4 1'  ],
+            [ 'nom' => '5 3 2'  ],
+            [ 'nom' => '4 4 1 1'  ],
         ];
 
         foreach ($taciques as $t)
@@ -323,11 +323,11 @@ class AppFixtures extends Fixture
 
     public function load_poste(ObjectManager $manager){
         $poste=[
-            [ 'nom' => 'nom_poste1' , 'tactique_id' => 1 ],
-            [ 'nom' => 'nom_poste2' , 'tactique_id' => 2 ],
-            [ 'nom' => 'nom_poste3' , 'tactique_id' => 3 ],
-            [ 'nom' => 'nom_poste4' , 'tactique_id' => 4 ],
-            [ 'nom' => 'nom_poste5' , 'tactique_id' => 5 ],
+            [ 'nom' => 'attaquant' , 'tactique_id' => 1 ],
+            [ 'nom' => 'milieu offensif' , 'tactique_id' => 2 ],
+            [ 'nom' => 'milieu defensif' , 'tactique_id' => 3 ],
+            [ 'nom' => 'defenseur centre' , 'tactique_id' => 4 ],
+            [ 'nom' => 'defenseur latérale gauche' , 'tactique_id' => 5 ],
         ];
 
         foreach ($poste as $po)
@@ -415,11 +415,11 @@ class AppFixtures extends Fixture
 
     public function load_rapport_specifique(ObjectManager $manager){
         $rapport_specifique=[
-            [ 'qualite_technique' => 'qualite_technique1' , 'qualite_mentale' => 'qualite_mentale1' , 'qualite_physique' => 'qualite_physique1' , 'qualite_tactique' => 'qualite_tactique1' , 'nom_agent' => "nom_agent", 'joueur_id' => 1 , 'commente_id'  => 1 ],
-            [ 'qualite_technique' => 'qualite_technique2' , 'qualite_mentale' => 'qualite_mentale2' , 'qualite_physique' => 'qualite_physique2' , 'qualite_tactique' => 'qualite_tactique2' , 'nom_agent' => "nom_agent", 'joueur_id' => 2 , 'commente_id'  => 2 ],
-            [ 'qualite_technique' => 'qualite_technique3' , 'qualite_mentale' => 'qualite_mentale3' , 'qualite_physique' => 'qualite_physique3' , 'qualite_tactique' => 'qualite_tactique3' , 'nom_agent' => "nom_agent", 'joueur_id' => 3 , 'commente_id'  => 3 ],
-            [ 'qualite_technique' => 'qualite_technique4' , 'qualite_mentale' => 'qualite_mentale4' , 'qualite_physique' => 'qualite_physique4' , 'qualite_tactique' => 'qualite_tactique4' , 'nom_agent' => "nom_agent", 'joueur_id' => 4 , 'commente_id'  => 4 ],
-            [ 'qualite_technique' => 'qualite_technique5' , 'qualite_mentale' => 'qualite_mentale5' , 'qualite_physique' => 'qualite_physique5' , 'qualite_tactique' => 'qualite_tactique5' , 'nom_agent' => "nom_agent", 'joueur_id' => 5 , 'commente_id'  => 5 ],
+            [ 'qualite_technique' => 'bon jeux de passe' , 'qualite_mentale' => 'abondonne vite ' , 'qualite_physique' => 'Tres bons physique mais petit' , 'qualite_tactique' => 'bonne vision de jeux' , 'nom_agent' => "Fabrice Dieux", 'joueur_id' => 1 , 'commente_id'  => 1 ],
+            [ 'qualite_technique' => 'tres bon des les coups francs' , 'qualite_mentale' => 'joueur trop agresif' , 'qualite_physique' => 'grand et costaud' , 'qualite_tactique' => 'bon appel de balle' , 'nom_agent' => "David Gishirico", 'joueur_id' => 2 , 'commente_id'  => 2 ],
+            [ 'qualite_technique' => 'defenseur aggresif' , 'qualite_mentale' => 'un mental dacier' , 'qualite_physique' => 'faible et grand' , 'qualite_tactique' => 'libere de bons espace' , 'nom_agent' => "Pierre Marie", 'joueur_id' => 3 , 'commente_id'  => 3 ],
+            [ 'qualite_technique' => 'dribbleur hors pair' , 'qualite_mentale' => 'ne lache pas la partie ' , 'qualite_physique' => 'carrure normal mais jambes muscler' , 'qualite_tactique' => 'cree des actions efficace' , 'nom_agent' => "Jean Lapres", 'joueur_id' => 4 , 'commente_id'  => 4 ],
+            [ 'qualite_technique' => 'Tres solide sur les appuies et rapide' , 'qualite_mentale' => 'difficile' , 'qualite_physique' => 'grande taille' , 'qualite_tactique' => 'a toujours un oeil sur son joueur ' , 'nom_agent' => "Guillaume Acier", 'joueur_id' => 5 , 'commente_id'  => 5 ],
         ];
 
         foreach ($rapport_specifique as $rp)

@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Commentaire;
 use App\Entity\Matchs;
+use App\Entity\Participe;
 use App\Form\CommentaireType;
 use App\Form\MatchType;
 use App\Repository\MatchsRepository;
@@ -29,21 +30,19 @@ class RapportMatchController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/matchs/rapport", name="match_rapport_create", methods={"GET","POST"})
+     * @Route("/matchs/showMatchs/{id}", name="match_show", methods={"GET"})
      */
-    public function newRapport(Request $request): Response
+    public function newRapport(Request $request , Matchs $matchs , MatchsRepository $matchsRepository): Response
     {
-        $match = new Matchs();
-        $form1 = $this->createForm(MatchType::class, $match);
-        $form1->handleRequest($request);
 
-        if ($form1->isSubmitted() && $form1->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($match);
-            $entityManager->flush();
-            return new Response('ok Match');
-        }
+        $id = $matchs->getId();
+        $matchID = $matchsRepository->find($id);
+        $participe = new Participe();
+        $participe->s;
+
 
         $commentaire = new Commentaire();
         $form2 = $this->createForm(CommentaireType::class, $commentaire);
@@ -57,9 +56,8 @@ class RapportMatchController extends AbstractController
         }
 
         return $this->render('rapportMatch/addRapportMatch.html.twig', [
-            'match' => $match,
+            'match' => $matchID,
             'commentaire' => $commentaire,
-            'form1' => $form1->createView(),
             'form2' => $form2->createView(),
         ]);
     }

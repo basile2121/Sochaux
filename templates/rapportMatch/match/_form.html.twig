@@ -1,10 +1,10 @@
-{% form_theme form1 'bootstrap_4_layout.html.twig' %}
+{% form_theme formMatch 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-    <div style="text-align: center; margin-left: 35%; margin-right: auto">
-        {{ form_start(form1, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
-            {{ form_widget(form1) }}
+    <div style="text-align: center; margin-left: 35%; margin-right: 35%; border: 4mm ridge rgba(170, 50, 220, .6);">
+        {{ form_start(formMatch, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
+            {{ form_widget(formMatch) }}
             <button class="btn btn btn-success">{{ button_label|default('Save') }}</button>
-        {{ form_end(form1) }}
+        {{ form_end(formMatch) }}
     </div>
 {% endblock %}

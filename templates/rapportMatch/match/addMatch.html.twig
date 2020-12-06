@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Ajouter Un Match{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Cree un nouveau Match</h1>
+
+    {{ include('rapportMatch/match/_form.html.twig') }}
+
+    <br>
+    <a href="{{ path('index_index') }}" class="btn btn-warning">Revenir a la l'accueil</a>
+{% endblock %}

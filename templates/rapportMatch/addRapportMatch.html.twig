@@ -5,13 +5,15 @@
 {% block body %}
     <h1 style="text-align: center">Cree un Rapport de Match</h1>
     <br>
+
+
     <div style="background-color: #9fa9b7;">
         <br>
         <br>
         <h2 style="text-align: center">Le recapitulatif du match</h2>
         <br>
-        <div style="border: 20px">
-            {{ include('rapportMatch/match/_form.html.twig') }}
+        <div style="border: 20px;">
+            {{ include('rapportMatch/match/showMatch.html.twig') }}
          </div>
         <br>
     </div>
@@ -19,9 +21,11 @@
     <div style="background-color: #0c6251">
         <br>
         <h2 style="text-align: center">Equipe 1</h2>
+        <a style="" class="btn btn-success" href="{{ path('clubs_show') }}">Selectioner la premier equipe</a>
         <img src="{{ asset('images/terrain.png') }}" alt="" style="margin: 0px 10px 0px 60%">
         <br>
         <h2 style="text-align: center">Equipe 2</h2>
+        <a class="btn btn-success" href="{{ path('clubs_show') }}">Selectioner la deuxieme equipe</a>
         <img src="{{ asset('images/terrain.png') }}" alt="" style="margin: 0px 10px 0px 60%">
         <br>
         <br>
@@ -30,6 +34,7 @@
     <div style="background-color: #9fa9b7">
         <h2 style="text-align: center">Le commentaire</h2>
         {#{ include('rapportMatch/commentaire/showCommentaires.html.twig') }#}
+
         {{ include('rapportMatch/commentaire/_form.html.twig') }}
     </div>
     <h2 style="text-align: center" class="btn btn-info">Enregistrer le rapport</h2>

@@ -4,9 +4,13 @@
 namespace App\Controller;
 
 
+use App\Entity\Matchs;
 use App\Entity\RapportSpecifique;
+use App\Form\MatchType;
 use App\Form\RapportSpecifiqueType;
+use App\Repository\MatchsRepository;
 use App\Repository\RapportSpecifiqueRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,83 +20,83 @@ class MatchController extends AbstractController
 {
 
     /**
-     * @Route("/rapportSpecifiques" , name="rapportSpecifiques_show", methods={"GET"})
+     * @Route("/matchs" , name="matchs_show", methods={"GET"})
      */
-    public function index(RapportSpecifiqueRepository $rapportSpecifiqueRepository): Response
+    public function index(MatchsRepository $matchsRepository): Response
     {
-        return $this->render('rapportSpecifiques/showRapportSpecifiques.html.twig', [
-            'rapportSpecifiques' => $rapportSpecifiqueRepository->findAll(),
+        return $this->render('matchs/showMatchs.html.twig', [
+            'matchs' => $matchsRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/rapportSpecifiques/showRapportSpecifique/{id}", name="rapportSpecifique_show", methods={"GET"})
+     * @Route("/matchs/showMatchs/{id}", name="match_show", methods={"GET"})
      */
-    public function show(RapportSpecifique $rapportSpecifique): Response
+    public function show(Matchs $matchs , MatchsRepository $matchsRepository): Response
     {
-
-        return $this->render('rapportSpecifiques/showRapportSpecifique.html.twig', [
-            'rapportSpecifique' => $rapportSpecifique,
+        $id = $matchs->getId();
+        $match = $matchsRepository->find($id);
+        return $this->render('rapportMatch/addRapportMatch.html.twig', [
+            'match' => $match,
         ]);
     }
+
     /**
-     * @Route("/rapportSpecifiques/createRapportSpecifique", name="rapportSpecifiques_add", methods={"GET","POST"})
+     * @Route("/matchs/createMatchs", name="matchs_add", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
-        $rapportSpecifique = new RapportSpecifique();
-        $form = $this->createForm(RapportSpecifiqueType::class, $rapportSpecifique);
+        $matchs = new Matchs();
+        $form = $this->createForm(MatchType::class, $matchs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($rapportSpecifique);
+            $entityManager->persist($matchs);
             $entityManager->flush();
-            $this->addFlash('info','Le rapport specifique ' .$rapportSpecifique->getJoueur() . ' vien d etre ajouter !');
+            $this->addFlash('info','Le maths a  ' .$matchs->getLieux() . ' vien d etre ajouter !');
 
-            return $this->redirectToRoute('rapportSpecifiques_show');
+            return $this->redirect('/matchs/showMatchs/'.$matchs->getId());
         }
 
-        return $this->render('rapportSpecifiques/addRapportSpecifique.html.twig', [
-            'rapportSpecifique' => $rapportSpecifique,
-            'form' => $form->createView(),
+        return $this->render('rapportMatch/match/addMatch.html.twig', [
+            '$match' => $matchs,
+            'formMatch' => $form->createView(),
         ]);
     }
 
-
-
     /**
-     * @Route("/rapportSpecifiques/edit/{id}", name="rapportSpecifiques_edit", methods={"GET","POST"})
+     * @Route("/matchs/edit/{id}", name="matchs_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, RapportSpecifique $rapportSpecifique): Response
+    public function edit(Request $request, Matchs $matchs): Response
     {
-        $form = $this->createForm(RapportSpecifiqueType::class, $rapportSpecifique);
+        $form = $this->createForm(MatchType::class, $matchs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('info','Le rapport specifique ' .$rapportSpecifique->getJoueur() . ' vien d etre modfifier !');
-            return $this->redirectToRoute('rapportSpecifiques_show');
+            $this->addFlash('info','Le rapport mathc du ' .$matchs->getDate() . ' vien d etre modfifier !');
+            return $this->redirectToRoute('match_show');
         }
 
-        return $this->render('rapportSpecifiques/editRapportSpecifique.html.twig', [
-            'rapportSpecifique' => $rapportSpecifique,
+        return $this->render('matchs/editMatch.html.twig', [
+            'matchs' => $matchs,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/rapportSpecifiques/delete/{id}", name="rapportSpecifiques_delete", methods={"DELETE"})
+     * @Route("/matchs/delete/{id}", name="matchs_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, RapportSpecifique $rapportSpecifique): Response
+    public function delete(Request $request, Matchs $matchs): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$rapportSpecifique->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$matchs->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($rapportSpecifique);
+            $entityManager->remove($matchs);
             $entityManager->flush();
-            $this->addFlash('info','Le rapport specifique vien d etre Supprimer !');
+            $this->addFlash('info','Le matchs vien d etre Supprimer !');
         }
 
-        return $this->redirectToRoute('rapportSpecifiques_show');
+        return $this->redirectToRoute('matchs_show');
     }
 }
