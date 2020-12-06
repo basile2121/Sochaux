@@ -40,8 +40,7 @@ class RapportMatchController extends AbstractController
 
         $id = $matchs->getId();
         $matchID = $matchsRepository->find($id);
-        $participe = new Participe();
-        $participe->s;
+
 
 
         $commentaire = new Commentaire();

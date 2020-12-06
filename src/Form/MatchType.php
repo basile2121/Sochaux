@@ -30,7 +30,7 @@ class MatchType extends AbstractType
                 ]
             ))
             ->add('tournoi')
-            ->add('club')
+
 
 
         ;

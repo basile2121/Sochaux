@@ -19,17 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Debut des rapports de Match + Modification Mineur de la NavBar">
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/match/addMatch.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Creation d'un match + ajout des fixtures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/MatchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MatchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +213,7 @@
       <workItem from="1607067886054" duration="1198000" />
       <workItem from="1607105795838" duration="5364000" />
       <workItem from="1607161782676" duration="10642000" />
-      <workItem from="1607255506485" duration="11313000" />
+      <workItem from="1607255506485" duration="12022000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -271,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606992204228</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creation d'un match + ajout des fixtures">
+      <created>1607273639340</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607273639340</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +298,7 @@
     <MESSAGE value="Correction des bugs d'affichage de la NavBar et ajout de l'image lien dessus&#10;Attention Probleme avec la Navbar elle prend l'ecran de body" />
     <MESSAGE value="Correction Mineur debordement de la NavBar" />
     <MESSAGE value="Debut des rapports de Match + Modification Mineur de la NavBar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debut des rapports de Match + Modification Mineur de la NavBar" />
+    <MESSAGE value="Creation d'un match + ajout des fixtures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation d'un match + ajout des fixtures" />
   </component>
 </project>
