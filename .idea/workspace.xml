@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Creation d'un match + ajout des fixtures">
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Correction d'un Bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MatchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MatchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/commentaire/showCommentaires.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/commentaire/showCommentairesMatch.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +214,8 @@
       <workItem from="1607067886054" duration="1198000" />
       <workItem from="1607105795838" duration="5364000" />
       <workItem from="1607161782676" duration="10642000" />
-      <workItem from="1607255506485" duration="12022000" />
+      <workItem from="1607255506485" duration="12647000" />
+      <workItem from="1607334314009" duration="3664000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -271,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607273639340</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Correction d'un Bug">
+      <created>1607275615963</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607275615963</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +308,7 @@
     <MESSAGE value="Correction Mineur debordement de la NavBar" />
     <MESSAGE value="Debut des rapports de Match + Modification Mineur de la NavBar" />
     <MESSAGE value="Creation d'un match + ajout des fixtures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creation d'un match + ajout des fixtures" />
+    <MESSAGE value="Correction d'un Bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction d'un Bug" />
   </component>
 </project>

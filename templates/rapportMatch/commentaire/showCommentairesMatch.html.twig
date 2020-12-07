@@ -12,12 +12,14 @@
                 <thead class="thead-dark">
                 <tr class="table-secondary">
                     <th scope="col">Match</th>
+                    <th>Le Texte</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for commentaire in commentaires %}
                     <tr class="text-center">
                         <td>{{ commentaire.matchs }}</td>
+                        <td>{{ commentaire.texte }}</td>
                     <tr>
                         <td colspan="8">Aucun Commentaire de trouvé</td>
                     </tr>
