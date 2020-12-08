@@ -3,31 +3,31 @@
 {% block title %}Contrat{% endblock %}
 
 {% block body %}
-    <h1>Contrat</h1>
-
-    <table class="table">
+    <h3 style="padding:25px; text-align:center;">Contrat</h3>
+    <div class="col-lg-3 mx-auto" style="box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.7); padding:0px 0px 0px 0px">
+    <table class="table table-light table-striped table-bordered table-responsive-lg">
         <tbody>
         <tr>
-            <th>Nom</th>
-            <td>{{ contrat.joueur.nom }}</td>
+            <th scope="col">Nom</th>
+            <td class="text-center">{{ contrat.joueur.nom }}</td>
         </tr>
         <tr>
-            <th>Prenom</th>
-            <td>{{ contrat.joueur.prenom }}</td>
+            <th scope="col">Prenom</th>
+            <td class="text-center">{{ contrat.joueur.prenom }}</td>
         </tr>
         <tr>
-            <th>Club</th>
-            <td>{{ contrat.club }}</td>
+            <th scope="col">Club</th>
+            <td class="text-center">{{ contrat.club }}</td>
         </tr>
         <tr>
-            <th>Date Debut</th>
-            <td>{{ contrat.dateDebut ? contrat.dateDebut|date('Y-m-d') : '' }}</td>
+            <th scope="col">Date Debut</th>
+            <td class="text-center">{{ contrat.dateDebut ? contrat.dateDebut|date('Y-m-d') : '' }}</td>
         </tr>
         <tr>
-            <th>Date Fin</th>
-            <td>{{ contrat.dateFin ? contrat.dateFin|date('Y-m-d') : '' }}</td>
+            <th scope="col">Date Fin</th>
+            <td class="text-center">{{ contrat.dateFin ? contrat.dateFin|date('Y-m-d') : '' }}</td>
         </tr>
         </tbody>
     </table>
-
+    </div>
 {% endblock %}

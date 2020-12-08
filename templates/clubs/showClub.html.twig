@@ -3,23 +3,22 @@
 {% block title %}Club{% endblock %}
 
 {% block body %}
-    <h1>Le club</h1>
-
-    <table class="table">
-        <tbody>
+    <h3 style="padding:25px; text-align:center;">Le club</h3>
+    <div class="col-lg-2 mx-auto" style="box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.7); padding:0px 0px 0px 0px">
+    <table class="table table-light table-striped table-bordered table-responsive-lg">
         <tr>
-            <th>Nom Club</th>
-            <td>{{ club.nomClub }}</td>
+            <th scope="col">Nom Club</th>
+            <td class="text-center">{{ club.nomClub }}</td>
         </tr>
         <tr>
-            <th>Ville</th>
-            <td>{{ club.villeClub }}</td>
+            <th scope="col">Ville</th>
+            <td class="text-center">{{ club.villeClub }}</td>
         </tr>
         <tr>
-            <th>Pays</th>
-            <td>{{ club.paysClub }}</td>
+            <th scope="col">Pays</th>
+            <td class="text-center">{{ club.paysClub }}</td>
         </tr>
-        </tbody>
     </table>
+    </div>
 
 {% endblock %}

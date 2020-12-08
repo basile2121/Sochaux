@@ -3,35 +3,32 @@
 {% block title %}Rapport specifique{% endblock %}
 
 {% block body %}
-    <h1>Le Rapport specifique</h1>
-
-    <table class="table">
-        <tbody>
+    <h3 style="padding:25px; text-align:center;">Le Rapport specifique</h1>
+    <div class="col-lg-7 mx-auto" style="box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.7); padding:0px 0px 0px 0px" >
+    <table class="table table-light table-striped table-bordered table-responsive-md">
         <tr>
-            <th>Qualite technique</th>
-            <td>{{ rapportSpecifique.qualiteTechnique }}</td>
+            <th scope="col">Nom agent</th>
+            <td class="text-center">{{ rapportSpecifique.nomAgent }}</td>
         </tr>
         <tr>
-            <th>Qualite mentale</th>
-            <td>{{ rapportSpecifique.qualiteMentale }}</td>
+            <th scope="col">Joueur</th>
+            <td class="text-center">{{ rapportSpecifique.joueur }}</td>
         </tr>
         <tr>
-            <th>Qualite physique</th>
-            <td>{{ rapportSpecifique.qualitePhysique }}</td>
+            <th scope="col">Qualite technique</th>
+            <td class="text-left">{{ rapportSpecifique.qualiteTechnique }}e indusook a galley of type and scramblimen book. It has</td>
         </tr>
         <tr>
-            <th>Qualite tactique</th>
-            <td>{{ rapportSpecifique.qualiteTactique }}</td>
-        </tr>
+            <th scope="col">Qualite mentale</th>
+            <td class="text-left">{{ rapportSpecifique.qualiteMentale }}Loretry's standard dummy nter took a galley o</td>
         <tr>
-            <th>Nom agent</th>
-            <td>{{ rapportSpecifique.nomAgent }}</td>
+            <th scope="col">Qualite physique</th>
+            <td class="text-left">{{ rapportSpecifique.qualitePhysique }}Lorem Ipsum is simply dummy text o</td>
+        <tr >
+            <th scope="col">Qualite tactique</th>
+            <td class="text-left">{{ rapportSpecifique.qualiteTactique }}Lorem Ipsum passages, and mop publiing versions of Lorem Ipsum. </td>
         </tr>
-        <tr>
-            <th>Joueur</th>
-            <td>{{ rapportSpecifique.joueur }}</td>
-        </tr>
-        </tbody>
     </table>
-    <a class="btn btn-info" href="#">Convertir en PDF</a>
+    </div>
+    <a style="margin-left:20px;"class="btn btn-info" href="#">Convertir en PDF</a>
 {% endblock %}
