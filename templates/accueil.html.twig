@@ -1,7 +1,66 @@
-{% extends "layout.html.twig" %}
+{% extends('layout.html.twig') %}
 
 {% block body %}
-	<h1> Projet web </h1>
-	<a href="{{ path('matchs_add') }}">Creer un rapport de Matchs</a>
+<body>
+  <section id="container">
+
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-9 main-chart">
+            <div class="row mt">
+
+              <!-- Creer Un Rapport -->
+              <div class="col-md-4 col-sm-4 mb">
+                <div class="grey-panel pn donut-chart">
+                  <div class="grey-header">
+                    <h5>Cree un Rapport Specifique</h5>
+                  </div>
+                  <div class="row">
+                    <p>Appuyer Ici</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Voir La Liste Des Joueurs -->
+              <div class="col-md-4 col-sm-4 mb">
+                <div class="darkblue-panel pn">
+                  <div class="darkblue-header">
+                    <h5>Liste Des Joueurs</h5>
+                  </div>
+                  <p>Acceder a La liste des Joueurs</p>
+                </div>
+              </div>
+
+              <!-- Les Rapports Specifique -->
+              <div class="col-md-4 col-sm-4 mb">
+                <div class="darkblue-panel pn">
+                  <div class="darkblue-header">
+                    <h5>Les rapports Specifiques</h5>
+                  </div>
+                  <p>Acceder aux rapports Specifique</p>
+                </div>
+              </div>
+
+              <!-- Notifications -->
+              <div class="col-md-4 col-sm-4 mb">
+                <div class="green-panel pn">
+                  <div class="green-header">
+                    <h5>Notifications</h5>
+                  </div>
+                </div>
+              </div>
+
+           </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+
+  </section>
+
 {% endblock %}
+
 

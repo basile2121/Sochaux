@@ -3,11 +3,14 @@
 {% block title %}Modifier le rapport specifique{% endblock %}
 
 {% block body %}
-    <h1 style="text-align: center">Modifier le rapport specifique</h1>
 
-    {{ include('rapportSpecifiques/_form.html.twig', {'button_label': 'Update'}) }}
-    <br>
-    <a href="{{ path('clubs_show') }}" class="btn btn-warning">Revenir à la liste des rapport specifiques</a>
-    <br>
-    {{ include('rapportSpecifiques/deleteRapportSpecifique.html.twig') }}
+
+            <h1 style="text-align: center">Modifier le rapport specifique</h1>
+
+            {{ include('rapportSpecifiques/_form.html.twig', {'button_label': 'Update'}) }}
+            <br>
+            <a href="{{ path('clubs_show') }}" class="btn btn-warning">Revenir à la liste des rapport specifiques</a>
+            <br>
+            {{ include('rapportSpecifiques/deleteRapportSpecifique.html.twig') }}
+
 {% endblock %}

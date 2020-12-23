@@ -39,13 +39,14 @@
                         <a class="btn btn-info" href="{{ path('joueur_show', {'id': joueur.id}) }}">Informations</a>
                     </td>
 
-                    <td style="text-align:center;"><a  class="btn btn-info" href="{{ path('joueur_edit', {'id': joueur.id}) }}">Modifier</a></td>
+                    <td style="text-align:center;"><a  class="btn btn-info" href="{{ path('joueur_edit', {'id': joueur.id}) }}"><i class="fa fa-pencil"> Modifier</i></a></td>
                      <td style="text-align:center;">   
                         <form method="post" action="{{ path('joueur_delete', {'id': joueur.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce joueurs');">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ joueur.id) }}">
-                            <button class="btn btn-info">Supprimer</button>
+                            <button class="btn btn-danger "><i class="fa fa-trash-o "> Supprimer</i></button>
                         </form>
+
                     </td>
                     <td style="text-align:center;">
                         <a class="btn btn-info" href="{{ path('joueurs_contrats_add' , {'id' : joueur.id}) }}">Ajouter</a>

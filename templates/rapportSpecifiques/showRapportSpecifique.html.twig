@@ -3,32 +3,34 @@
 {% block title %}Rapport specifique{% endblock %}
 
 {% block body %}
-    <h3 style="padding:25px; text-align:center;">Le Rapport specifique</h1>
-    <div class="col-lg-7 mx-auto" style="box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.7); padding:0px 0px 0px 0px" >
-    <table class="table table-light table-striped table-bordered table-responsive-md">
-        <tr>
-            <th scope="col">Nom agent</th>
-            <td class="text-center">{{ rapportSpecifique.nomAgent }}</td>
-        </tr>
-        <tr>
-            <th scope="col">Joueur</th>
-            <td class="text-center">{{ rapportSpecifique.joueur }}</td>
-        </tr>
-        <tr>
-            <th scope="col">Qualite technique</th>
-            <td class="text-left">{{ rapportSpecifique.qualiteTechnique }}e indusook a galley of type and scramblimen book. It has</td>
-        </tr>
-        <tr>
-            <th scope="col">Qualite mentale</th>
-            <td class="text-left">{{ rapportSpecifique.qualiteMentale }}Loretry's standard dummy nter took a galley o</td>
-        <tr>
-            <th scope="col">Qualite physique</th>
-            <td class="text-left">{{ rapportSpecifique.qualitePhysique }}Lorem Ipsum is simply dummy text o</td>
-        <tr >
-            <th scope="col">Qualite tactique</th>
-            <td class="text-left">{{ rapportSpecifique.qualiteTactique }}Lorem Ipsum passages, and mop publiing versions of Lorem Ipsum. </td>
-        </tr>
-    </table>
-    </div>
-    <a style="margin-left:20px;"class="btn btn-info" href="#">Convertir en PDF</a>
+
+            <h3 style="padding:25px; text-align:center;">Le Rapport specifique</h3>
+            <div class="col-lg-7 mx-auto" style="box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.7); padding:0px 0px 0px 0px" >
+            <table class="table table-light table-striped table-bordered table-responsive-md">
+                <tr>
+                    <th scope="col">Nom agent</th>
+                    <td class="text-center">{{ rapportSpecifique.nomAgent }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Joueur</th>
+                    <td class="text-center">{{ rapportSpecifique.joueur }}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Qualite technique</th>
+                    <td class="text-left">{{ rapportSpecifique.qualiteTechnique }}e indusook a galley of type and scramblimen book. It has</td>
+                </tr>
+                <tr>
+                    <th scope="col">Qualite mentale</th>
+                    <td class="text-left">{{ rapportSpecifique.qualiteMentale }}Loretry's standard dummy nter took a galley o</td>
+                <tr>
+                    <th scope="col">Qualite physique</th>
+                    <td class="text-left">{{ rapportSpecifique.qualitePhysique }}Lorem Ipsum is simply dummy text o</td>
+                <tr >
+                    <th scope="col">Qualite tactique</th>
+                    <td class="text-left">{{ rapportSpecifique.qualiteTactique }}Lorem Ipsum passages, and mop publiing versions of Lorem Ipsum. </td>
+                </tr>
+            </table>
+            </div>
+            <a style="margin-left:20px;"class="btn btn-info" href="#">Convertir en PDF</a>
+
 {% endblock %}

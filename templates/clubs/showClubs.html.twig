@@ -29,13 +29,13 @@
                 </td>
 
                 <td>
-                    <a  class="btn btn-info" href="{{ path('clubs_edit', {'id': club.id}) }}">Modifier</a>
+                    <a  class="btn btn-info" href="{{ path('clubs_edit', {'id': club.id}) }}"><i class="fa fa-pencil"> Modifier</i></a>
                 </td>
                 <td>
                     <form method="post" action="{{ path('clubs_delete', {'id': club.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce club');">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ club.id) }}">
-                        <button class="btn btn-info">Supprimer</button>
+                        <button class="btn btn-danger "><i class="fa fa-trash-o "> Supprimer</i></button>
                     </form>
                 </td>
 

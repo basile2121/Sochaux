@@ -2,7 +2,8 @@
 
 {% block title %}Modifier le Joueur{% endblock %}
 
-{% block body %}
+{% block body %}*
+
     <h1 style="text-align: center">Modifier le Joueur</h1>
 
     {{ include('joueurs/_form.html.twig', {'button_label': 'Update'}) }}
@@ -10,4 +11,5 @@
     <a href="{{ path('joueurs_show') }}" class="btn btn-warning">Revenir à la liste des joueurs</a>
     <br>
     {{ include('joueurs/deleteJoueur.html.twig') }}
+
 {% endblock %}

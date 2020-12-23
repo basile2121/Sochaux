@@ -28,12 +28,12 @@
                     <td>{{ contrat.dateDebut ? contrat.dateDebut|date('Y-m-d') : '' }}</td>
                     <td>{{ contrat.dateFin ? contrat.dateFin|date('Y-m-d') : '' }}</td>
                     <td style="text-align:center;"><a class="btn btn-info" href="{{ path('contrat_show', {'id': contrat.id}) }}">Informations</a></td>
-                    <td style="text-align:center;"><a  class="btn btn-info" href="{{ path('contrats_edit', {'id': contrat.id}) }}">Modifier</a></td>
+                    <td style="text-align:center;"><a  class="btn btn-info" href="{{ path('contrats_edit', {'id': contrat.id}) }}"><i class="fa fa-pencil"> Modifier</i></a></td>
                     <td style="text-align:center;">
                         <form method="post" action="{{ path('contrats_delete', {'id': contrat.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce contrat');">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contrat.id) }}">
-                            <button class="btn btn-info">Supprimer</button>
+                            <button class="btn btn-danger "><i class="fa fa-trash-o "> Supprimer</i></button>
                         </form>
                     </td>
                 </tr>

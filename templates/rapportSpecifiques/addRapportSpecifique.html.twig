@@ -3,9 +3,12 @@
 {% block title %}Ajouter rapport specifique{% endblock %}
 
 {% block body %}
-    <h1 style="text-align: center">Cree un nouveau rapport specifique</h1>
 
-    {{ include('rapportSpecifiques/_form.html.twig') }}
-    <br>
-    <a href="{{ path('rapportSpecifiques_show') }}" class="btn btn-warning">Revenir a la liste des rapport specifiques</a>
+
+            <h1 style="text-align: center">Cree un nouveau rapport specifique</h1>
+
+            {{ include('rapportSpecifiques/_form.html.twig') }}
+            <br>
+            <a href="{{ path('rapportSpecifiques_show') }}" class="btn btn-warning">Revenir a la liste des rapport specifiques</a>
+
 {% endblock %}
