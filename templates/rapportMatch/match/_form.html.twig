@@ -1,10 +1,32 @@
 {% form_theme formMatch 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-    <div style="text-align: center; margin-left: 35%; margin-right: 35%; border: 4mm ridge rgba(170, 50, 220, .6);">
-        {{ form_start(formMatch, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
-            {{ form_widget(formMatch) }}
-            <button class="btn btn btn-success">{{ button_label|default('Save') }}</button>
+    <div style="text-align: center; margin-left: 20%; margin-right: 20%; border: 2mm ridge rgba(70,130,180 , 2); background-color: #9fa9b7">
+        {{ form_start(formMatch) }}
+        <div class="row" style="margin: 3% ">
+            <div class="col">
+                {{ form_row(formMatch.conditions) }}
+            </div>
+            <div class="col">
+                {{ form_row(formMatch.lieux) }}
+            </div>
+            <div class="col">
+                {{ form_row(formMatch.date) }}
+            </div>
+            <div class="col">
+                {{ form_row(formMatch.tournoi , { 'attr': { 'style' : 'height : 60' } }) }}
+            </div>
+        </div>
+
+
+        <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
         {{ form_end(formMatch) }}
+
     </div>
+    <br>
+    <bt></bt>
+    <div style="text-align: center">
+        <a href="{{ path('index_index') }}" class="btn btn-warning">Consulter les Matchs Existants</a>
+    </div>
+
 {% endblock %}

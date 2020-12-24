@@ -6,6 +6,7 @@ use App\Repository\MatchsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=MatchsRepository::class)
@@ -30,7 +31,7 @@ class Matchs
     private $conditions;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date" , nullable=false)
      */
     private $date;
 
