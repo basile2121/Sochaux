@@ -5,16 +5,31 @@
         {{ form_start(formMatch) }}
         <div class="row" style="margin: 3% ">
             <div class="col">
-                {{ form_row(formMatch.conditions) }}
+                <div style="color: #696969; font-size: 18px;">
+                    {{ form_label(formMatch.conditions) }}
+                </div>
+                {{ form_widget(formMatch.conditions) }}
             </div>
+            <br>
             <div class="col">
-                {{ form_row(formMatch.lieux) }}
+                <div style="color: #696969; font-size: 18px;">
+                    {{ form_label(formMatch.lieux) }}
+                </div>
+                {{ form_widget(formMatch.lieux) }}
             </div>
+            <br>
             <div class="col">
-                {{ form_row(formMatch.date) }}
+                <div style="color: #696969; font-size: 18px;">
+                    {{ form_label(formMatch.date) }}
+                </div>
+                {{ form_widget(formMatch.date) }}
             </div>
+            <br>
             <div class="col">
-                {{ form_row(formMatch.tournoi , { 'attr': { 'style' : 'height : 60' } }) }}
+                <div style="color: #696969; font-size: 18px;">
+                    {{ form_label(formMatch.tournoi) }}
+                </div>
+                {{ form_widget(formMatch.tournoi) }}
             </div>
         </div>
 

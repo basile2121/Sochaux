@@ -26,24 +26,25 @@
 
 </head>
 <body>
-{% for message in app.flashes('info') %}
-    <div class="alert alert-dismissible alert-warning">
-        <button type="button" class="close" data-dismiss="alert"></button>
-        <strong> {{ message }}</strong>
-    </div>
-{% endfor %}
+
 {% include('navBar.html.twig') %}
 <section id="container">
     <section id="main-content">
         <section class="wrapper">
 {% block body %}
+    {% for message in app.flashes('info') %}
+        <div class="alert alert-dismissible alert-warning">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            <strong> {{ message }}</strong>
+        </div>
+    {% endfor %}
 
 {% endblock %}
         </section>
     </section>
 </section>
 <br>
-{% include('footer.html.twig') %}
+{# include('footer.html.twig') #}
 
 {% block javascripts %}
 

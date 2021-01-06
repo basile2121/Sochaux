@@ -23,20 +23,6 @@ class RapportMatchController extends AbstractController
 {
 
     /**
-     * @Route("/matchs" , name="matchs_show", methods={"GET"})
-     */
-    public function index(MatchsRepository $matchsRepository): Response
-    {
-        return $this->render('joueurs/showJoueurs.html.twig', [
-            'matchs' => $matchsRepository->findAll(),
-
-        ]);
-    }
-
-
-
-
-    /**
      * @Route("/matchs/rapport", name="match_rapport_create", methods={"GET","POST"})
      * @Route("/matchs/showMatchs/{id}", name="match_show", methods={"GET" ,"POST"})
      */
