@@ -19,17 +19,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Refonte Total du site">
-      <change afterPath="$PROJECT_DIR$/templates/matchs/deleteMatch.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/matchs/showMatch.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Mise a Jour des Matchs + petites focntionalités">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/commentaire/showCommentairesMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/commentaire/showCommentairesMatch.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/8a9dd3173f1f220f921e733f1c24e513.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/a23c594211405d0a53c5b88a1a84d575.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clubs/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clubs/editClub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/editClub.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clubs/showClub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/showClub.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contrats/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contrats/editContrat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/editContrat.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contrats/showContrat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/showContrat.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contrats/showContrats.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/showContrats.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/editJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/editJoueur.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navBar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navBar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/editRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/editRapportSpecifique.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +242,7 @@
       <workItem from="1608282033082" duration="1486000" />
       <workItem from="1608739123371" duration="12864000" />
       <workItem from="1609625339863" duration="1824000" />
-      <workItem from="1609943546372" duration="6778000" />
+      <workItem from="1609943546372" duration="11165000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -302,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608761665503</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Mise a Jour des Matchs + petites focntionalités">
+      <created>1609950425611</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609950425611</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +351,7 @@
     <MESSAGE value="Creation d'un match + ajout des fixtures" />
     <MESSAGE value="Correction d'un Bug" />
     <MESSAGE value="Refonte Total du site" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refonte Total du site" />
+    <MESSAGE value="Mise a Jour des Matchs + petites focntionalités" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mise a Jour des Matchs + petites focntionalités" />
   </component>
 </project>

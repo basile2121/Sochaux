@@ -6,9 +6,11 @@
 
     <h1 style="text-align: center">Modifier le Joueur</h1>
 
-    {{ include('joueurs/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('joueurs/_form.html.twig', {'button_label': 'Valider Modification'}) }}
     <br>
     <a href="{{ path('joueurs_show') }}" class="btn btn-warning">Revenir à la liste des joueurs</a>
+    <br>
+    <br>
     <br>
     {{ include('joueurs/deleteJoueur.html.twig') }}
 

@@ -10,14 +10,16 @@
           <div class="col-lg-9 main-chart">
             <div class="row mt">
 
+              <h1 style="text-align: center; font-weight: bold">Acces Rapide</h1>
+              <br>
               <!-- Creer Un Rapport -->
               <div class="col-md-4 col-sm-4 mb">
-                <div class="grey-panel pn donut-chart">
-                  <div class="grey-header">
-                    <h5>Cree un Rapport Specifique</h5>
+                <div class="darkblue-panel pn">
+                  <div class="darkblue-header">
+                    <h5>Créer un Rapport Spécifique</h5>
                   </div>
                   <div class="row">
-                    <p>Appuyer Ici</p>
+                    <a class="btn btn-warning" href="{{ path('matchs_add') }}">Creation</a>
                   </div>
                 </div>
               </div>
@@ -29,7 +31,7 @@
                   <div class="darkblue-header">
                     <h5>Liste Des Joueurs</h5>
                   </div>
-                  <p>Acceder a La liste des Joueurs</p>
+                  <a class="btn btn-warning" href="{{ path('joueurs_show') }}">Acceder à La liste des Joueurs</a>
                 </div>
               </div>
 
@@ -39,15 +41,42 @@
                   <div class="darkblue-header">
                     <h5>Les rapports Specifiques</h5>
                   </div>
-                  <p>Acceder aux rapports Specifique</p>
+                  <a class="btn btn-warning" href="{{ path('rapportSpecifiques_show') }}">Acceder aux rapports Specifiques</a>
                 </div>
               </div>
 
               <!-- Notifications -->
               <div class="col-md-4 col-sm-4 mb">
-                <div class="green-panel pn">
-                  <div class="green-header">
+                <div class="darkblue-panel pn">
+                  <div class="darkblue-header">
                     <h5>Notifications</h5>
+                  </div>
+                  <div class="row">
+                    <a class="btn btn-warning" href="#">Notifications</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notifications -->
+              <div class="col-md-4 col-sm-4 mb">
+                <div class="darkblue-panel pn">
+                  <div class="darkblue-header">
+                    <h5>Gestion du Club</h5>
+                  </div>
+                  <div class="row">
+                    <a class="btn btn-warning" href="#">Acceder à la gestion du club</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notifications -->
+              <div class="col-md-4 col-sm-4 mb">
+                <div class="darkblue-panel pn">
+                  <div class="darkblue-header">
+                    <h5>Effectif Club</h5>
+                  </div>
+                  <div class="row">
+                    <a class="btn btn-warning" href="#">Effectif Club</a>
                   </div>
                 </div>
               </div>

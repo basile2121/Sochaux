@@ -3,22 +3,24 @@
 {% block title %}Club{% endblock %}
 
 {% block body %}
-    <h3 style="padding:25px; text-align:center;">Le club</h3>
-    <div class="col-lg-2 mx-auto" style="box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.7); padding:0px 0px 0px 0px">
-    <table class="table table-light table-striped table-bordered table-responsive-lg">
-        <tr>
-            <th scope="col">Nom Club</th>
-            <td class="text-center">{{ club.nomClub }}</td>
-        </tr>
-        <tr>
-            <th scope="col">Ville</th>
-            <td class="text-center">{{ club.villeClub }}</td>
-        </tr>
-        <tr>
-            <th scope="col">Pays</th>
-            <td class="text-center">{{ club.paysClub }}</td>
-        </tr>
+    <h3 style="padding:25px; text-align:center; color: #171a1d; font-weight: bold">Le club de {{ club.nomClub }} </h3>
+    <table class="table " style=" margin-left: 15%; width:70%; border-radius: 20px ;box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); background-color: #2f3640;">
+        <tbody style="text-align: center; color: #F9F9FF;  padding-bottom: 20px">
+            <tr>
+                <th style="text-align: center; font-size: 20px " scope="col">Nom Club</th>
+                <td class="text-center">{{ club.nomClub }}</td>
+            </tr>
+            <tr>
+                <th style="text-align: center; font-size: 20px " scope="col">Ville</th>
+                <td class="text-center">{{ club.villeClub }}</td>
+            </tr>
+            <tr>
+                <th style="text-align: center; font-size: 20px " scope="col">Pays</th>
+                <td class="text-center">{{ club.paysClub }}</td>
+            </tr>
+        </tbody>
     </table>
-    </div>
+
+    <a style="width: 300px;" class="btn btn-warning center-block size" href="{{ path('clubs_show') }}">Revenir à la liste des Clubs</a>
 
 {% endblock %}
