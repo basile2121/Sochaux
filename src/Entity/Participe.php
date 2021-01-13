@@ -20,17 +20,23 @@ class Participe
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $score;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Club::class, inversedBy="participes")
+     * @ORM\ManyToOne(targetEntity=Club::class, inversedBy="participes" )
      */
-    private $club;
+    private $clubfirst;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Matchs::class, inversedBy="participes")
+     * @ORM\ManyToOne(targetEntity=Club::class, inversedBy="participes" )
+     */
+    private $clubsecond;
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Matchs::class, inversedBy="participes" )
      */
     private $matchs;
 
@@ -41,7 +47,6 @@ class Participe
 
     public function __construct()
     {
-        $this->club = new ArrayCollection();
         $this->matchs = new ArrayCollection();
         $this->tactique = new ArrayCollection();
     }
@@ -50,19 +55,6 @@ class Participe
     {
         return $this->id;
     }
-
-    public function getScore(): ?int
-    {
-        return $this->score;
-    }
-
-    public function setScore(int $score): self
-    {
-        $this->score = $score;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Club[]
      */
@@ -88,6 +80,43 @@ class Participe
 
         return $this;
     }
+
+    public function getScore(): ?int
+    {
+        return $this->score;
+    }
+
+    public function setScore(int $score): self
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
+    public function getClubFirst(): ?Club
+    {
+        return $this->clubfirst;
+    }
+
+    public function setClubFirst(?Club $club): self
+    {
+        $this->clubfirst = $club;
+
+        return $this;
+    }
+
+    public function getClubSecond(): ?Club
+    {
+        return $this->clubsecond;
+    }
+
+    public function setClubSecond(?Club $club): self
+    {
+        $this->clubsecond = $club;
+
+        return $this;
+    }
+
 
     /**
      * @return Collection|Matchs[]

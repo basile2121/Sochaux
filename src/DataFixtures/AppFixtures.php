@@ -289,11 +289,11 @@ class AppFixtures extends Fixture
 
     public function load_participes(ObjectManager $manager){
         $participe=[
-            [ 'score' => 1 , 'club_id' => 1 , 'match_id' => 1 , 'tactique_id' => 1 ],
-            [ 'score' => 2 , 'club_id' => 2 , 'match_id' => 2 , 'tactique_id' => 2 ],
-            [ 'score' => 3 , 'club_id' => 3 , 'match_id' => 3 , 'tactique_id' => 3 ],
-            [ 'score' => 4 , 'club_id' => 4 , 'match_id' => 4 , 'tactique_id' => 4 ],
-            [ 'score' => 5 , 'club_id' => 5 , 'match_id' => 5 , 'tactique_id' => 5 ],
+            [ 'score' => 1 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 1 , 'tactique_id' => 1 ],
+            [ 'score' => 2 , 'club_first' => 1 , 'club_second' => 2, 'match_id' => 2 , 'tactique_id' => 2 ],
+            [ 'score' => 3 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 3 , 'tactique_id' => 3 ],
+            [ 'score' => 4 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 4 , 'tactique_id' => 4 ],
+            [ 'score' => 5 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 5 , 'tactique_id' => 5 ],
         ];
 
         foreach ($participe as $pa)
@@ -301,10 +301,15 @@ class AppFixtures extends Fixture
             $new_participe = new Participe();
             $new_participe->setScore($pa['score']);
 
-            $club = $manager->getRepository(Club::class)->findOneBy([
-                'id' => $pa['club_id']],
+            $clubFirst = $manager->getRepository(Club::class)->findOneBy([
+                'id' => $pa['club_first']],
                 ['id' => 'ASC']);
-            $new_participe->addClub($club);
+            $new_participe->setClubFirst($clubFirst);
+
+            $clubSecond = $manager->getRepository(Club::class)->findOneBy([
+                'id' => $pa['club_second']],
+                ['id' => 'ASC']);
+            $new_participe->setClubSecond($clubSecond);
 
             $match = $manager->getRepository(Matchs::class)->findOneBy([
                 'id' => $pa['match_id']],

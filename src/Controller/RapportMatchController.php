@@ -8,8 +8,11 @@ use App\Entity\Matchs;
 use App\Entity\Participe;
 use App\Form\CommentaireType;
 use App\Form\MatchType;
+use App\Form\ParticipeType;
 use App\Repository\CommentaireRepository;
 use App\Repository\MatchsRepository;
+use App\Repository\ParticipeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\File;
@@ -26,10 +29,22 @@ class RapportMatchController extends AbstractController
      * @Route("/matchs/rapport", name="match_rapport_create", methods={"GET","POST"})
      * @Route("/matchs/showMatchs/{id}", name="match_show", methods={"GET" ,"POST"})
      */
-    public function newRapport(Request $request , Matchs $matchs , MatchsRepository $matchsRepository , CommentaireRepository $commentaireRepository): Response
+    public function newRapport(Request $request , Matchs $matchs , MatchsRepository $matchsRepository ,ParticipeRepository $participeRepository, CommentaireRepository $commentaireRepository): Response
     {
         $id = $matchs->getId();
         $matchID = $matchsRepository->find($id);
+
+        $participes = $matchs->getParticipes();
+
+        foreach ($participes as $participe){
+            $equipe1 = $participe->getClubFirst();
+            $equipe2 = $participe->getClubSecond();
+
+        }
+
+
+
+
 
         $commentaire = new Commentaire();
         $commentaire->setMatchs($matchs);
@@ -47,9 +62,12 @@ class RapportMatchController extends AbstractController
 
 
         return $this->render('rapportMatch/addRapportMatch.html.twig', [
+            'participes' => $participes,
             'match' => $matchID,
             'commentaire' => $commentaire,
             'commentaires' => $commentaires,
+            'equipe1' => $equipe1,
+            'equipe2' => $equipe2,
             'form2' => $form2->createView(),
         ]);
     }
@@ -81,6 +99,34 @@ class RapportMatchController extends AbstractController
         }
         return $this->render('route.html.twig', ['donnees'=>$donnees]);
     }
+
+
+    /**
+     * @Route("/clubs/addClubs/{id}", name="club_add_matchs", methods={"GET","POST"})
+     */
+    public function addClubsMatch(Request $request , Matchs $matchs): Response
+    {
+        $participe = new Participe();
+        $participe->addMatch($matchs);
+        $form = $this->createForm(ParticipeType::class, $participe);
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($participe);
+            $entityManager->flush();
+            $this->addFlash('info','Les clubs sont ajoutés !');
+
+            return $this->redirect('/matchs/showMatchs/'.$matchs->getId());
+        }
+
+        return $this->render('rapportMatch/club/addClub.html.twig', [
+            '$match' => $matchs,
+            'formClub' => $form->createView(),
+        ]);
+    }
+
 
 
 
