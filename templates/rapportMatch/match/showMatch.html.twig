@@ -13,13 +13,24 @@
         </tr>
         <tr>
             <th style="text-align: center; font-size: 20px" >Date</th>
-            <td>{{ match.date ? match.date|date('Y-m-d') : '' }}</td>
+            <td>{{ match.date ? match.date|date('d/m/Y') : '' }}</td>
+        </tr>
+
+        <tr>
+            <th style="text-align: center; font-size: 20px" >Pays</th>
+            <td>France</td>
         </tr>
 
         <tr>
             <th style="text-align: center; font-size: 20px" >Tournoi</th>
             <td>{{ match.tournoi }}</td>
         </tr>
+
+        <tr>
+            <th style="text-align: center; font-size: 20px" >Equipes </th>
+            <td>{{ equipe1 }}  | {{ equipe2 }}</td>
+        </tr>
+
         </tbody>
     </table>
 

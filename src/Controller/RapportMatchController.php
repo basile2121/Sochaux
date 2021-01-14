@@ -39,11 +39,7 @@ class RapportMatchController extends AbstractController
         foreach ($participes as $participe){
             $equipe1 = $participe->getClubFirst();
             $equipe2 = $participe->getClubSecond();
-
         }
-
-
-
 
 
         $commentaire = new Commentaire();

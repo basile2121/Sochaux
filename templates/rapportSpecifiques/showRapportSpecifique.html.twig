@@ -8,6 +8,10 @@
 
                 <table class="table table-light table-striped table-bordered table-responsive-md">
                     <tr>
+                        <th scope="col">Date Du rapport</th>
+                        <td class="text-left">{{ rapportSpecifique.dateRapport ? rapportSpecifique.dateRapport|date('d/m/Y') : '' }}</td>
+                    </tr>
+                    <tr>
                         <th scope="col">Nom agent</th>
                         <td class="text-left">{{ rapportSpecifique.nomAgent }}</td>
                     </tr>

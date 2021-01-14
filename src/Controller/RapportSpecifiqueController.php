@@ -41,6 +41,7 @@ class RapportSpecifiqueController extends AbstractController
     public function new(Request $request): Response
     {
         $rapportSpecifique = new RapportSpecifique();
+        $rapportSpecifique->setDateRapport(new \DateTime());
         $form = $this->createForm(RapportSpecifiqueType::class, $rapportSpecifique);
         $form->handleRequest($request);
 

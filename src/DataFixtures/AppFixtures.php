@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use Cassandra\Date;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -420,11 +421,11 @@ class AppFixtures extends Fixture
 
     public function load_rapport_specifique(ObjectManager $manager){
         $rapport_specifique=[
-            [ 'qualite_technique' => 'bon jeux de passe' , 'qualite_mentale' => 'abondonne vite ' , 'qualite_physique' => 'Tres bons physique mais petit' , 'qualite_tactique' => 'bonne vision de jeux' , 'nom_agent' => "Fabrice Dieux", 'joueur_id' => 1 , 'commente_id'  => 1 ],
-            [ 'qualite_technique' => 'tres bon des les coups francs' , 'qualite_mentale' => 'joueur trop agresif' , 'qualite_physique' => 'grand et costaud' , 'qualite_tactique' => 'bon appel de balle' , 'nom_agent' => "David Gishirico", 'joueur_id' => 2 , 'commente_id'  => 2 ],
-            [ 'qualite_technique' => 'defenseur aggresif' , 'qualite_mentale' => 'un mental dacier' , 'qualite_physique' => 'faible et grand' , 'qualite_tactique' => 'libere de bons espace' , 'nom_agent' => "Pierre Marie", 'joueur_id' => 3 , 'commente_id'  => 3 ],
-            [ 'qualite_technique' => 'dribbleur hors pair' , 'qualite_mentale' => 'ne lache pas la partie ' , 'qualite_physique' => 'carrure normal mais jambes muscler' , 'qualite_tactique' => 'cree des actions efficace' , 'nom_agent' => "Jean Lapres", 'joueur_id' => 4 , 'commente_id'  => 4 ],
-            [ 'qualite_technique' => 'Tres solide sur les appuies et rapide' , 'qualite_mentale' => 'difficile' , 'qualite_physique' => 'grande taille' , 'qualite_tactique' => 'a toujours un oeil sur son joueur ' , 'nom_agent' => "Guillaume Acier", 'joueur_id' => 5 , 'commente_id'  => 5 ],
+            [ 'qualite_technique' => 'bon jeux de passe' , 'qualite_mentale' => 'abondonne vite ' , 'qualite_physique' => 'Tres bons physique mais petit' , 'qualite_tactique' => 'bonne vision de jeux' , 'nom_agent' => "Fabrice Dieux" , 'date_rapport ' => '2020-12-12', 'joueur_id' => 1 , 'commente_id'  => 1 ],
+            [ 'qualite_technique' => 'tres bon des les coups francs' , 'qualite_mentale' => 'joueur trop agresif' , 'qualite_physique' => 'grand et costaud' , 'qualite_tactique' => 'bon appel de balle' , 'nom_agent' => "David Gishirico", 'date_rapport ' => '2019-12-12', 'joueur_id' => 2 , 'commente_id'  => 2 ],
+            [ 'qualite_technique' => 'defenseur aggresif' , 'qualite_mentale' => 'un mental dacier' , 'qualite_physique' => 'faible et grand' , 'qualite_tactique' => 'libere de bons espace' , 'nom_agent' => "Pierre Marie", 'date_rapport ' => '2020-09-12', 'joueur_id' => 3 , 'commente_id'  => 3 ],
+            [ 'qualite_technique' => 'dribbleur hors pair' , 'qualite_mentale' => 'ne lache pas la partie ' , 'qualite_physique' => 'carrure normal mais jambes muscler' , 'qualite_tactique' => 'cree des actions efficace' , 'nom_agent' => "Jean Lapres", 'date_rapport ' => '2020-12-03', 'joueur_id' => 4 , 'commente_id'  => 4 ],
+            [ 'qualite_technique' => 'Tres solide sur les appuies et rapide' , 'qualite_mentale' => 'difficile' , 'qualite_physique' => 'grande taille' , 'qualite_tactique' => 'a toujours un oeil sur son joueur ' , 'nom_agent' => "Guillaume Acier", 'date_rapport ' => '2018-12-09', 'joueur_id' => 5 , 'commente_id'  => 5 ],
         ];
 
         foreach ($rapport_specifique as $rp)
@@ -435,6 +436,11 @@ class AppFixtures extends Fixture
             $new_rp->setQualitePhysique($rp['qualite_physique']);
             $new_rp->setQualiteTactique($rp['qualite_tactique']);
             $new_rp->setNomAgent($rp['nom_agent']);
+            try {
+                $new_rp->setDateRapport(new \DateTime($rp['date_rapport']));
+            } catch (\Exception $e) {
+            }
+
 
             $joueur = $manager->getRepository(Joueur::class)->findOneBy([
                 'id' => $rp['joueur_id']],

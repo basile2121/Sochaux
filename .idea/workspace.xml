@@ -19,19 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Correction d'un Bug">
-      <change afterPath="$PROJECT_DIR$/src/Form/ParticipeType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/club/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/club/addClub.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Sochaux.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sochaux.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Participe.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tournoi.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tournoi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CommentaireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentaireType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +238,7 @@
       <workItem from="1608739123371" duration="12864000" />
       <workItem from="1609625339863" duration="1824000" />
       <workItem from="1609943546372" duration="11165000" />
+      <workItem from="1610633928430" duration="5019000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -319,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609950425611</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Selection des Equipes dans le match + Debut tableau Joueurs">
+      <created>1610567560407</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610567560408</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +355,7 @@
     <MESSAGE value="Correction d'un Bug" />
     <MESSAGE value="Refonte Total du site" />
     <MESSAGE value="Mise a Jour des Matchs + petites focntionalités" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mise a Jour des Matchs + petites focntionalités" />
+    <MESSAGE value="Selection des Equipes dans le match + Debut tableau Joueurs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Selection des Equipes dans le match + Debut tableau Joueurs" />
   </component>
 </project>

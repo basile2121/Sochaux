@@ -54,6 +54,11 @@ class RapportSpecifique
      */
     private $commentes;
 
+    /**
+     * @ORM\Column(type="date" , nullable=true)
+     */
+    private $dateRapport;
+
     public function __construct()
     {
         $this->commentes = new ArrayCollection();
@@ -164,6 +169,18 @@ class RapportSpecifique
             $this->commentes->removeElement($commente);
             $commente->removeRapportSpecifique($this);
         }
+
+        return $this;
+    }
+
+    public function getDateRapport(): ?\DateTimeInterface
+    {
+        return $this->dateRapport;
+    }
+
+    public function setDateRapport(\DateTimeInterface $dateRapport): self
+    {
+        $this->dateRapport = $dateRapport;
 
         return $this;
     }
