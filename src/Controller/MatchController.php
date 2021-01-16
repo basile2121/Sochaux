@@ -47,6 +47,7 @@ class MatchController extends AbstractController
     public function new(Request $request): Response
     {
         $matchs = new Matchs();
+        $matchs->setPaysMatch("Europe");
         $form = $this->createForm(MatchType::class, $matchs);
         $form->handleRequest($request);
 

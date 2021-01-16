@@ -6,12 +6,16 @@ namespace App\Controller;
 use App\Entity\Commentaire;
 use App\Entity\Matchs;
 use App\Entity\Participe;
+use App\Entity\Tournoi;
 use App\Form\CommentaireType;
 use App\Form\MatchType;
+use App\Form\MatchTypeTournoi;
 use App\Form\ParticipeType;
+use App\Form\TournoiType;
 use App\Repository\CommentaireRepository;
 use App\Repository\MatchsRepository;
 use App\Repository\ParticipeRepository;
+use App\Repository\TournoiRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,8 +37,11 @@ class RapportMatchController extends AbstractController
     {
         $id = $matchs->getId();
         $matchID = $matchsRepository->find($id);
+        //$matchs->setTournoi(null);
 
         $participes = $matchs->getParticipes();
+        $equipe2 = null;
+        $equipe1 = null;
 
         foreach ($participes as $participe){
             $equipe1 = $participe->getClubFirst();
@@ -124,8 +131,25 @@ class RapportMatchController extends AbstractController
     }
 
 
+    /**
+     * @Route("/tournois/addTournoi/{id}", name="tournoi_add_matchs", methods={"GET","POST"})
+     */
+    public function chooseTournoiMatch(Request $request, Matchs $matchs): Response
+    {
+        $form = $this->createForm(MatchTypeTournoi::class, $matchs );
+        $form->handleRequest($request);
 
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            return $this->redirect('/matchs/showMatchs/'.$matchs->getId());
+        }
+
+        return $this->render('rapportMatch/match/editMatchTournoi.html.twig', [
+            'matchs' => $matchs,
+            'formMatchTournoi' => $form->createView(),
+        ]);
+    }
 
 
 }

@@ -47,4 +47,12 @@ class TournoiRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function getPaysTournoi(String $pays)
+    {
+        return $this->createQueryBuilder('t')
+            ->where('t.paysTournoi = :pays')
+            ->setParameter('pays', $pays);
+
+    }
+
 }

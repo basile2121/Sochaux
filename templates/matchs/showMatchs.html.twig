@@ -23,7 +23,14 @@
                     <th>{{ match.lieux }}</th>
                     <td>{{ match.conditions }}</td>
                     <td>{{ match.date ? match.date|date('Y-m-d') : '' }}</td>
-                    <td>{{ match.tournoi.nomTournoi }}</td>
+                    <td>
+                        {% if match.tournoi is not null %}
+                            {{ match.tournoi.nomTournoi }}
+                        {% else %}
+                            Pas de Tournoi
+                        {% endif %}
+
+                    </td>
                     <td style="text-align:center;"><a class="btn btn-info" href="{{ path('match_show', {'id': match.id}) }}">Informations</a></td>
                     <td style="text-align:center;">
                         <form method="post" action="{{ path('matchs_delete', {'id': match.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce match');">

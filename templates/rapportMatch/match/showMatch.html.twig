@@ -22,7 +22,13 @@
 
         <tr>
             <th style="text-align: center; font-size: 20px" >Tournoi</th>
-            <td>{{ match.tournoi }}</td>
+            <td>
+                {% if match.tournoi is not null %}
+                    {{ match.tournoi }}
+                {% else %}
+                    <a href="{{ path('tournoi_add_matchs' , {'id': match.id }) }}" class="btn btn-success">Ajouter Tournoi</a>
+                {% endif %}
+            </td>
         </tr>
 
         <tr>

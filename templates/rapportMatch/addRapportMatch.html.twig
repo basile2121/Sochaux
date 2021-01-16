@@ -21,7 +21,13 @@
 
         <div style="background-color: #353b48;">
             <br>
-            <h2 style="text-align: center; color: #F9F9FF; font-weight: bold">Equipe 1 : {{ equipe1.nomClub }} </h2>
+            <h2 style="text-align: center; color: #F9F9FF; font-weight: bold">Equipe 1 :
+                {% if equipe1 is not null %}
+                    {{ equipe1.nomClub }}
+                {% else%}
+                    Pas de Club
+                {% endif %}
+            </h2>
 
             <div class="container">
                 <div class="row">
@@ -92,10 +98,10 @@
             <br>
 
             <h2 style="text-align: center; color: #F9F9FF; font-weight: bold">Equipe 2 :
-                {% if equipe2 is not null   %}
-                     {{ equipe2.nomClub }}
-                {% else %}
-                    Choisir une équipe
+                {% if equipe2 is not null %}
+                    {{ equipe2.nomClub }}
+                {% else%}
+                    Pas de Club
                 {% endif %}
             </h2>
             <div class="container">

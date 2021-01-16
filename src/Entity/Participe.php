@@ -25,12 +25,12 @@ class Participe
     private $score;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Club::class, inversedBy="participes" )
+     * @ORM\ManyToOne(targetEntity=Club::class , inversedBy="participes"  )
      */
     private $clubfirst;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Club::class, inversedBy="participes" )
+     * @ORM\ManyToOne(targetEntity=Club::class, inversedBy="participes"  )
      */
     private $clubsecond;
 

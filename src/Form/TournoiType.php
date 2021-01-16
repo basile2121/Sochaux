@@ -13,7 +13,6 @@ class TournoiType extends AbstractType
     {
         $builder
             ->add('nom_tournoi')
-            ->add('paysTournoi')
         ;
     }
 

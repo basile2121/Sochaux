@@ -6,7 +6,7 @@ use App\Entity\Contrat;
 use App\Entity\Matchs;
 
 use App\Entity\Tournoi;
-use App\Entity\TypeProduit;
+use App\Repository\TournoiRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -22,16 +22,16 @@ class MatchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('lieux' , TextType::class , array(
-                'attr' => ['placeholder' => "Entrer la ville du match"],
-                'constraints' => [
-                    new Assert\NotBlank(['message' => 'Saisir la ville du match'])
-                ],
-            ))
             ->add('paysMatch' , TextType::class , array(
                 'attr' => ['placeholder' => "Entrer le pays ou le continent du match"],
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Saisir le pays ou le continent du match'])
+                ],
+            ))
+            ->add('lieux' , TextType::class , array(
+                'attr' => ['placeholder' => "Entrer la ville du match"],
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Saisir la ville du match'])
                 ],
             ))
             ->add('conditions' , TextType::class , array(
@@ -50,19 +50,6 @@ class MatchType extends AbstractType
                 'attr' => ['placeholder' => 'jj/mm/aaaa'],
                 'html5' => false,
             ))
-            ->add('tournoi' ,EntityType::class, array(
-                'constraints' => [
-                    new Assert\NotBlank(['message' => 'Choisir le Tournoi du match']),
-                ],
-                'required' => false,
-                'class' => Tournoi::class,
-                'choice_label' => 'nom_tournoi',
-                'placeholder' => 'Chosir un Tournoi',
-                'attr' => ['placeholder' => "Le Tournoi"]
-            ))
-
-
-
         ;
     }
 
