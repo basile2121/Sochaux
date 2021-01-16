@@ -44,6 +44,20 @@ class JoueurController extends AbstractController
             'joueur' => $joueur,
         ]);
     }
+
+    /**
+     * @Route("/joueurs/showRapportSpecifique/{id}", name="joueur_rapportSpecifique_show", methods={"GET"})
+     */
+    public function showRapport(Joueur $joueur): Response
+    {
+        $rapports = $joueur->getRapportSpecifiques();
+
+
+        return $this->render('joueurs/showRapportsJoueurs.html.twig', [
+            'rapportSpecifiques' => $rapports,
+        ]);
+    }
+
     /**
      * @Route("/joueurs/createJoueur", name="joueurs_add", methods={"GET","POST"})
      */
