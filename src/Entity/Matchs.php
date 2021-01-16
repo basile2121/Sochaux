@@ -55,6 +55,11 @@ class Matchs
      */
     private $joueDans;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $paysMatch;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
@@ -204,5 +209,17 @@ class Matchs
     public function __toString()
     {
         return $this->getLieux();
+    }
+
+    public function getPaysMatch(): ?string
+    {
+        return $this->paysMatch;
+    }
+
+    public function setPaysMatch(string $paysMatch): self
+    {
+        $this->paysMatch = $paysMatch;
+
+        return $this;
     }
 }

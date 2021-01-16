@@ -13,7 +13,8 @@
                     <tr class="table-secondary">
                         <th scope="col">Nom agent</th>
                         <th scope="col">Joueur</th>
-                        <th scope="col">Rapport specifique</th>
+                        <th scope="col">Note</th>
+                        <th scope="col">Infos</th>
                         <th scope="col">Modifications</th>
                         <th scope="col">Suppression</th>
                         <th scope="col">PDF</th>
@@ -25,6 +26,7 @@
                         <tr class="text-center">
                             <td>{{ rapportSpecifique.nomAgent }}</td>
                             <td>{{ rapportSpecifique.joueur }}</td>
+                            <td>{{ rapportSpecifique.noteJoueur }} /20</td>
                             <td>
                                 <a class="btn btn-info" href="{{ path('rapportSpecifique_show', {'id': rapportSpecifique.id}) }}">Informations</a>
                             </td>

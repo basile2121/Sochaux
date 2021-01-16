@@ -12,12 +12,18 @@ class RapportSpecifiqueType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('nom_agent')
+            ->add('adresseAgent')
+            ->add('telephoneAgent')
+            ->add('mailAgent')
+            ->add('equipe1')
+            ->add('equipe2')
+            ->add('joueur')
+            ->add('noteJoueur')
             ->add('qualite_technique')
             ->add('qualite_mentale')
             ->add('qualite_physique')
             ->add('qualite_tactique')
-            ->add('nom_agent')
-            ->add('joueur')
            /* ->add('commentes')*/
         ;
     }

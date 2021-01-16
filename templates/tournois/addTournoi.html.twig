@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Ajouter Tournoi{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Cree un nouveau Tournoi</h1>
+
+    {{ include('tournois/_form.html.twig') }}
+    <br>
+    <a href="{{ path('tournois_show') }}" class="btn btn-warning">Revenir a la liste des Tournois</a>
+{% endblock %}

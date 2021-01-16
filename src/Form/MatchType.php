@@ -28,6 +28,12 @@ class MatchType extends AbstractType
                     new Assert\NotBlank(['message' => 'Saisir la ville du match'])
                 ],
             ))
+            ->add('paysMatch' , TextType::class , array(
+                'attr' => ['placeholder' => "Entrer le pays ou le continent du match"],
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Saisir le pays ou le continent du match'])
+                ],
+            ))
             ->add('conditions' , TextType::class , array(
                 'attr' => ['placeholder' => "La condition "],
                 'constraints' => [

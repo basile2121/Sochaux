@@ -20,12 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/TournoiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/TournoiType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournois/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournois/addTournoi.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournois/deleteTournoi.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournois/editTournoi.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournois/showTournoi.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tournois/showTournois.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Championnat.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Club.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Club.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tournoi.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tournoi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Matchs.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Matchs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MatchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MatchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RapportSpecifiqueType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RapportSpecifiqueType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_nav_home.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navBar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navBar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +199,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/rapportMatch/club" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -199,11 +212,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/src/Controller" />
       <recent name="$PROJECT_DIR$/templates/rapportMatch/club" />
       <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\templates\matchs" />
-      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\templates" />
-      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
@@ -238,7 +251,7 @@
       <workItem from="1610633928430" duration="5019000" />
       <workItem from="1610733195346" duration="125000" />
       <workItem from="1610733358343" duration="1432000" />
-      <workItem from="1610807412004" duration="2956000" />
+      <workItem from="1610807412004" duration="7043000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -324,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610567560408</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Nouvelle Base De données">
+      <created>1610814074684</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610814074684</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +376,7 @@
     <MESSAGE value="Refonte Total du site" />
     <MESSAGE value="Mise a Jour des Matchs + petites focntionalités" />
     <MESSAGE value="Selection des Equipes dans le match + Debut tableau Joueurs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Selection des Equipes dans le match + Debut tableau Joueurs" />
+    <MESSAGE value="Nouvelle Base De données" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nouvelle Base De données" />
   </component>
 </project>

@@ -114,11 +114,12 @@ class AppFixtures extends Fixture
 
     public function load_matchs(ObjectManager $manager){
         $match =[
-            [ 'lieux' => 'Paris' , 'condition' => 'Pluie' , 'date' => '2020-09-01' , 'tournoi_id' => 1 ],
-            [ 'lieux' => 'Belfort' , 'condition' => 'Orage' , 'date' => '2018-07-02' , 'tournoi_id' => 2 ],
-            [ 'lieux' => 'Marseille' , 'condition' => 'Bonne' , 'date' => '2016-03-03' , 'tournoi_id' => 3 ],
-            [ 'lieux' => 'Milan' , 'condition' => 'Forte Chaleur' , 'date' => '2020-08-04' , 'tournoi_id' => 4 ],
-            [ 'lieux' => 'Madrid' , 'condition' => 'Bonne' , 'date' => '2019-11-05' , 'tournoi_id' => 5 ],
+            [ 'lieux' => 'Paris' , 'condition' => 'Pluie' , 'date' => '2020-09-01' , 'paysMatch' => 'France' , 'tournoi_id' => 1 ],
+            [ 'lieux' => 'Belfort' , 'condition' => 'Orage' , 'date' => '2018-07-02' , 'paysMatch' => 'France' , 'tournoi_id' => 2 ],
+            [ 'lieux' => 'Marseille' , 'condition' => 'Bonne' , 'date' => '2016-03-03' , 'paysMatch' => 'France' , 'tournoi_id' => 3 ],
+            [ 'lieux' => 'Milan' , 'condition' => 'Forte Chaleur' , 'date' => '2020-08-04' , 'paysMatch' => 'Italie' , 'tournoi_id' => 4 ],
+            [ 'lieux' => 'Madrid' , 'condition' => 'Bonne' , 'date' => '2019-11-05' , 'paysMatch' => 'Espagne' , 'tournoi_id' => 5 ],
+            [ 'lieux' => 'Londre' , 'condition' => 'Bonne' , 'date' => '2019-11-05' , 'paysMatch' => 'Angleterre' , 'tournoi_id' => 4 ],
         ];
 
         foreach ($match as $m)
@@ -127,6 +128,7 @@ class AppFixtures extends Fixture
             $new_match->setLieux($m['lieux']);
             $new_match->setConditions($m['condition']);
             $new_match->setDate(new \DateTime($m['date']));
+            $new_match->setPaysMatch($m['paysMatch']);
             $tournoi = $manager->getRepository(Tournoi::class)->findOneBy([
                 'id' => $m['tournoi_id']],
                 ['id' => 'ASC']);
@@ -399,11 +401,26 @@ class AppFixtures extends Fixture
 
     public function load_rapport_specifique(ObjectManager $manager){
         $rapport_specifique=[
-            [ 'qualite_technique' => 'bon jeux de passe' , 'qualite_mentale' => 'abondonne vite ' , 'qualite_physique' => 'Tres bons physique mais petit' , 'qualite_tactique' => 'bonne vision de jeux' , 'nom_agent' => "Fabrice Dieux" , 'date_rapport ' => '2020-12-12', 'joueur_id' => 1 , 'commente_id'  => 1 , 'mailAgent' => 'agent1@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 12 ],
-            [ 'qualite_technique' => 'tres bon des les coups francs' , 'qualite_mentale' => 'joueur trop agresif' , 'qualite_physique' => 'grand et costaud' , 'qualite_tactique' => 'bon appel de balle' , 'nom_agent' => "David Gishirico", 'date_rapport ' => '2019-12-12', 'joueur_id' => 2 , 'commente_id'  => 2 , 'mailAgent' => 'agent2@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 17 ],
-            [ 'qualite_technique' => 'defenseur aggresif' , 'qualite_mentale' => 'un mental dacier' , 'qualite_physique' => 'faible et grand' , 'qualite_tactique' => 'libere de bons espace' , 'nom_agent' => "Pierre Marie", 'date_rapport ' => '2020-09-12', 'joueur_id' => 3 , 'commente_id'  => 3 , 'mailAgent' => 'agent3@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 13 ],
-            [ 'qualite_technique' => 'dribbleur hors pair' , 'qualite_mentale' => 'ne lache pas la partie ' , 'qualite_physique' => 'carrure normal mais jambes muscler' , 'qualite_tactique' => 'cree des actions efficace' , 'nom_agent' => "Jean Lapres", 'date_rapport ' => '2020-12-03', 'joueur_id' => 4 , 'commente_id'  => 4 , 'mailAgent' => 'agent4@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 15 ],
-            [ 'qualite_technique' => 'Tres solide sur les appuies et rapide' , 'qualite_mentale' => 'difficile' , 'qualite_physique' => 'grande taille' , 'qualite_tactique' => 'a toujours un oeil sur son joueur ' , 'nom_agent' => "Guillaume Acier", 'date_rapport ' => '2018-12-09', 'joueur_id' => 5 , 'commente_id'  => 5 , 'mailAgent' => 'agent5@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 19 ],
+            [ 'qualite_technique' => 'bon jeux de passe' , 'qualite_mentale' => 'abondonne vite ' , 'qualite_physique' => 'Tres bons physique mais petit'
+                , 'qualite_tactique' => 'bonne vision de jeux' , 'nom_agent' => "Fabrice Dieux" , 'date_rapport ' => '2020-12-12', 'joueur_id' => 1
+                , 'commente_id'  => 1 , 'mailAgent' => 'agent1@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris'
+                , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 12 ],
+            [ 'qualite_technique' => 'tres bon des les coups francs' , 'qualite_mentale' => 'joueur trop agresif' , 'qualite_physique' => 'grand et costaud'
+                , 'qualite_tactique' => 'bon appel de balle' , 'nom_agent' => "David Gishirico", 'date_rapport ' => '2019-12-12', 'joueur_id' => 2 ,
+                'commente_id'  => 2 , 'mailAgent' => 'agent2@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' ,
+                'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 17 ],
+            [ 'qualite_technique' => 'defenseur aggresif' , 'qualite_mentale' => 'un mental dacier' , 'qualite_physique' => 'faible et grand'
+                , 'qualite_tactique' => 'libere de bons espace' , 'nom_agent' => "Pierre Marie", 'date_rapport ' => '2020-09-12', 'joueur_id' => 3 ,
+                'commente_id'  => 3 , 'mailAgent' => 'agent3@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' ,
+                'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 13 ],
+            [ 'qualite_technique' => 'dribbleur hors pair' , 'qualite_mentale' => 'ne lache pas la partie ' , 'qualite_physique' => 'carrure normal mais jambes muscler' ,
+                'qualite_tactique' => 'cree des actions efficace' , 'nom_agent' => "Jean Lapres", 'date_rapport ' => '2020-12-03', 'joueur_id' => 4 ,
+                'commente_id'  => 4 , 'mailAgent' => 'agent4@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' ,
+                'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 15 ],
+            [ 'qualite_technique' => 'Tres solide sur les appuies et rapide' , 'qualite_mentale' => 'difficile' , 'qualite_physique' => 'grande taille' ,
+                'qualite_tactique' => 'a toujours un oeil sur son joueur ' , 'nom_agent' => "Guillaume Acier", 'date_rapport ' => '2018-12-09', 'joueur_id' => 5 ,
+                'commente_id'  => 5 , 'mailAgent' => 'agent5@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' ,
+                'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 19 ],
         ];
 
         foreach ($rapport_specifique as $rp)
