@@ -21,14 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Championnat.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Club.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Club.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CommentaireType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentaireType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Tournoi.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tournoi.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,6 +236,9 @@
       <workItem from="1609625339863" duration="1824000" />
       <workItem from="1609943546372" duration="11165000" />
       <workItem from="1610633928430" duration="5019000" />
+      <workItem from="1610733195346" duration="125000" />
+      <workItem from="1610733358343" duration="1432000" />
+      <workItem from="1610807412004" duration="2956000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>

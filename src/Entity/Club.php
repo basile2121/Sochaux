@@ -35,11 +35,6 @@ class Club
     private $ville_club;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Championnat::class, inversedBy="clubs")
-     */
-    private $championnat;
-
-    /**
      * @ORM\OneToMany(targetEntity=Contrat::class, mappedBy="club")
      */
     private $contrats;
@@ -96,17 +91,6 @@ class Club
         return $this;
     }
 
-    public function getChampionnat(): ?Championnat
-    {
-        return $this->championnat;
-    }
-
-    public function setChampionnat(?Championnat $championnat): self
-    {
-        $this->championnat = $championnat;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Contrat[]

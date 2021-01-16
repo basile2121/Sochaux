@@ -59,6 +59,36 @@ class RapportSpecifique
      */
     private $dateRapport;
 
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $mailAgent;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $telephoneAgent;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adresseAgent;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $equipe1;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $equipe2;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $noteJoueur;
+
     public function __construct()
     {
         $this->commentes = new ArrayCollection();
@@ -181,6 +211,78 @@ class RapportSpecifique
     public function setDateRapport(\DateTimeInterface $dateRapport): self
     {
         $this->dateRapport = $dateRapport;
+
+        return $this;
+    }
+
+    public function getMailAgent(): ?string
+    {
+        return $this->mailAgent;
+    }
+
+    public function setMailAgent(?string $mailAgent): self
+    {
+        $this->mailAgent = $mailAgent;
+
+        return $this;
+    }
+
+    public function getTelephoneAgent(): ?string
+    {
+        return $this->telephoneAgent;
+    }
+
+    public function setTelephoneAgent(?string $telephoneAgent): self
+    {
+        $this->telephoneAgent = $telephoneAgent;
+
+        return $this;
+    }
+
+    public function getAdresseAgent(): ?string
+    {
+        return $this->adresseAgent;
+    }
+
+    public function setAdresseAgent(?string $adresseAgent): self
+    {
+        $this->adresseAgent = $adresseAgent;
+
+        return $this;
+    }
+
+    public function getEquipe1(): ?string
+    {
+        return $this->equipe1;
+    }
+
+    public function setEquipe1(string $equipe1): self
+    {
+        $this->equipe1 = $equipe1;
+
+        return $this;
+    }
+
+    public function getEquipe2(): ?string
+    {
+        return $this->equipe2;
+    }
+
+    public function setEquipe2(string $equipe2): self
+    {
+        $this->equipe2 = $equipe2;
+
+        return $this;
+    }
+
+    public function getNoteJoueur(): ?int
+    {
+        return $this->noteJoueur;
+    }
+
+    public function setNoteJoueur(int $noteJoueur): self
+    {
+        $this->noteJoueur = $noteJoueur;
 
         return $this;
     }

@@ -6,7 +6,6 @@ use Cassandra\Date;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use App\Entity\Championnat;
 use App\Entity\Club;
 use App\Entity\Commentaire;
 use App\Entity\Commente;
@@ -26,9 +25,6 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        echo "chargement des fixtures pour l'entité championnat \n***\n\n";
-        $this->load_championnats($manager);
-
         echo "chargement des fixtures pour l'entité club \n***\n\n";
         $this->load_clubs($manager);
 
@@ -74,33 +70,15 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 
-    public function load_championnats(ObjectManager $manager){
-        $championnat=[
-            [ 'nom' => 'Ligue 1' , 'pays' => "France"],
-            [ 'nom' => 'Lige BFA' , 'pays' => "Espagne"],
-            [ 'nom' => 'Premier Ligue' , 'pays' => "Angletterre"],
-            [ 'nom' => 'Ligue 2' , 'pays' => "France"],
-            [ 'nom' => 'Ligue nouvelle' , 'pays' => "Allemagne"],
-        ];
 
-        foreach ($championnat as $champ)
-        {
-            $new_champ = new Championnat();
-            $new_champ->setNomChampionnat($champ['nom']);
-            $new_champ->setPaysChampionnat($champ['pays']);
-
-            $manager->persist($new_champ);
-        }
-        $manager->flush();
-    }
 
     public function load_clubs(ObjectManager $manager){
         $club=[
-            [ 'nom' => 'Atheltico Madrid' , 'pays' => "Espagne" , 'ville' => "Madrid" , 'championnat_id' => 1 ],
-            [ 'nom' => 'Juventus Turin' , 'pays' => "Italie" , 'ville' => "Turin" , 'championnat_id' => 2 ],
-            [ 'nom' => 'FC Barcelone' , 'pays' => "Espagne" , 'ville' => "Barcelone" , 'championnat_id' => 3 ],
-            [ 'nom' => 'Paris St Germain' , 'pays' => "France" , 'ville' => "Paris" , 'championnat_id' => 4 ],
-            [ 'nom' => 'Machester United' , 'pays' => "Anglettere" , 'ville' => "Manchester" , 'championnat_id' => 5 ],
+            [ 'nom' => 'Atheltico Madrid' , 'pays' => "Espagne" , 'ville' => "Madrid"  ],
+            [ 'nom' => 'Juventus Turin' , 'pays' => "Italie" , 'ville' => "Turin" ],
+            [ 'nom' => 'FC Barcelone' , 'pays' => "Espagne" , 'ville' => "Barcelone"  ],
+            [ 'nom' => 'Paris St Germain' , 'pays' => "France" , 'ville' => "Paris"],
+            [ 'nom' => 'Machester United' , 'pays' => "Anglettere" , 'ville' => "Manchester"  ],
         ];
 
         foreach ($club as $cl)
@@ -109,10 +87,6 @@ class AppFixtures extends Fixture
             $new_club->setNomClub($cl['nom']);
             $new_club->setPaysClub($cl['pays']);
             $new_club->setVilleClub($cl['ville']);
-            $championnat = $manager->getRepository(Championnat::class)->findOneBy([
-                'id' => $cl['championnat_id']],
-                ['id' => 'ASC']);
-            $new_club->setChampionnat($championnat);
             $manager->persist($new_club);
         }
         $manager->flush();
@@ -120,17 +94,18 @@ class AppFixtures extends Fixture
 
     public function load_tournois(ObjectManager $manager){
         $tournoi=[
-            [ 'nom' => 'Ligue 1'   ],
-            [ 'nom' => 'Coupe de France'   ],
-            [ 'nom' => 'Championne League'   ],
-            [ 'nom' => 'Premiere Ligue'   ],
-            [ 'nom' => 'Ligue 2'   ],
+            [ 'nom' => 'Ligue 1' , 'paysTournoi' => 'France'  ],
+            [ 'nom' => 'Coupe de France' , 'paysTournoi' => 'France'  ],
+            [ 'nom' => 'Championne League' , 'paysTournoi' => 'Europe'  ],
+            [ 'nom' => 'Premiere Ligue', 'paysTournoi' => 'Angleterre'  ],
+            [ 'nom' => 'Ligue 2' , 'paysTournoi' => 'France'  ],
         ];
 
         foreach ($tournoi as $tr)
         {
             $new_tournoi = new Tournoi();
             $new_tournoi->setNomTournoi($tr['nom']);
+            $new_tournoi->setPaysTournoi($tr['paysTournoi']);
             $manager->persist($new_tournoi);
         }
 
@@ -419,13 +394,16 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 
+
+
+
     public function load_rapport_specifique(ObjectManager $manager){
         $rapport_specifique=[
-            [ 'qualite_technique' => 'bon jeux de passe' , 'qualite_mentale' => 'abondonne vite ' , 'qualite_physique' => 'Tres bons physique mais petit' , 'qualite_tactique' => 'bonne vision de jeux' , 'nom_agent' => "Fabrice Dieux" , 'date_rapport ' => '2020-12-12', 'joueur_id' => 1 , 'commente_id'  => 1 ],
-            [ 'qualite_technique' => 'tres bon des les coups francs' , 'qualite_mentale' => 'joueur trop agresif' , 'qualite_physique' => 'grand et costaud' , 'qualite_tactique' => 'bon appel de balle' , 'nom_agent' => "David Gishirico", 'date_rapport ' => '2019-12-12', 'joueur_id' => 2 , 'commente_id'  => 2 ],
-            [ 'qualite_technique' => 'defenseur aggresif' , 'qualite_mentale' => 'un mental dacier' , 'qualite_physique' => 'faible et grand' , 'qualite_tactique' => 'libere de bons espace' , 'nom_agent' => "Pierre Marie", 'date_rapport ' => '2020-09-12', 'joueur_id' => 3 , 'commente_id'  => 3 ],
-            [ 'qualite_technique' => 'dribbleur hors pair' , 'qualite_mentale' => 'ne lache pas la partie ' , 'qualite_physique' => 'carrure normal mais jambes muscler' , 'qualite_tactique' => 'cree des actions efficace' , 'nom_agent' => "Jean Lapres", 'date_rapport ' => '2020-12-03', 'joueur_id' => 4 , 'commente_id'  => 4 ],
-            [ 'qualite_technique' => 'Tres solide sur les appuies et rapide' , 'qualite_mentale' => 'difficile' , 'qualite_physique' => 'grande taille' , 'qualite_tactique' => 'a toujours un oeil sur son joueur ' , 'nom_agent' => "Guillaume Acier", 'date_rapport ' => '2018-12-09', 'joueur_id' => 5 , 'commente_id'  => 5 ],
+            [ 'qualite_technique' => 'bon jeux de passe' , 'qualite_mentale' => 'abondonne vite ' , 'qualite_physique' => 'Tres bons physique mais petit' , 'qualite_tactique' => 'bonne vision de jeux' , 'nom_agent' => "Fabrice Dieux" , 'date_rapport ' => '2020-12-12', 'joueur_id' => 1 , 'commente_id'  => 1 , 'mailAgent' => 'agent1@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 12 ],
+            [ 'qualite_technique' => 'tres bon des les coups francs' , 'qualite_mentale' => 'joueur trop agresif' , 'qualite_physique' => 'grand et costaud' , 'qualite_tactique' => 'bon appel de balle' , 'nom_agent' => "David Gishirico", 'date_rapport ' => '2019-12-12', 'joueur_id' => 2 , 'commente_id'  => 2 , 'mailAgent' => 'agent2@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 17 ],
+            [ 'qualite_technique' => 'defenseur aggresif' , 'qualite_mentale' => 'un mental dacier' , 'qualite_physique' => 'faible et grand' , 'qualite_tactique' => 'libere de bons espace' , 'nom_agent' => "Pierre Marie", 'date_rapport ' => '2020-09-12', 'joueur_id' => 3 , 'commente_id'  => 3 , 'mailAgent' => 'agent3@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 13 ],
+            [ 'qualite_technique' => 'dribbleur hors pair' , 'qualite_mentale' => 'ne lache pas la partie ' , 'qualite_physique' => 'carrure normal mais jambes muscler' , 'qualite_tactique' => 'cree des actions efficace' , 'nom_agent' => "Jean Lapres", 'date_rapport ' => '2020-12-03', 'joueur_id' => 4 , 'commente_id'  => 4 , 'mailAgent' => 'agent4@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 15 ],
+            [ 'qualite_technique' => 'Tres solide sur les appuies et rapide' , 'qualite_mentale' => 'difficile' , 'qualite_physique' => 'grande taille' , 'qualite_tactique' => 'a toujours un oeil sur son joueur ' , 'nom_agent' => "Guillaume Acier", 'date_rapport ' => '2018-12-09', 'joueur_id' => 5 , 'commente_id'  => 5 , 'mailAgent' => 'agent5@example.com ', 'telephone_agent' => '0623457687',  'adresse_agent' => '23000 Paris' , 'equipe1' => 'Lyon' , 'equipe2' => 'Marseille' , 'noteJoueur' => 19 ],
         ];
 
         foreach ($rapport_specifique as $rp)
@@ -441,11 +419,16 @@ class AppFixtures extends Fixture
             } catch (\Exception $e) {
             }
 
-
             $joueur = $manager->getRepository(Joueur::class)->findOneBy([
                 'id' => $rp['joueur_id']],
                 ['id' => 'ASC']);
             $new_rp->setJoueur($joueur);
+            $new_rp->setMailAgent($rp['mailAgent']);
+            $new_rp->setTelephoneAgent($rp['telephone_agent']);
+            $new_rp->setAdresseAgent($rp['adresse_agent']);
+            $new_rp->setEquipe1($rp['equipe1']);
+            $new_rp->setEquipe2($rp['equipe2']);
+            $new_rp->setNoteJoueur($rp['noteJoueur']);
             $manager->persist($new_rp);
         }
         $manager->flush();

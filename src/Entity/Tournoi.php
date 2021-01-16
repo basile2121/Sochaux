@@ -29,6 +29,11 @@ class Tournoi
      */
     private $matchs;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $paysTournoi;
+
     public function __construct()
     {
         $this->matchs = new ArrayCollection();
@@ -84,5 +89,17 @@ class Tournoi
     public function __toString()
     {
         return $this->getNomTournoi();
+    }
+
+    public function getPaysTournoi(): ?string
+    {
+        return $this->paysTournoi;
+    }
+
+    public function setPaysTournoi(string $paysTournoi): self
+    {
+        $this->paysTournoi = $paysTournoi;
+
+        return $this;
     }
 }
