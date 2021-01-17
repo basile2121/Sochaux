@@ -54,6 +54,9 @@
                     {% endfor %}
                     </tbody>
                 </table>
+                <div style="margin-top: 2rem;">
+                    {{ knp_pagination_render(rapportSpecifiques) }}
+                </div>
             </div>
     <a style="width: 300px;" class="btn btn-warning center-block size" href="{{ path('rapportSpecifiques_add') }}">Ajouter Un Rapport</a>
 

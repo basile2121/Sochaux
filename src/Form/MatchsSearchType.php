@@ -10,30 +10,43 @@ use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use function Sodium\add;
 
-class RapportsSearchType extends AbstractType {
+class MatchsSearchType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('searchBarre' , TextType::class , [
-                'label' => 'Rechercher un rapport pour Le Joueurs',
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Entrer le nom du joueur '
-                ]
-            ])
-            ->add('dateRapport' , TextType::class , [
-                'label' => 'Date du rapport  (YYYY-MM-DD)',
+            ->add('dateMatch' , TextType::class , [
+                'label' => 'Rechercher avec une date (YYYY-MM-DD)',
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'Entrer une date '
                 ]
 
-
+                ])
+            ->add('equipe1' ,TextType::class , [
+                'label' => 'Rechercher avec une premiere equipe',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Entrer une equipe '
+                ]
+            ])
+            ->add('equipe2' ,TextType::class , [
+                'label' => 'Rechercher avec une deuxieme equipe',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Entrer une equipe '
+                ]
+            ])
+            ->add('lieux' ,TextType::class , [
+                'label' => 'Rechercher avec un lieux',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Entrer un lieux'
+                ]
             ])
         ;
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

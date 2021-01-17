@@ -6,6 +6,8 @@ use App\Data\SearchData;
 use App\Entity\Club;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @method Club|null find($id, $lockMode = null, $lockVersion = null)
@@ -15,9 +17,15 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ClubRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * @var PaginatorInterface
+     */
+    private $paginator;
+
+    public function __construct(ManagerRegistry $registry , PaginatorInterface $paginator)
     {
         parent::__construct($registry, Club::class);
+        $this->paginator = $paginator;
     }
 
     // /**
@@ -48,7 +56,7 @@ class ClubRepository extends ServiceEntityRepository
         ;
     }
     */
-    public function findSearch(SearchData $data): array
+    public function findSearch(SearchData $data): PaginationInterface
     {
         $query = $this
             ->createQueryBuilder('c')
@@ -58,6 +66,11 @@ class ClubRepository extends ServiceEntityRepository
             $query = $query
                 ->andWhere('c.nom_club LIKE :searchBarre')
                 ->setParameter('searchBarre' , "%{$data->searchBarre}%");
-        return $query->getQuery()->getResult();
+        $query = $query->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            $data->page,
+            5
+        );
     }
 }

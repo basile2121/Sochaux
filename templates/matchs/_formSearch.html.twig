@@ -1,0 +1,44 @@
+{% form_theme formSearch 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    {{ form_start(formSearch, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div style="color: #696969; font-size: 18px;">
+                    {{ form_label(formSearch.dateMatch) }}
+                </div>
+                {{ form_widget(formSearch.dateMatch) }}
+            </div>
+            <div class="col-lg-5">
+                <div style="color: #696969; font-size: 18px;">
+                    {{ form_label(formSearch.lieux) }}
+                </div>
+                {{ form_widget(formSearch.lieux) }}
+            </div>
+            <br>
+            <div class="col-lg-5">
+                <div style="color: #696969; font-size: 18px;">
+                    {{ form_label(formSearch.equipe1) }}
+                </div>
+                {{ form_widget(formSearch.equipe1) }}
+            </div>
+            <div class="col-lg-5">
+                <div style="color: #696969; font-size: 18px;">
+                    {{ form_label(formSearch.equipe2) }}
+                </div>
+                {{ form_widget(formSearch.equipe2) }}
+            </div>
+            <br>
+        </div>
+        <br>
+        <button style="width: 30%" type="submit" class="btn btn btn-warning">{{ button_label|default('Rechercher') }}</button>
+
+    </div>
+
+
+
+    {{ form_end(formSearch) }}
+
+{% endblock %}

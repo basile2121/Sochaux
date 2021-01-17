@@ -20,24 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Data/SearchData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ClubsSearchType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/JoueursSearchType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RapportsSearchType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/clubs/_formSearch.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/joueurs/_formSearch.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/_formSearch.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/knp.paginator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/MatchsSearchType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/matchs/_formSearch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Sochaux.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sochaux.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ClubController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClubController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/JoueurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/SearchData.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/SearchData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ClubsSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ClubsSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/JoueursSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JoueursSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RapportsSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RapportsSearchType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ClubRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClubRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MatchsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MatchsRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/RapportSpecifiqueRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RapportSpecifiqueRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,6 +191,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jJoQ6IFpoTfJCh9xuHvy5jeRJY" />
@@ -199,7 +208,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/rapportSpecifiques" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/matchs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -212,13 +221,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/rapportSpecifiques" />
+      <recent name="$PROJECT_DIR$/templates/matchs" />
       <recent name="$PROJECT_DIR$/src/Form" />
+      <recent name="$PROJECT_DIR$/templates/rapportSpecifiques" />
       <recent name="$PROJECT_DIR$/templates/clubs" />
       <recent name="$PROJECT_DIR$/templates/rapportMatch/match" />
-      <recent name="$PROJECT_DIR$/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form" />
+      <recent name="$PROJECT_DIR$/src/Form/Search" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/templates/Menu" />
     </key>
@@ -252,7 +263,7 @@
       <workItem from="1610733195346" duration="125000" />
       <workItem from="1610733358343" duration="1432000" />
       <workItem from="1610807412004" duration="23799000" />
-      <workItem from="1610878564534" duration="10666000" />
+      <workItem from="1610878564534" duration="22190000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -366,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610838034037</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Ajout des filtres + Recherche sur les CRDU Joueur (Nom Joueur , Pro) , Rapport Specifique (Nom Joueur + Date ) , Club (Nom Club">
+      <created>1610890213829</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1610890213829</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,6 +420,7 @@
     <MESSAGE value="Ajout du CRUD de tournoi + quelques modifications" />
     <MESSAGE value="Plusieurs Rapports pour le Joueurs" />
     <MESSAGE value="Trier les Tournoi en fonction des pays" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trier les Tournoi en fonction des pays" />
+    <MESSAGE value="Ajout des filtres + Recherche sur les CRDU Joueur (Nom Joueur , Pro) , Rapport Specifique (Nom Joueur + Date ) , Club (Nom Club" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des filtres + Recherche sur les CRDU Joueur (Nom Joueur , Pro) , Rapport Specifique (Nom Joueur + Date ) , Club (Nom Club" />
   </component>
 </project>

@@ -24,6 +24,7 @@ class ClubController extends AbstractController
     public function index(ClubRepository $clubRepository , Request $request): Response
     {
         $data = new SearchData();
+        $data->page = $request->get('page' , 1);
         $form = $this->createForm(ClubsSearchType::class , $data);
         $form->handleRequest($request);
         $clubs = $clubRepository->findSearch($data);

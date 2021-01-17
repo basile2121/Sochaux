@@ -6,6 +6,8 @@ use App\Data\SearchData;
 use App\Entity\Joueur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @method Joueur|null find($id, $lockMode = null, $lockVersion = null)
@@ -15,40 +17,19 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class JoueurRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * @var PaginatorInterface
+     */
+    private $paginator;
+
+    public function __construct(ManagerRegistry $registry , PaginatorInterface $paginator)
     {
         parent::__construct($registry, Joueur::class);
+        $this->paginator = $paginator;
     }
 
-    // /**
-    //  * @return Joueur[] Returns an array of Joueur objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('j')
-            ->andWhere('j.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('j.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Joueur
-    {
-        return $this->createQueryBuilder('j')
-            ->andWhere('j.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
-    public function findSearch(SearchData $data): array
+    public function findSearch(SearchData $data): PaginationInterface
     {
         $query = $this
             ->createQueryBuilder('j')
@@ -61,6 +42,11 @@ class JoueurRepository extends ServiceEntityRepository
         if (!empty($data->pro))
             $query = $query
                 ->andWhere('j.pro = 1');
-        return $query->getQuery()->getResult();
+        $query = $query->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            $data->page,
+            5
+        );
     }
 }

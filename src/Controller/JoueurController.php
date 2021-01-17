@@ -29,6 +29,7 @@ class JoueurController extends AbstractController
     public function index(JoueurRepository $joueurRepository , Request $request): Response
     {
         $data = new SearchData();
+        $data->page = $request->get('page' , 1);
         $form= $this->createForm(JoueursSearchType::class , $data);
         $form->handleRequest($request);
         $joueurs = $joueurRepository->findSearch($data);

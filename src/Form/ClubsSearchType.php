@@ -30,7 +30,8 @@ class ClubsSearchType extends AbstractType {
         $resolver->setDefaults([
             'data_class' => SearchData::class,
             'method' => 'GET',
-            'csrf_protection' => false
+            'csrf_protection' => false,
+            "allow_extra_fields" => true
             ]);
 
 

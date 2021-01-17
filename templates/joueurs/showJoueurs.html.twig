@@ -8,67 +8,77 @@
     <br>
 
     <div class="container-fluid" style="padding:0px 7em; ">
-        <div>
-            {% include('joueurs/_formSearch.html.twig') %}
+        <div class="row">
+            <div style="margin-bottom: 2rem">
+                {% include('joueurs/_formSearch.html.twig') %}
+            </div>
+
+            <div class="col-lg-12">
+                <table class="table table-striped table-bordered"  style="border-radius: 10px;box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); ">
+                    <thead  class="thead-dark">
+                    <tr class="text-center">
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Pro</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Club</th>
+                        <th scope="col">Rapports</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Modifications</th>
+                        <th scope="col">Suppression</th>
+                        <th scope="col">Contrats</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for joueur in joueurs %}
+                        <tr>
+                            <td>{{ joueur.nom }}</td>
+                            <td>{{ joueur.prenom }}</td>
+                            <td>{{ joueur.age }}</td>
+                            <td>{{ joueur.pro ? 'Oui' : 'Non' }}</td>
+                            <td style="text-align:center;">
+                                <img style="width:60px;"  alt="" src="{{ asset('images/') }}{{ joueur.photo }}">
+                            </td>
+                            <td>
+                                Contrat
+                            </td>
+                            <td>
+                                <a class="btn btn-info" href="{{ path('joueur_rapportSpecifique_show' , {'id' : joueur.id}) }}">Rapports</a>
+                            </td>
+                            <td style="text-align:center;" >
+                                <a class="btn btn-info" href="{{ path('joueur_show', {'id': joueur.id}) }}">Informations</a>
+                            </td>
+
+                            <td style="text-align:center;"><a  class="btn btn-info" href="{{ path('joueur_edit', {'id': joueur.id}) }}"><i class="fa fa-pencil"> Modifier</i></a></td>
+                            <td style="text-align:center;">
+                                <form method="post" action="{{ path('joueur_delete', {'id': joueur.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce joueurs');">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ joueur.id) }}">
+                                    <button class="btn btn-danger "><i class="fa fa-trash-o "> Supprimer</i></button>
+                                </form>
+
+                            </td>
+                            <td style="text-align:center;">
+                                <a class="btn btn-info" href="{{ path('joueurs_contrats_add' , {'id' : joueur.id}) }}">Ajouter</a>
+                            </td>
+
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="8">Aucun Joueur trouvé</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div style="margin-top: 2rem;">
+                    {{ knp_pagination_render(joueurs) }}
+                </div>
+            </div>
+
         </div>
-        <table class="table table-striped table-bordered"  style="border-radius: 10px;box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); ">
-            <thead  class="thead-dark">
-            <tr class="text-center">
-                <th scope="col">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">Age</th>
-                <th scope="col">Pro</th>
-                <th scope="col">Photo</th>
-                <th scope="col">Club</th>
-                <th scope="col">Rapports</th>
-                <th scope="col">Details</th>
-                <th scope="col">Modifications</th>
-                <th scope="col">Suppression</th>
-                <th scope="col">Contrats</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for joueur in joueurs %}
-                <tr>
-                    <td>{{ joueur.nom }}</td>
-                    <td>{{ joueur.prenom }}</td>
-                    <td>{{ joueur.age }}</td>
-                    <td>{{ joueur.pro ? 'Oui' : 'Non' }}</td>
-                    <td style="text-align:center;">
-                        <img style="width:60px;"  alt="" src="{{ asset('images/') }}{{ joueur.photo }}">
-                    </td>
-                    <td>
-                            Contrat
-                    </td>
-                    <td>
-                        <a class="btn btn-info" href="{{ path('joueur_rapportSpecifique_show' , {'id' : joueur.id}) }}">Rapports</a>
-                    </td>
-                    <td style="text-align:center;" >
-                        <a class="btn btn-info" href="{{ path('joueur_show', {'id': joueur.id}) }}">Informations</a>
-                    </td>
-
-                    <td style="text-align:center;"><a  class="btn btn-info" href="{{ path('joueur_edit', {'id': joueur.id}) }}"><i class="fa fa-pencil"> Modifier</i></a></td>
-                     <td style="text-align:center;">   
-                        <form method="post" action="{{ path('joueur_delete', {'id': joueur.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce joueurs');">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ joueur.id) }}">
-                            <button class="btn btn-danger "><i class="fa fa-trash-o "> Supprimer</i></button>
-                        </form>
-
-                    </td>
-                    <td style="text-align:center;">
-                        <a class="btn btn-info" href="{{ path('joueurs_contrats_add' , {'id' : joueur.id}) }}">Ajouter</a>
-                    </td>
-
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="8">Aucun Joueur trouvé</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
     </div>
+
     <a style="width: 300px;" class="btn btn-warning center-block size" href="{{ path('joueurs_add') }}">Ajouter un Joueur</a>
 
 

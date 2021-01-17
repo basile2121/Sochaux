@@ -23,6 +23,7 @@ class RapportSpecifiqueController extends AbstractController
     public function index(RapportSpecifiqueRepository $rapportSpecifiqueRepository , Request $request): Response
     {
         $data = new SearchData();
+        $data->page = $request->get('page' , 1);
         $form = $this->createForm(RapportsSearchType::class , $data);
         $form->handleRequest($request);
         $rapportSpecifiques = $rapportSpecifiqueRepository->findSearch($data);

@@ -6,6 +6,8 @@ use App\Data\SearchData;
 use App\Entity\RapportSpecifique;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @method RapportSpecifique|null find($id, $lockMode = null, $lockVersion = null)
@@ -15,9 +17,15 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class RapportSpecifiqueRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * @var PaginatorInterface
+     */
+    private $paginator;
+
+    public function __construct(ManagerRegistry $registry , PaginatorInterface $paginator)
     {
         parent::__construct($registry, RapportSpecifique::class);
+        $this->paginator = $paginator;
     }
 
     // /**
@@ -48,7 +56,7 @@ class RapportSpecifiqueRepository extends ServiceEntityRepository
         ;
     }
     */
-    public function findSearch(SearchData $data):array
+    public function findSearch(SearchData $data):PaginationInterface
     {
         $query = $this
             ->createQueryBuilder('r')
@@ -64,6 +72,11 @@ class RapportSpecifiqueRepository extends ServiceEntityRepository
                 ->andWhere('r.dateRapport LIKE :dateRapport')
                 ->setParameter('dateRapport' , "%{$data->dateRapport}%");
 
-        return $query->getQuery()->getResult();
+        $query = $query->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            $data->page,
+            5
+        );
     }
 }

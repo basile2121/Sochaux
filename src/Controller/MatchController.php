@@ -4,11 +4,14 @@
 namespace App\Controller;
 
 
+use App\Data\SearchData;
 use App\Entity\Matchs;
 use App\Entity\RapportSpecifique;
+use App\Form\MatchsSearchType;
 use App\Form\MatchType;
 use App\Form\RapportSpecifiqueType;
 use App\Repository\MatchsRepository;
+use App\Repository\ParticipeRepository;
 use App\Repository\RapportSpecifiqueRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,10 +25,17 @@ class MatchController extends AbstractController
     /**
      * @Route("/matchs" , name="matchs_show", methods={"GET"})
      */
-    public function index(MatchsRepository $matchsRepository): Response
+    public function index(MatchsRepository $matchsRepository , Request $request): Response
     {
+        $data = new SearchData();
+        $data->page = $request->get('page' , 1);
+        $form = $this->createForm(MatchsSearchType::class , $data);
+        $form->handleRequest($request);
+        $matchs = $matchsRepository->findSearch($data);
         return $this->render('matchs/showMatchs.html.twig', [
-            'matchs' => $matchsRepository->findAll(),
+            'matchs' => $matchs,
+            'formSearch' => $form->createView()
+
         ]);
     }
 
