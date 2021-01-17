@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Data\SearchData;
 use App\Entity\Joueur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -47,4 +48,19 @@ class JoueurRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findSearch(SearchData $data): array
+    {
+        $query = $this
+            ->createQueryBuilder('j')
+            ->orderBy('j.nom', 'ASC')
+            ->select('j');
+        if (!empty($data->searchBarre))
+            $query = $query
+                ->andWhere('j.nom LIKE :searchBarre')
+                ->setParameter('searchBarre' , "%{$data->searchBarre}%");
+        if (!empty($data->pro))
+            $query = $query
+                ->andWhere('j.pro = 1');
+        return $query->getQuery()->getResult();
+    }
 }

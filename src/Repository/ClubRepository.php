@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Data\SearchData;
 use App\Entity\Club;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -47,4 +48,16 @@ class ClubRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findSearch(SearchData $data): array
+    {
+        $query = $this
+            ->createQueryBuilder('c')
+            ->orderBy('c.nom_club' , 'ASC')
+            ->select('c');
+        if (!empty($data->searchBarre))
+            $query = $query
+                ->andWhere('c.nom_club LIKE :searchBarre')
+                ->setParameter('searchBarre' , "%{$data->searchBarre}%");
+        return $query->getQuery()->getResult();
+    }
 }

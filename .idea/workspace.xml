@@ -20,20 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/MatchTypeTournoi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/match/_formTournoi.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/match/editMatchTournoi.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/SearchData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ClubsSearchType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/JoueursSearchType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RapportsSearchType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/clubs/_formSearch.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/joueurs/_formSearch.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/_formSearch.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Participe.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MatchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MatchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/TournoiType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TournoiType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/match/showMatch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ClubController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClubController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/JoueurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClubRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClubRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RapportSpecifiqueRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RapportSpecifiqueRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +199,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/rapportMatch/match" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/rapportSpecifiques" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -207,11 +212,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/rapportMatch/match" />
+      <recent name="$PROJECT_DIR$/templates/rapportSpecifiques" />
       <recent name="$PROJECT_DIR$/src/Form" />
+      <recent name="$PROJECT_DIR$/templates/clubs" />
+      <recent name="$PROJECT_DIR$/templates/rapportMatch/match" />
       <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/src/Controller" />
-      <recent name="$PROJECT_DIR$/templates/rapportMatch/club" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
@@ -246,7 +251,8 @@
       <workItem from="1610633928430" duration="5019000" />
       <workItem from="1610733195346" duration="125000" />
       <workItem from="1610733358343" duration="1432000" />
-      <workItem from="1610807412004" duration="22831000" />
+      <workItem from="1610807412004" duration="23799000" />
+      <workItem from="1610878564534" duration="10666000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -353,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610820232860</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Trier les Tournoi en fonction des pays">
+      <created>1610838034037</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1610838034037</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +401,7 @@
     <MESSAGE value="Nouvelle Base De données" />
     <MESSAGE value="Ajout du CRUD de tournoi + quelques modifications" />
     <MESSAGE value="Plusieurs Rapports pour le Joueurs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plusieurs Rapports pour le Joueurs" />
+    <MESSAGE value="Trier les Tournoi en fonction des pays" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trier les Tournoi en fonction des pays" />
   </component>
 </project>

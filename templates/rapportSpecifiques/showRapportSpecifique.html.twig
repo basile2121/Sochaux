@@ -58,6 +58,7 @@
 
             <a style="margin-left:20px;"class="btn btn-info" href="#">Convertir en PDF</a>
 
+    <a  class="btn btn-info" href="{{ path('rapportSpecifiques_edit', {'id': rapportSpecifique.id}) }}"><i class="fa fa-pencil"> Modifier Le Rapport</i></a>
     <a style="width: 300px;" class="btn btn-warning center-block size" href="{{ path('rapportSpecifiques_show') }}">Revenir à la liste des Rapports</a>
 
 {% endblock %}

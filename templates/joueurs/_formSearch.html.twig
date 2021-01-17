@@ -1,0 +1,18 @@
+{% form_theme formSearch 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    {{ form_start(formSearch, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                {{ form_widget(formSearch) }}
+            </div>
+            <div class="col-lg-8">
+                <button type="submit" class="btn btn btn-success">{{ button_label|default('Rechercher') }}</button>
+            </div>
+        </div>
+    </div>
+    {{ form_end(formSearch) }}
+
+{% endblock %}

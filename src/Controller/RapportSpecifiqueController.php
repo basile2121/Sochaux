@@ -4,8 +4,10 @@
 namespace App\Controller;
 
 
+use App\Data\SearchData;
 use App\Entity\RapportSpecifique;
 use App\Form\RapportSpecifiqueType;
+use App\Form\RapportsSearchType;
 use App\Repository\RapportSpecifiqueRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,10 +20,15 @@ class RapportSpecifiqueController extends AbstractController
     /**
      * @Route("/rapportSpecifiques" , name="rapportSpecifiques_show", methods={"GET"})
      */
-    public function index(RapportSpecifiqueRepository $rapportSpecifiqueRepository): Response
+    public function index(RapportSpecifiqueRepository $rapportSpecifiqueRepository , Request $request): Response
     {
+        $data = new SearchData();
+        $form = $this->createForm(RapportsSearchType::class , $data);
+        $form->handleRequest($request);
+        $rapportSpecifiques = $rapportSpecifiqueRepository->findSearch($data);
         return $this->render('rapportSpecifiques/showRapportSpecifiques.html.twig', [
-            'rapportSpecifiques' => $rapportSpecifiqueRepository->findAll(),
+            'rapportSpecifiques' => $rapportSpecifiques,
+            'formSearch' => $form->createView()
         ]);
     }
 

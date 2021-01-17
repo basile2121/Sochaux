@@ -2,13 +2,17 @@
 
 namespace App\Controller;
 
+use App\Data\SearchData;
 use App\Entity\Club;
+use App\Form\ClubsSearchType;
 use App\Form\ClubType;
+use App\Form\JoueursSearchType;
 use App\Repository\ClubRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 
 class ClubController extends AbstractController
@@ -17,10 +21,16 @@ class ClubController extends AbstractController
     /**
      * @Route("/clubs" , name="clubs_show", methods={"GET"})
      */
-    public function index(ClubRepository $clubRepository): Response
+    public function index(ClubRepository $clubRepository , Request $request): Response
     {
+        $data = new SearchData();
+        $form = $this->createForm(ClubsSearchType::class , $data);
+        $form->handleRequest($request);
+        $clubs = $clubRepository->findSearch($data);
+
         return $this->render('clubs/showClubs.html.twig', [
-            'clubs' => $clubRepository->findAll(),
+            'clubs' => $clubs,
+            'formSearch' => $form->createView()
         ]);
     }
 

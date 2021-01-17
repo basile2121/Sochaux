@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Data\SearchData;
 use App\Entity\Contrat;
 use App\Entity\Joueur;
 use App\Form\ContratType;
+use App\Form\JoueursSearchType;
 use App\Form\JoueurType;
 use App\Repository\ContratRepository;
 use App\Repository\JoueurRepository;
@@ -24,13 +26,16 @@ class JoueurController extends AbstractController
     /**
      * @Route("/joueurs" , name="joueurs_show", methods={"GET"})
      */
-    public function index(JoueurRepository $joueurRepository , ContratRepository $contratRepository): Response
+    public function index(JoueurRepository $joueurRepository , Request $request): Response
     {
-        $joueurs = $joueurRepository->findBy([],['nom' => 'ASC']);
-        $contrats = $contratRepository->findAll();
+        $data = new SearchData();
+        $form= $this->createForm(JoueursSearchType::class , $data);
+        $form->handleRequest($request);
+        $joueurs = $joueurRepository->findSearch($data);
+        //$joueurs = $joueurRepository->findBy([],['nom' => 'DESC']);
         return $this->render('joueurs/showJoueurs.html.twig', [
             'joueurs' => $joueurs,
-            'contrats' => $contrats
+            'formSearch' => $form->createView()
         ]);
     }
 

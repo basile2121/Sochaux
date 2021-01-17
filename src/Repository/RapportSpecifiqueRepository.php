@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Data\SearchData;
 use App\Entity\RapportSpecifique;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -47,4 +48,22 @@ class RapportSpecifiqueRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findSearch(SearchData $data):array
+    {
+        $query = $this
+            ->createQueryBuilder('r')
+            ->orderBy('r.dateRapport' , 'ASC')
+            ->select('r');
+        if (!empty($data->searchBarre))
+            $query = $query
+                ->join('r.joueur' , 'j')
+                ->andWhere('j.nom LIKE :searchBarre')
+                ->setParameter('searchBarre' , "%{$data->searchBarre}%");
+        if (!empty($data->dateRapport))
+            $query = $query
+                ->andWhere('r.dateRapport LIKE :dateRapport')
+                ->setParameter('dateRapport' , "%{$data->dateRapport}%");
+
+        return $query->getQuery()->getResult();
+    }
 }
