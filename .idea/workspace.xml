@@ -20,32 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/knp.paginator.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/MatchsSearchType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/matchs/_formSearch.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Sochaux.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sochaux.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ClubController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClubController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JoueurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/SearchData.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/SearchData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ClubsSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ClubsSearchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/JoueursSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JoueursSearchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RapportsSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RapportsSearchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ClubRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClubRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MatchsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MatchsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RapportSpecifiqueRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RapportSpecifiqueRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/showClubs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueurs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matchs/showMatchs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +239,10 @@
       <workItem from="1610733195346" duration="125000" />
       <workItem from="1610733358343" duration="1432000" />
       <workItem from="1610807412004" duration="23799000" />
-      <workItem from="1610878564534" duration="22190000" />
+      <workItem from="1610878564534" duration="22450000" />
+      <workItem from="1610966477725" duration="2179000" />
+      <workItem from="1611231098234" duration="757000" />
+      <workItem from="1611587352963" duration="110000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -384,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610890213829</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Filtres Sur les Matchs + ajout de la pagination pour Club , rapport , joueur , matchs">
+      <created>1610909243024</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610909243024</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,6 +407,7 @@
     <MESSAGE value="Plusieurs Rapports pour le Joueurs" />
     <MESSAGE value="Trier les Tournoi en fonction des pays" />
     <MESSAGE value="Ajout des filtres + Recherche sur les CRDU Joueur (Nom Joueur , Pro) , Rapport Specifique (Nom Joueur + Date ) , Club (Nom Club" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des filtres + Recherche sur les CRDU Joueur (Nom Joueur , Pro) , Rapport Specifique (Nom Joueur + Date ) , Club (Nom Club" />
+    <MESSAGE value="Filtres Sur les Matchs + ajout de la pagination pour Club , rapport , joueur , matchs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filtres Sur les Matchs + ajout de la pagination pour Club , rapport , joueur , matchs" />
   </component>
 </project>
