@@ -25,24 +25,24 @@ class MatchsSearchType extends AbstractType {
 
                 ])
             ->add('equipe1' ,TextType::class , [
-                'label' => 'Rechercher avec une premiere equipe',
+                'label' => 'Rechercher avec une première équipe',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Entrer une equipe '
+                    'placeholder' => 'Entrer une équipe '
                 ]
             ])
             ->add('equipe2' ,TextType::class , [
-                'label' => 'Rechercher avec une deuxieme equipe',
+                'label' => 'Rechercher avec une deuxième équipe',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Entrer une equipe '
+                    'placeholder' => 'Entrer une équipe '
                 ]
             ])
             ->add('lieux' ,TextType::class , [
-                'label' => 'Rechercher avec un lieux',
+                'label' => 'Rechercher avec un lieu',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Entrer un lieux'
+                    'placeholder' => 'Entrer un lieu'
                 ]
             ])
         ;

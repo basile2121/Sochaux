@@ -20,7 +20,7 @@ class ClubsSearchType extends AbstractType {
                 'label' => 'Rechercher un Club',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Entrer le nom du club '
+                    'placeholder' => 'Entrer le nom du Club '
                 ]
                 ]);
     }

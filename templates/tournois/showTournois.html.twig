@@ -13,7 +13,7 @@
             <th scope="col">Nom</th>
             <th scope="col">Pays</th>
             <th scope="col">Tournoi</th>
-            <th scope="col">Modifications</th>
+            <th scope="col">Modification</th>
             <th scope="col">Suppression</th>
         </tr>
         </thead>
@@ -27,13 +27,13 @@
                 </td>
 
                 <td>
-                    <a  class="btn btn-info" href="{{ path('tournois_edit', {'id': tournoi.id}) }}"><i class="fa fa-pencil"> Modifier</i></a>
+                    <a  class="btn btn-info" href="{{ path('tournois_edit', {'id': tournoi.id}) }}"><i class="fa fa-pencil">Modifier</i></a>
                 </td>
                 <td>
                     <form method="post" action="{{ path('tournois_delete', {'id': tournoi.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce tournoi');">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ tournoi.id) }}">
-                        <button class="btn btn-danger "><i class="fa fa-trash-o "> Supprimer</i></button>
+                        <button class="btn btn-danger "><i class="fa fa-trash-o ">Supprimer</i></button>
                     </form>
                 </td>
 

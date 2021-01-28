@@ -4,19 +4,19 @@
 
 {% block body %}
 
-    <h3 style="padding:25px; text-align:center; color: #171a1d; font-weight: bold">Informations de L'agent {{ rapportSpecifique.nomAgent }}</h3>
+    <h3 style="padding:25px; text-align:center; color: #171a1d; font-weight: bold">Informations de l'Agent {{ rapportSpecifique.nomAgent }}</h3>
 
     <table class="table table-light table-striped table-bordered table-responsive-md">
         <tr>
-            <th scope="col">Mail agent</th>
+            <th scope="col">Mail Agent</th>
             <td class="text-left">{{ rapportSpecifique.mailAgent }}</td>
         </tr>
         <tr>
-            <th scope="col">Telephone agent</th>
+            <th scope="col">Téléphone Agent</th>
             <td class="text-left">{{ rapportSpecifique.telephoneAgent }}</td>
         </tr>
         <tr>
-            <th scope="col">Adresse agent</th>
+            <th scope="col">Adresse Agent</th>
             <td class="text-left">{{ rapportSpecifique.adresseAgent }}</td>
         </tr>
     </table>
@@ -25,7 +25,7 @@
 
     <table class="table table-light table-striped table-bordered table-responsive-md">
         <tr>
-            <th scope="col">Date Du rapport</th>
+            <th scope="col">Date du rapport</th>
             <td class="text-left">{{ rapportSpecifique.dateRapport ? rapportSpecifique.dateRapport|date('d/m/Y') : '' }}</td>
         </tr>
         <tr>
@@ -41,17 +41,17 @@
             <td class="text-left">{{ rapportSpecifique.noteJoueur }}</td>
         </tr>
         <tr>
-            <th scope="col">Qualite technique</th>
+            <th scope="col">Qualité(s) technique(s)</th>
             <td class="text-left">{{ rapportSpecifique.qualiteTechnique }}e indusook a galley of type and scramblimen book. It has</td>
         </tr>
         <tr>
-            <th scope="col">Qualite mentale</th>
+            <th scope="col">Qualité(s) mentale(s)</th>
             <td class="text-left">{{ rapportSpecifique.qualiteMentale }}Loretry's standard dummy nter took a galley o</td>
         <tr>
-            <th scope="col">Qualite physique</th>
+            <th scope="col">Qualité(s) physique(s)</th>
             <td class="text-left">{{ rapportSpecifique.qualitePhysique }}Lorem Ipsum is simply dummy text o</td>
         <tr >
-            <th scope="col">Qualite tactique</th>
+            <th scope="col">Qualité(s) tactique(s)</th>
             <td class="text-left">{{ rapportSpecifique.qualiteTactique }}Lorem Ipsum passages, and mop publiing versions of Lorem Ipsum. </td>
         </tr>
     </table>

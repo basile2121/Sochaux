@@ -19,22 +19,22 @@ class ParticipeType extends AbstractType
         $builder
             ->add('club_first',EntityType::class, array(
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Choisir la premiere equipe']),
+                    new Assert\NotBlank(['message' => 'Choisir la première équipe']),
                 ],
                 'required' => false,
                 'class' => Club::class,
                 'placeholder' => 'Chosir le Premiere Equipe',
-                'attr' => ['placeholder' => "Chosir le Premiere Equipe"]
+                'attr' => ['placeholder' => "Chosir le première équipe"]
             ))
 
             ->add('club_second',EntityType::class, array(
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Choisir la deuxieme equipe']),
+                    new Assert\NotBlank(['message' => 'Choisir la deuxième équipe']),
                 ],
                 'required' => false,
                 'class' => Club::class,
-                'placeholder' => 'Chosir la Deuxieme Equipe',
-                'attr' => ['placeholder' => "Chosir la Deuxieme Equipe"]
+                'placeholder' => 'Chosir la deuxième équipe',
+                'attr' => ['placeholder' => "Chosir la deuxième équipe"]
             ))
         ;
     }

@@ -25,7 +25,7 @@ class CommentaireType extends AbstractType
             ->add('minute_commentaire' , TextType::class , array(
                 'attr' => ['placeholder' => "Minutes des commentaires"],
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Saisir la minutes du commentaire'])
+                    new Assert\NotBlank(['message' => 'Saisir la minute du commentaire'])
                 ],
             ))
         ;

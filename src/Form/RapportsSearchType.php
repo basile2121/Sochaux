@@ -18,10 +18,10 @@ class RapportsSearchType extends AbstractType {
     {
         $builder
             ->add('searchBarre' , TextType::class , [
-                'label' => 'Rechercher un rapport pour Le Joueurs',
+                'label' => 'Rechercher un rapport pour le Joueur',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Entrer le nom du joueur '
+                    'placeholder' => 'Entrer le nom du Joueur '
                 ]
             ])
             ->add('dateRapport' , TextType::class , [
