@@ -11,6 +11,7 @@ use App\Form\CommentaireType;
 use App\Form\MatchType;
 use App\Form\MatchTypeTournoi;
 use App\Form\ParticipeType;
+use App\Form\TactiqueType;
 use App\Form\TournoiType;
 use App\Repository\CommentaireRepository;
 use App\Repository\MatchsRepository;
@@ -39,13 +40,18 @@ class RapportMatchController extends AbstractController
         $matchID = $matchsRepository->find($id);
         //$matchs->setTournoi(null);
 
+
         $participes = $matchs->getParticipes();
         $equipe2 = null;
         $equipe1 = null;
+        $tactique1 = null;
+        $tactique2 = null;
 
         foreach ($participes as $participe){
             $equipe1 = $participe->getClubFirst();
             $equipe2 = $participe->getClubSecond();
+            $tactique1 = $participe->getTactiqueFirstClub();
+            $tactique2 = $participe->getTactiqueSecondClub();
         }
 
 
@@ -65,13 +71,14 @@ class RapportMatchController extends AbstractController
 
 
         return $this->render('rapportMatch/addRapportMatch.html.twig', [
-            'participes' => $participes,
             'match' => $matchID,
             'commentaire' => $commentaire,
             'commentaires' => $commentaires,
             'equipe1' => $equipe1,
             'equipe2' => $equipe2,
-            'form2' => $form2->createView(),
+            'tactique1' => $tactique1,
+            'tactique2' => $tactique2,
+            'form2' => $form2->createView()
         ]);
     }
 
@@ -101,6 +108,31 @@ class RapportMatchController extends AbstractController
             return $this->redirectToRoute('redirect');
         }
         return $this->render('route.html.twig', ['donnees'=>$donnees]);
+    }
+
+    /**
+     * @Route("/tactiques/addTactiques/{id}", name="tactique_add_matchs", methods={"GET","POST"})
+     */
+    public function addTactiquesMatchs(Request $request , Matchs $matchs ): Response
+    {
+
+        $participe = $matchs->getParticipeMatch(0);
+
+
+        $form = $this->createForm(TactiqueType::class, $participe);
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirect('/matchs/showMatchs/'.$matchs->getId());
+        }
+
+        return $this->render('rapportMatch/tactique/addTactique.html.twig', [
+            '$match' => $matchs,
+            'formTactique' => $form->createView(),
+        ]);
     }
 
 

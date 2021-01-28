@@ -12,10 +12,11 @@
             {{ include('rapportMatch/match/showMatch.html.twig') }}
          </div>
         <br>
-        {% if equipe2 is not defined and equipe1 is not defined  %}
-            <a style="" class="btn btn-warning center-block" href="{{ path('club_add_matchs' , {'id': match.id }) }}">Selectioner les équipes</a>
+        {% if equipe2 is null and equipe1 is null  %}
+            <a class="btn btn-warning center-block" href="{{ path('club_add_matchs' , {'id': match.id }) }}">Selectioner les équipes</a>
         {% else %}
-            <a style="" class="btn btn-success center-block" href="{{ path('club_add_matchs' , {'id': match.id }) }}">Modifier les équipes</a>
+            <a class="btn btn-success center-block" href="{{ path('club_add_matchs' , {'id': match.id }) }}">Modifier les équipes</a>
+            <a class="btn btn-warning center-block" href="{{ path('tactique_add_matchs' , {'id': match.id } )}}">Modifier les Tactiques</a>
         {% endif %}
     </div>
 
@@ -28,6 +29,8 @@
                     Pas de Club
                 {% endif %}
             </h2>
+            <br>
+            <br>
 
             <div class="container">
                 <div class="row">
@@ -93,7 +96,14 @@
                             <label>Ajouter</label>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" style="padding: 0">
+                        <h4 style="text-align: center; color: #F9F9FF; font-weight: bold">Tactique :
+                            {% if tactique1 is not null %}
+                                {{ tactique1.nomTactique }}
+                            {% else%}
+                                Pas de Tactique
+                            {% endif %}
+                        </h4>
                         <img src="{{ asset('images/terrain.png') }}" alt="" style="width: 100%">
                     </div>
                 </div>
@@ -108,6 +118,8 @@
                     Pas de Club
                 {% endif %}
             </h2>
+            <br>
+            <br>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
@@ -128,7 +140,11 @@
                             <tr>
                                 <td>Nom Prénom</td>
                                 <td class="numeric">Attaquant</td>
-                                <td class="numeric">2</td>
+                                <td>
+                                    <div>
+                                        <img style="width: 50px; height: 50px; " src="{{ asset('images/numero.png') }}" alt="">
+                                    </div>
+                                </td>
                                 <td class="numeric">19</td>
                                 <td class="numeric">2</td>
                                 <td class="numeric">0</td>
@@ -173,7 +189,14 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" style="padding: 0">
+                        <h4 style="text-align: center; color: #F9F9FF; font-weight: bold">Tactique :
+                            {% if tactique2 is not null %}
+                                {{ tactique2.nomTactique }}
+                            {% else%}
+                                Pas de Tactique
+                            {% endif %}
+                        </h4>
                         <img src="{{ asset('images/terrain.png') }}" alt="" style="width: 100%">
                     </div>
                 </div>

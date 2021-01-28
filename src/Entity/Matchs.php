@@ -159,6 +159,10 @@ class Matchs
         return $this->participes;
     }
 
+    public function getParticipeMatch(int $index){
+        return $this->participes->get($index);
+    }
+
     public function addParticipe(Participe $participe): self
     {
         if (!$this->participes->contains($participe)) {

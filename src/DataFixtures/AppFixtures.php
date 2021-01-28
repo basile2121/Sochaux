@@ -267,11 +267,11 @@ class AppFixtures extends Fixture
 
     public function load_participes(ObjectManager $manager){
         $participe=[
-            [ 'score' => 1 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 1 , 'tactique_id' => 1 ],
-            [ 'score' => 2 , 'club_first' => 1 , 'club_second' => 2, 'match_id' => 2 , 'tactique_id' => 2 ],
-            [ 'score' => 3 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 3 , 'tactique_id' => 3 ],
-            [ 'score' => 4 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 4 , 'tactique_id' => 4 ],
-            [ 'score' => 5 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 5 , 'tactique_id' => 5 ],
+            [ 'score' => 1 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 1 , 'tactique_first_club' => 1  , 'tactique_second_club' => 2 ],
+            [ 'score' => 2 , 'club_first' => 1 , 'club_second' => 2, 'match_id' => 2 , 'tactique_first_club' => 1  , 'tactique_second_club' => 2 ],
+            [ 'score' => 3 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 3 , 'tactique_first_club' => 1  , 'tactique_second_club' => 2 ],
+            [ 'score' => 4 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 4 , 'tactique_first_club' => 1  , 'tactique_second_club' => 2 ],
+            [ 'score' => 5 , 'club_first' => 1 , 'club_second' => 2 , 'match_id' => 5 , 'tactique_first_club' => 1  , 'tactique_second_club' => 2 ],
         ];
 
         foreach ($participe as $pa)
@@ -294,10 +294,17 @@ class AppFixtures extends Fixture
                 ['id' => 'ASC']);
             $new_participe->addMatch($match);
 
-            $tactique = $manager->getRepository(Tactique::class)->findOneBy([
-                'id' => $pa['tactique_id']],
+            $tactiqueFirstClub = $manager->getRepository(Tactique::class)->findOneBy([
+                'id' => $pa['tactique_first_club']],
                 ['id' => 'ASC']);
-            $new_participe->addTactique($tactique);
+            $new_participe->setTactiqueFirst($tactiqueFirstClub);
+
+            $tactiqueSecondClub = $manager->getRepository(Tactique::class)->findOneBy([
+                'id' => $pa['tactique_second_club']],
+                ['id' => 'ASC']);
+            $new_participe->setTactiqueSecond($tactiqueSecondClub);
+
+
 
             $manager->persist($new_participe);
         }

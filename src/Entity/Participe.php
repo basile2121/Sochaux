@@ -34,51 +34,29 @@ class Participe
      */
     private $clubsecond;
 
-
     /**
      * @ORM\ManyToMany(targetEntity=Matchs::class, inversedBy="participes" )
      */
     private $matchs;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Tactique::class, inversedBy="participes")
+     * @ORM\ManyToOne(targetEntity=Tactique::class, inversedBy="participes")
      */
-    private $tactique;
+    private $tactique_first_club;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Tactique::class, inversedBy="participes")
+     */
+    private $tactique_second_club;
 
     public function __construct()
     {
         $this->matchs = new ArrayCollection();
-        $this->tactique = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-    /**
-     * @return Collection|Club[]
-     */
-    public function getClub(): Collection
-    {
-        return $this->club;
-    }
-
-    public function addClub(Club $club): self
-    {
-        if (!$this->club->contains($club)) {
-            $this->club[] = $club;
-        }
-
-        return $this;
-    }
-
-    public function removeClub(Club $club): self
-    {
-        if ($this->club->contains($club)) {
-            $this->club->removeElement($club);
-        }
-
-        return $this;
     }
 
     public function getScore(): ?int
@@ -117,6 +95,29 @@ class Participe
         return $this;
     }
 
+    public function getTactiqueFirstClub(): ?Tactique
+    {
+        return $this->tactique_first_club;
+    }
+
+    public function setTactiqueFirstClub(?Tactique $tactique): self
+    {
+        $this->tactique_first_club = $tactique;
+
+        return $this;
+    }
+
+    public function getTactiqueSecondClub(): ?Tactique
+    {
+        return $this->tactique_second_club;
+    }
+
+    public function setTactiqueSecondClub(?Tactique $tactique): self
+    {
+        $this->tactique_second_club = $tactique;
+
+        return $this;
+    }
 
     /**
      * @return Collection|Matchs[]
@@ -144,29 +145,5 @@ class Participe
         return $this;
     }
 
-    /**
-     * @return Collection|Tactique[]
-     */
-    public function getTactique(): Collection
-    {
-        return $this->tactique;
-    }
 
-    public function addTactique(Tactique $tactique): self
-    {
-        if (!$this->tactique->contains($tactique)) {
-            $this->tactique[] = $tactique;
-        }
-
-        return $this;
-    }
-
-    public function removeTactique(Tactique $tactique): self
-    {
-        if ($this->tactique->contains($tactique)) {
-            $this->tactique->removeElement($tactique);
-        }
-
-        return $this;
-    }
 }

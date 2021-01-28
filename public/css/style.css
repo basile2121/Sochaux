@@ -155,6 +155,7 @@ a, a:hover, a:focus {
   border-color: #da4453;
 }
 
+
 .btn-clear-g {
 	color: #48bcb4;
 	background: transparent;
@@ -259,7 +260,7 @@ ul.top-menu > li > .logout {
     height:17px;
     width:17px;
     display:inline-block;
-    background: url("../img/nav-expand.png") no-repeat top;
+
     border-radius:3px;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
@@ -268,7 +269,7 @@ ul.top-menu > li > .logout {
     top:15px;
 }
 .active .dcjq-icon {
-    background: url("../img/nav-expand.png") no-repeat bottom;
+
     border-radius:3px;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
