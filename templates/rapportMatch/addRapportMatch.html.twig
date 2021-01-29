@@ -141,9 +141,7 @@
                                 <td>Nom Prénom</td>
                                 <td class="numeric">Attaquant</td>
                                 <td>
-                                    <div>
-                                        <img style="width: 50px; height: 50px; " src="{{ asset('images/numero.png') }}" alt="">
-                                    </div>
+                                    <img class="element" draggable="true" ondragstart="dragstart_handler(event)" id="joueur8" style="width: 50px; height: 50px; " src="{{ asset('images/numero.png') }}" alt="">
                                 </td>
                                 <td class="numeric">19</td>
                                 <td class="numeric">2</td>
@@ -197,7 +195,15 @@
                                 Pas de Tactique
                             {% endif %}
                         </h4>
-                        <img src="{{ asset('images/terrain.png') }}" alt="" style="width: 100%">
+
+                        <body>
+                        <div id="listeJoueurs">
+                        </div>
+                        <button id="reset" onclick="reset()">Reset</button>
+                        <div id="terrain">
+                            <img id="targets" src="{{ asset('images/terrain.png') }}" alt="" z-index="1" style="width: 100%">
+                        </div>
+                        </body>
                     </div>
                 </div>
             </div>
@@ -244,4 +250,11 @@
     <br>
     <br>
 
+
+
+
+
+
 {% endblock %}
+
+

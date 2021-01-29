@@ -1,0 +1,63 @@
+#target1{
+    margin-top: -100px;
+    margin-left: 300px;
+}
+#target2{
+    margin-top: -620px;
+    margin-left: 200px;
+}
+#target3{
+    margin-top: -620px;
+    margin-left: 40px;
+}
+#target4{
+    margin-top: -550px;
+    margin-left: 50px;
+}
+#target5{
+    margin-top: -550px;
+    margin-left: 100px;
+}
+#target6{
+    margin-top: -470px;
+
+}
+#target7{
+    margin-top: -470px;
+    margin-left: 40px;
+}
+#target8{
+    margin-top: -170px;
+    margin-left: 70px;
+}
+#target9{
+    margin-top: -170px;
+    margin-left: 50px;
+}
+#target10{
+    margin-top: -170px;
+
+}
+#target11{
+    margin-top: -80px;
+    margin-left: 50px;
+}
+.target{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 5;
+    background-color: red;
+    border-radius: 3em;
+
+}
+.target:hover{
+    background-color: blue;
+}
+.target:-moz-drag-over{
+    background-color: green;
+}
+#targets{
+    position: relative;
+    z-index: 1;
+}

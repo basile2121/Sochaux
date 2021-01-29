@@ -297,12 +297,12 @@ class AppFixtures extends Fixture
             $tactiqueFirstClub = $manager->getRepository(Tactique::class)->findOneBy([
                 'id' => $pa['tactique_first_club']],
                 ['id' => 'ASC']);
-            $new_participe->setTactiqueFirst($tactiqueFirstClub);
+            $new_participe->setTactiqueFirstClub($tactiqueFirstClub);
 
             $tactiqueSecondClub = $manager->getRepository(Tactique::class)->findOneBy([
                 'id' => $pa['tactique_second_club']],
                 ['id' => 'ASC']);
-            $new_participe->setTactiqueSecond($tactiqueSecondClub);
+            $new_participe->setTactiqueSecondClub($tactiqueSecondClub);
 
 
 

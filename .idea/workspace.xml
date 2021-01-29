@@ -20,25 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/match.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/76fa4180c1001f620197f72064da7991.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/a73dcd77ed4948bcf9d7e78473f2459f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/b7cce18882a1ecdc7b90c0c8beeebd82.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/numero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/TactiqueType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/tactique/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rapportMatch/tactique/addTactique.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/lib/dragAndDrop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportMatchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/match.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/match.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Matchs.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Matchs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Participe.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ParticipeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ParticipeType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/club/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/club/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
