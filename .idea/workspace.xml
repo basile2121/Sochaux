@@ -19,13 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/lib/dragAndDrop.js" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Ajout du choix de la tactiques dans le rapport de Match">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/match.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/match.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,6 +242,7 @@
       <workItem from="1610966477725" duration="2179000" />
       <workItem from="1611231098234" duration="757000" />
       <workItem from="1611587352963" duration="110000" />
+      <workItem from="1612529304338" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
