@@ -9,6 +9,7 @@
 
     {% block stylesheets %}
         <!-- Favicons -->
+        <link rel="stylesheet" href="{{ asset('css/match.css') }}">
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" >
@@ -21,7 +22,6 @@
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style-responsive.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/match.css') }}">
 
     {% endblock %}
 
@@ -49,6 +49,8 @@
 
 {% block javascripts %}
 
+
+
     <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
 
     <script src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}" ></script>
@@ -62,14 +64,12 @@
     <script  type="text/javascript"  src="{{ asset('lib/gritter/js/jquery.gritter.js') }}" ></script>
     <script  type="text/javascript"  src="{{ asset('lib/gritter-conf.js') }}" ></script>
 
-    <script src="{{ asset('lib/dragAndDrop.js') }}"></script>
-
+    <script src="{{ asset('dragAndDrop.js') }}"></script>
     <script>
-        afficheTargets();
+        afficheTargetsTerrain1();
+        afficheTargetsTerrain2();
         afficheJoueurs();
     </script>
-
-
 
 
 {% endblock %}

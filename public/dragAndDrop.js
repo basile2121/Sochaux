@@ -1,3 +1,27 @@
+function afficheTargetsTerrain1(){
+    for(let n = 12;n<23;n++){
+
+        const element = document.createElement("div");
+        element.className = "target";
+        element.id = "target"+n;
+        element.setAttribute("ondragover","dragover_handler(event)");
+        element.setAttribute("ondrop","drop_handler(event)");
+        document.getElementById("terrain1").appendChild(element);
+    }
+}
+
+function afficheTargetsTerrain2(){
+    for(let k = 1;k<12;k++){
+
+        const element = document.createElement("div");
+        element.className = "target";
+        element.id = "target"+k;
+        element.setAttribute("ondragover","dragover_handler(event)");
+        element.setAttribute("ondrop","drop_handler(event)");
+        document.getElementById("terrain2").appendChild(element);
+    }
+}
+
 
 function dragstart_handler(ev) {
     // On ajoute l'identifiant de l'élément cible à l'objet de transfert
@@ -17,8 +41,8 @@ function drop_handler(ev) {
 }
 
 function reset(){
-    for(i = 1;i<12;i++){
-        for(j = 1;j<5;j++){
+    for(let i = 1;i<25;i++){
+        for(let j = 1;j<5;j++){
             if(document.getElementById("target"+i) != null && document.getElementById("target"+i).childNodes.length > 0){
                 alert(document.getElementById("target"+i));
                 console.log("target"+i);
@@ -35,7 +59,7 @@ function reset(){
 function afficheJoueurs(){
     var liste = ["numero.png","griezmann.jpeg","muller.jpeg","ronaldo.jpeg","neuer.jpeg"];
 
-    for(i = 0;i<10;i++){
+    for(let i = 0;i<12;i++){
         var element = document.createElement("img");
         element.className = "element";
         element.setAttribute("ondragstart","dragstart_handler(event)");
@@ -46,15 +70,5 @@ function afficheJoueurs(){
         element.draggable = true;
         element.src = liste[i];
         document.getElementById("listeJoueurs").appendChild(element);
-    }
-}
-function afficheTargets(){
-    for(i = 1;i<11;i++){
-        const element = document.createElement("div");
-        element.className = "target";
-        element.id = "target"+i;
-        element.setAttribute("ondragover","dragover_handler(event)");
-        element.setAttribute("ondrop","drop_handler(event)");
-        document.getElementById("terrain").appendChild(element);
     }
 }

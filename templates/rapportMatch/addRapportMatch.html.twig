@@ -3,6 +3,8 @@
 {% block title %}Rapport de Match{% endblock %}
 
 {% block body %}
+
+
     <div>
         <br>
         <br>
@@ -100,11 +102,19 @@
                         <h4 style="text-align: center; color: #F9F9FF; font-weight: bold">Tactique :
                             {% if tactique1 is not null %}
                                 {{ tactique1.nomTactique }}
+                                {% if tactique1 == "4 4 2" %}
+                                    <link rel="stylesheet" href="{{ asset('css/matchPosTerrain1442.css') }}">
+                                {% endif %}
+                                {% if tactique1 == "4 3 3" %}
+                                    <link rel="stylesheet" href="{{ asset('css/matchPosTerrain1433.css') }}">
+                                {% endif %}
                             {% else%}
                                 Pas de Tactique
                             {% endif %}
                         </h4>
-                        <img src="{{ asset('images/terrain.png') }}" alt="" style="width: 100%">
+                        <div id="terrain1">
+                            <img id="targets1" src="{{ asset('images/terrain.png') }}" alt="" style="width: 100%">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,6 +201,12 @@
                         <h4 style="text-align: center; color: #F9F9FF; font-weight: bold">Tactique :
                             {% if tactique2 is not null %}
                                 {{ tactique2.nomTactique }}
+                                {% if tactique2 == "4 4 2" %}
+                                    <link rel="stylesheet" href="{{ asset('css/matchPosTerrain2442.css') }}">
+                                {% endif %}
+                                {% if tactique2 == "4 3 3" %}
+                                    <link rel="stylesheet" href="{{ asset('css/matchPosTerrain2433.css') }}">
+                                {% endif %}
                             {% else%}
                                 Pas de Tactique
                             {% endif %}
@@ -200,8 +216,8 @@
                         <div id="listeJoueurs">
                         </div>
                         <button id="reset" onclick="reset()">Reset</button>
-                        <div id="terrain">
-                            <img id="targets" src="{{ asset('images/terrain.png') }}" alt="" z-index="1" style="width: 100%">
+                        <div id="terrain2">
+                            <img id="targets2" src="{{ asset('images/terrain.png') }}" alt="" style="width: 100%">
                         </div>
                         </body>
                     </div>
@@ -249,6 +265,8 @@
     <h2 style="text-align: center; width: 200px;  " class="btn btn-warning center-block size">Enregistrer le rapport</h2>
     <br>
     <br>
+
+
 
 
 
