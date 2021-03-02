@@ -103,10 +103,19 @@
                             {% if tactique1 is not null %}
                                 {{ tactique1.nomTactique }}
                                 {% if tactique1 == "4 4 2" %}
-                                    <link rel="stylesheet" href="{{ asset('css/matchPosTerrain1442.css') }}">
+                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1442.css') }}">
                                 {% endif %}
                                 {% if tactique1 == "4 3 3" %}
-                                    <link rel="stylesheet" href="{{ asset('css/matchPosTerrain1433.css') }}">
+                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1433.css') }}">
+                                {% endif %}
+                                {% if tactique1 == "5 4 1" %}
+                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1541.css') }}">
+                                {% endif %}
+                                {% if tactique1 == "5 3 2" %}
+                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1532.css') }}">
+                                {% endif %}
+                                {% if tactique1 == "4 4 1 1" %}
+                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain14411.css') }}">
                                 {% endif %}
                             {% else%}
                                 Pas de Tactique
@@ -202,10 +211,19 @@
                             {% if tactique2 is not null %}
                                 {{ tactique2.nomTactique }}
                                 {% if tactique2 == "4 4 2" %}
-                                    <link rel="stylesheet" href="{{ asset('css/matchPosTerrain2442.css') }}">
+                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2442.css') }}">
                                 {% endif %}
                                 {% if tactique2 == "4 3 3" %}
-                                    <link rel="stylesheet" href="{{ asset('css/matchPosTerrain2433.css') }}">
+                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2433.css') }}">
+                                {% endif %}
+                                {% if tactique2 == "5 4 1" %}
+                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2541.css') }}">
+                                {% endif %}
+                                {% if tactique2 == "5 3 2" %}
+                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2532.css') }}">
+                                {% endif %}
+                                {% if tactique2 == "4 4 1 1" %}
+                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain24411.css') }}">
                                 {% endif %}
                             {% else%}
                                 Pas de Tactique

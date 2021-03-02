@@ -19,15 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Ajout du choix de la tactiques dans le rapport de Match">
-      <change afterPath="$PROJECT_DIR$/public/css/matchPosTerrain1433.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/matchPosTerrain1442.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/matchPosTerrain2433.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/matchPosTerrain2442.css" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Ajout de drag and drop + des positions en focntion des tacitques pour 2 tactique.&#10;Correction de plusieurs Bug Mineur">
+      <change afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain14411.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain1532.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain1541.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain24411.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain2532.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain2541.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/match.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/match.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/lib/dragAndDrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/dragAndDrop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/matchPosTerrain1433.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain1433.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/matchPosTerrain1442.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain1442.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/matchPosTerrain2433.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain2433.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/matchPosTerrain2442.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain2442.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,11 +220,11 @@
       <recent name="$PROJECT_DIR$/templates/matchs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\css\terrain2" />
+      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\css\terrain1" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public" />
       <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/src/Form/Search" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/templates/Menu" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -259,7 +262,8 @@
       <workItem from="1611587352963" duration="110000" />
       <workItem from="1612529304338" duration="34000" />
       <workItem from="1614592729118" duration="506000" />
-      <workItem from="1614593289751" duration="10063000" />
+      <workItem from="1614593289751" duration="10841000" />
+      <workItem from="1614668066432" duration="2395000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -394,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612529327806</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Ajout de drag and drop + des positions en focntion des tacitques pour 2 tactique.&#10;Correction de plusieurs Bug Mineur">
+      <created>1614627544444</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1614627544444</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +444,8 @@
     <MESSAGE value="Ajout des filtres + Recherche sur les CRDU Joueur (Nom Joueur , Pro) , Rapport Specifique (Nom Joueur + Date ) , Club (Nom Club" />
     <MESSAGE value="Filtres Sur les Matchs + ajout de la pagination pour Club , rapport , joueur , matchs" />
     <MESSAGE value="Ajout du choix de la tactiques dans le rapport de Match" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du choix de la tactiques dans le rapport de Match" />
+    <MESSAGE value="Ajout de drag and drop + des positions en focntion des tacitques pour 2 tactique.&#10;Correction de plusieurs Bug Mineur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de drag and drop + des positions en focntion des tacitques pour 2 tactique.&#10;Correction de plusieurs Bug Mineur" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
