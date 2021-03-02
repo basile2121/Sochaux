@@ -19,19 +19,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Ajout de drag and drop + des positions en focntion des tacitques pour 2 tactique.&#10;Correction de plusieurs Bug Mineur">
-      <change afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain14411.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain1532.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain1541.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain24411.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain2532.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain2541.css" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Fin des positions">
+      <change afterPath="$PROJECT_DIR$/src/Controller/NotificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Notification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/NotificationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/NotificationRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/notification/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/notification/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/notification/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/notification/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/notification/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/notification/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/matchPosTerrain1433.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain1433.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/matchPosTerrain1442.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/terrain1/matchPosTerrain1442.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/matchPosTerrain2433.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain2433.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/matchPosTerrain2442.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/terrain2/matchPosTerrain2442.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportMatch/addRapportMatch.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MatchsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MatchsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navBar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navBar.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +268,7 @@
       <workItem from="1612529304338" duration="34000" />
       <workItem from="1614592729118" duration="506000" />
       <workItem from="1614593289751" duration="10841000" />
-      <workItem from="1614668066432" duration="2395000" />
+      <workItem from="1614668066432" duration="15526000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -405,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614627544444</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fin des positions">
+      <created>1614672904013</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1614672904013</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +457,8 @@
     <MESSAGE value="Filtres Sur les Matchs + ajout de la pagination pour Club , rapport , joueur , matchs" />
     <MESSAGE value="Ajout du choix de la tactiques dans le rapport de Match" />
     <MESSAGE value="Ajout de drag and drop + des positions en focntion des tacitques pour 2 tactique.&#10;Correction de plusieurs Bug Mineur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de drag and drop + des positions en focntion des tacitques pour 2 tactique.&#10;Correction de plusieurs Bug Mineur" />
+    <MESSAGE value="Fin des positions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fin des positions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -454,6 +467,11 @@
           <url>file://$PROJECT_DIR$/src/Form/TactiqueType.php</url>
           <line>3</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Form/MatchType.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

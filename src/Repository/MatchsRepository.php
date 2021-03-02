@@ -66,6 +66,10 @@ class MatchsRepository extends ServiceEntityRepository
             $query = $query
                 ->andWhere('m.date LIKE :dateMatch')
                 ->setParameter('dateMatch' , "%{$data->dateMatch}%");
+        if (!empty($data->lieux))
+            $query = $query
+                ->andWhere('m.lieux LIKE :lieux')
+                ->setParameter('lieux' , "%{$data->lieux}%");
         if (!empty($data->equipe1))
             $query = $query
                 ->join('m.participes' , 'p')

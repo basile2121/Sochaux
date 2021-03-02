@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Notification index{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Gestions des Notifications</h1>
+    <br>
+    <br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Date</th>
+                <th>Joueur</th>
+                <th>Rapport</th>
+                <th>Actions</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for notification in notifications %}
+            <tr>
+                <td>{{ notification.messageNotification }}</td>
+                <td>{{ notification.dateEnvoie ? notification.dateEnvoie|date('Y-m-d') : '' }}</td>
+                <td> <strong>{{ notification.rapportSpecifique.joueur }}</strong>  {{ notification.rapportSpecifique.joueur.prenom }}</td>
+                <td><a href="{{ path('rapportSpecifique_show' , {'id' : notification.rapportSpecifique.id}) }}">Acceder Au rapport</a></td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('notification_show', {'id': notification.id}) }}"> Voir </a>
+                    <a class="btn btn-info" href="{{ path('notifications_edit', {'id': notification.id}) }}"> Modifier </a>
+                </td>
+                <td>
+                    <form method="post" action="{{ path('notifications_delete', {'id': notification.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer la notification');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ notification.id) }}">
+                        <button class="btn btn-danger ">Supprimer</button>
+                    </form>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucune Notification Trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a style="width: 200px;" class="btn btn-success size" href="{{ path('notifications_add') }}">Ajouter une notification</a>
+{% endblock %}

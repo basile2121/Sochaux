@@ -1,95 +1,111 @@
 {% extends('layout.html.twig') %}
 
 {% block body %}
-<body>
-  <section id="container">
+  <body>
+<section id="container">
 
-    <section id="main-content">
-      <section class="wrapper">
-        <div class="row">
-          <div class="col-lg-9 main-chart">
-            <div class="row mt">
+  <section id="main-content-acc">
+    <section class="wrapper">
+      <div class="row">
+        <div class="col-lg-8 ">
+          <div class="row">
+            <h1 style="margin-left: 450px; font-weight: bold">Accès Rapide</h1>
+            <br>
+            <!-- Creer Un Rapport -->
+            <div class="col-md-6 col-sm-6 mb">
+              <div class="darkblue-panel pn">
+                <div class="darkblue-header">
+                  <h5>Créer un Rapport Spécifique</h5>
+                </div>
+                <a class="btn btn-warning" href="{{ path('matchs_add') }}">Création</a>
+              </div>
+            </div>
 
-              <h1 style="text-align: center; font-weight: bold">Accès Rapide</h1>
-              <br>
-              <!-- Creer Un Rapport -->
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>Créer un Rapport Spécifique</h5>
-                  </div>
-                  <div class="row">
-                    <a class="btn btn-warning" href="{{ path('matchs_add') }}">Création</a>
-                  </div>
+            <!-- Voir La Liste Des Joueurs -->
+            <div class="col-md-6 col-sm-6 mb">
+              <div class="darkblue-panel pn">
+                <div class="darkblue-header">
+                  <h5>Liste des Joueurs</h5>
+                </div>
+                <a class="btn btn-warning" href="{{ path('joueurs_show') }}">Accéder à La liste des joueurs</a>
+              </div>
+            </div>
+          </div>
+
+
+         <div class="row">
+            <!-- Les Rapports Specifique -->
+            <div class="col-md-6 col-sm-6 mb">
+              <div class="darkblue-panel pn">
+                <div class="darkblue-header">
+                  <h5>Les Rapports Specifiques</h5>
+                </div>
+                <a class="btn btn-warning" href="{{ path('rapportSpecifiques_show') }}">Accéder aux rapports specifiques</a>
+              </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="col-md-6 col-sm-6 mb">
+              <div class="darkblue-panel pn">
+                <div class="darkblue-header">
+                  <h5>Gestion du Club</h5>
+                </div>
+                <div class="row">
+                  <a class="btn btn-warning" href="#">Accéder à la gestion du club</a>
                 </div>
               </div>
-
-
-              <!-- Voir La Liste Des Joueurs -->
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>Liste des Joueurs</h5>
-                  </div>
-                  <a class="btn btn-warning" href="{{ path('joueurs_show') }}">Accéder à La liste des joueurs</a>
-                </div>
-              </div>
-
-              <!-- Les Rapports Specifique -->
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>Les Rapports Specifiques</h5>
-                  </div>
-                  <a class="btn btn-warning" href="{{ path('rapportSpecifiques_show') }}">Accéder aux rapports specifiques</a>
-                </div>
-              </div>
-
-              <!-- Notifications -->
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>Notifications</h5>
-                  </div>
-                  <div class="row">
-                    <a class="btn btn-warning" href="#">Notifications</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Notifications -->
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>Gestion du Club</h5>
-                  </div>
-                  <div class="row">
-                    <a class="btn btn-warning" href="#">Accéder à la gestion du club</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Notifications -->
-              <div class="col-md-4 col-sm-4 mb">
-                <div class="darkblue-panel pn">
-                  <div class="darkblue-header">
-                    <h5>Effectif Club</h5>
-                  </div>
-                  <div class="row">
-                    <a class="btn btn-warning" href="#">Effectif club</a>
-                  </div>
-                </div>
-              </div>
-
-           </div>
+            </div>
           </div>
         </div>
-      </section>
+
+        <div class="col-lg-4 ds">
+        <div class="row">
+            <div class="donut-main">
+              <h3>Liste des Notifications Récentes</h3>
+              <span>Il y a {{ nbNotification }} notification(s) </span>
+              <br>
+              <br>
+              <table class="table" , style="margin: auto">
+                <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Joueur</th>
+                  <th>Note</th>
+                  <th>Rapport</th>
+                  <th>Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for notification in notifications %}
+                  <tr>
+                    <td>{{ notification.dateEnvoie ? notification.dateEnvoie|date('d/m/Y') : '' }}</td>
+                    <td> <strong>{{ notification.rapportSpecifique.joueur }}</strong>  {{ notification.rapportSpecifique.joueur.prenom }}</td>
+                    <td><strong>{{ notification.rapportSpecifique.noteJoueur }}/20</strong></td>
+                    <td><a href="{{ path('rapportSpecifique_show' , {'id' : notification.rapportSpecifique.id}) }}">Lien</a></td>
+                    <td>
+                      <form method="post" action="{{ path('notifications_delete_accueil', {'id': notification.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer la notification');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ notification.id) }}">
+                        <button class="btn btn-danger center-block ">x</button>
+                      </form>
+                    </td>
+                  </tr>
+                {% else %}
+                  <tr>
+                    <td colspan="4">Aucune Notification </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
-
-
   </section>
 
+
+</section>
+
 {% endblock %}
-
-

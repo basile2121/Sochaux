@@ -1,0 +1,13 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+    <div style="text-align: center; margin: 0 20% 0 20%">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+

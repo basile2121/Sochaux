@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Data\SearchData;
+use App\Entity\Notification;
 use App\Entity\RapportSpecifique;
 use App\Form\RapportSpecifiqueType;
 use App\Form\RapportsSearchType;
@@ -50,11 +51,18 @@ class RapportSpecifiqueController extends AbstractController
     {
         $rapportSpecifique = new RapportSpecifique();
         $rapportSpecifique->setDateRapport(new \DateTime());
+
+        //Creation de la notification associée au rapportSpecifique Crée
+        $notification = new Notification();
+        $notification->setDateEnvoie(new \DateTime());
+        $notification->setRapportSpecifique($rapportSpecifique);
+
         $form = $this->createForm(RapportSpecifiqueType::class, $rapportSpecifique);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($notification);
             $entityManager->persist($rapportSpecifique);
             $entityManager->flush();
             $this->addFlash('info','Le rapport specifique ' .$rapportSpecifique->getJoueur() . ' vien d etre ajouter !');

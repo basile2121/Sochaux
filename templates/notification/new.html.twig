@@ -1,0 +1,9 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1 style="text-align: center">Ajouter une notification</h1>
+
+    {{ include('notification/_form.html.twig') }}
+
+    <a class="btn btn-info" href="{{ path('notifications_show') }}">Revenir a la liste des notifications</a>
+{% endblock %}
