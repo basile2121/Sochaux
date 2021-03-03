@@ -139,9 +139,11 @@ class JoueurController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             foreach ($contrat as $c){
                 $entityManager->remove($c);
+                $entityManager->flush();
             }
             foreach ($rapport as $r){
                 $entityManager->remove($r);
+                $entityManager->flush();
             }
             $entityManager->remove($joueur);
             $entityManager->flush();

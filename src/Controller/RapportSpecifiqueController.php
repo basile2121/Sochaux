@@ -102,19 +102,18 @@ class RapportSpecifiqueController extends AbstractController
     /**
      * @Route("/rapportSpecifiques/delete/{id}", name="rapportSpecifiques_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, RapportSpecifique $rapportSpecifique , NotificationRepository $notificationRepository): Response
+    public function delete(Request $request, RapportSpecifique $rapportSpecifique): Response
     {
-        $notifications = $notificationRepository->findAll();
-        foreach ($notifications as $notification){
-            if ($notification->getRapportSpecifique()->getId() === $rapportSpecifique->getId()){
-                if ($this->isCsrfTokenValid('delete'.$rapportSpecifique->getId(), $request->request->get('_token'))) {
-                    $entityManager = $this->getDoctrine()->getManager();
-                    $entityManager->remove($notification);
-                    $entityManager->remove($rapportSpecifique);
-                    $entityManager->flush();
-                    $this->addFlash('info','Le rapport specifique vien d etre Supprimer !');
-                }
+        $notifications = $rapportSpecifique->getNotifications();
+        if ($this->isCsrfTokenValid('delete'.$rapportSpecifique->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            foreach($notifications as $notification){
+                $entityManager->remove($notification);
+                $entityManager->flush();
             }
+            $entityManager->remove($rapportSpecifique);
+            $entityManager->flush();
+            $this->addFlash('info','Le rapport specifique vien d etre Supprimer !');
         }
 
         return $this->redirectToRoute('rapportSpecifiques_show');

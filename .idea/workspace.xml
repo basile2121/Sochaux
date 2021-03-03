@@ -19,14 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Changement totale sur les Formulaires">
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Correction Bug Suppresion">
+      <change afterPath="$PROJECT_DIR$/public/images/imageSochauxClub.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/joueurImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/rapportImage.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/rapportPlusieurs.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/JoueurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NotificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/addJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/addJoueur.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/editJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/editJoueur.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navBar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navBar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Notification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +200,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -208,10 +213,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\images" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\css" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\templates\rapportMatch\tactique" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\src\Form" />
-      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\images" />
       <recent name="$PROJECT_DIR$/templates/matchs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -259,7 +264,7 @@
       <workItem from="1614592729118" duration="506000" />
       <workItem from="1614593289751" duration="10841000" />
       <workItem from="1614668066432" duration="30230000" />
-      <workItem from="1614774772403" duration="5333000" />
+      <workItem from="1614774772403" duration="9302000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -422,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614777091272</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Correction Bug Suppresion">
+      <created>1614782244598</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1614782244598</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +477,8 @@
     <MESSAGE value="Fin des positions" />
     <MESSAGE value="Ajout du systeme de notification a la creation d'un rapport Specifique" />
     <MESSAGE value="Changement totale sur les Formulaires" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changement totale sur les Formulaires" />
+    <MESSAGE value="Correction Bug Suppresion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction Bug Suppresion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

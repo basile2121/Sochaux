@@ -95,7 +95,7 @@ class NotificationController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('notifications_show');
+        return $this->redirectToRoute('index_index');
     }
 
     /**

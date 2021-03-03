@@ -106,6 +106,7 @@ class MatchController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             foreach ($commentaire as $c ){
                 $entityManager->remove($c);
+                $entityManager->flush();
             }
             $entityManager->remove($matchs);
             $entityManager->flush();

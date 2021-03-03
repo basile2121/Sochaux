@@ -89,9 +89,20 @@ class RapportSpecifique
      */
     private $noteJoueur;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Notification::class, inversedBy="rapportSpecifique")
+     */
+    private $notification;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Notification::class, mappedBy="rapportSpecifique")
+     */
+    private $notifications;
+
     public function __construct()
     {
         $this->commentes = new ArrayCollection();
+        $this->notifications = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -283,6 +294,48 @@ class RapportSpecifique
     public function setNoteJoueur(int $noteJoueur): self
     {
         $this->noteJoueur = $noteJoueur;
+
+        return $this;
+    }
+
+    public function getNotification(): ?Notification
+    {
+        return $this->notification;
+    }
+
+    public function setNotification(?Notification $notification): self
+    {
+        $this->notification = $notification;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Notification[]
+     */
+    public function getNotifications(): Collection
+    {
+        return $this->notifications;
+    }
+
+    public function addNotification(Notification $notification): self
+    {
+        if (!$this->notifications->contains($notification)) {
+            $this->notifications[] = $notification;
+            $notification->setRapportSpecifique($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNotification(Notification $notification): self
+    {
+        if ($this->notifications->removeElement($notification)) {
+            // set the owning side to null (unless already changed)
+            if ($notification->getRapportSpecifique() === $this) {
+                $notification->setRapportSpecifique(null);
+            }
+        }
 
         return $this;
     }

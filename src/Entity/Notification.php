@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\NotificationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,9 +30,11 @@ class Notification
     private $messageNotification;
 
     /**
-     * @ORM\OneToOne(targetEntity=RapportSpecifique::class, cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=RapportSpecifique::class, inversedBy="notifications")
      */
     private $rapportSpecifique;
+
+
 
     public function getId(): ?int
     {
@@ -72,4 +76,6 @@ class Notification
 
         return $this;
     }
+
+
 }
