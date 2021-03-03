@@ -19,29 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Ajout du systeme de notification a la creation d'un rapport Specifique">
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Changement totale sur les Formulaires">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/lib/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/lib/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Joueur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Joueur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ClubType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ClubType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContratType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContratType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/JoueurType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JoueurType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RapportSpecifiqueType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RapportSpecifiqueType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/TournoiType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TournoiType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clubs/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clubs/addClub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/addClub.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clubs/editClub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/editClub.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contrats/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contrats/addContrat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/addContrat.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contrats/editContrat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/editContrat.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/JoueurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/joueurs/addJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/addJoueur.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/addRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/addRapportSpecifique.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tournois/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tournois/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tournois/addTournoi.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tournois/addTournoi.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tournois/editTournoi.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tournois/editTournoi.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/joueurs/editJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/editJoueur.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navBar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navBar.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +259,7 @@
       <workItem from="1614592729118" duration="506000" />
       <workItem from="1614593289751" duration="10841000" />
       <workItem from="1614668066432" duration="30230000" />
-      <workItem from="1614774772403" duration="2254000" />
+      <workItem from="1614774772403" duration="5333000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -430,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614693284897</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Changement totale sur les Formulaires">
+      <created>1614777091272</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1614777091272</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +464,8 @@
     <MESSAGE value="Ajout de drag and drop + des positions en focntion des tacitques pour 2 tactique.&#10;Correction de plusieurs Bug Mineur" />
     <MESSAGE value="Fin des positions" />
     <MESSAGE value="Ajout du systeme de notification a la creation d'un rapport Specifique" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du systeme de notification a la creation d'un rapport Specifique" />
+    <MESSAGE value="Changement totale sur les Formulaires" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement totale sur les Formulaires" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

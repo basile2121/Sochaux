@@ -101,8 +101,12 @@ class MatchController extends AbstractController
      */
     public function delete(Request $request, Matchs $matchs): Response
     {
+        $commentaire = $matchs->getCommentaires();
         if ($this->isCsrfTokenValid('delete'.$matchs->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+            foreach ($commentaire as $c ){
+                $entityManager->remove($c);
+            }
             $entityManager->remove($matchs);
             $entityManager->flush();
             $this->addFlash('info','Le matchs vien d etre Supprimer !');

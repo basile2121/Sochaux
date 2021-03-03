@@ -9,6 +9,7 @@ use App\Entity\Notification;
 use App\Entity\RapportSpecifique;
 use App\Form\RapportSpecifiqueType;
 use App\Form\RapportsSearchType;
+use App\Repository\NotificationRepository;
 use App\Repository\RapportSpecifiqueRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -101,13 +102,19 @@ class RapportSpecifiqueController extends AbstractController
     /**
      * @Route("/rapportSpecifiques/delete/{id}", name="rapportSpecifiques_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, RapportSpecifique $rapportSpecifique): Response
+    public function delete(Request $request, RapportSpecifique $rapportSpecifique , NotificationRepository $notificationRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$rapportSpecifique->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($rapportSpecifique);
-            $entityManager->flush();
-            $this->addFlash('info','Le rapport specifique vien d etre Supprimer !');
+        $notifications = $notificationRepository->findAll();
+        foreach ($notifications as $notification){
+            if ($notification->getRapportSpecifique()->getId() === $rapportSpecifique->getId()){
+                if ($this->isCsrfTokenValid('delete'.$rapportSpecifique->getId(), $request->request->get('_token'))) {
+                    $entityManager = $this->getDoctrine()->getManager();
+                    $entityManager->remove($notification);
+                    $entityManager->remove($rapportSpecifique);
+                    $entityManager->flush();
+                    $this->addFlash('info','Le rapport specifique vien d etre Supprimer !');
+                }
+            }
         }
 
         return $this->redirectToRoute('rapportSpecifiques_show');

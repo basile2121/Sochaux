@@ -122,7 +122,7 @@ class JoueurController extends AbstractController
             return $this->redirectToRoute('joueurs_show');
         }
 
-        return $this->render('joueurs/addJoueur.html.twig', [
+        return $this->render('joueurs/editJoueur.html.twig', [
             'joueur' => $joueur,
             'form' => $form->createView(),
         ]);
@@ -133,8 +133,16 @@ class JoueurController extends AbstractController
      */
     public function delete(Request $request, Joueur $joueur): Response
     {
+        $rapport = $joueur->getRapportSpecifiques();
+        $contrat = $joueur->getContrats();
         if ($this->isCsrfTokenValid('delete'.$joueur->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+            foreach ($contrat as $c){
+                $entityManager->remove($c);
+            }
+            foreach ($rapport as $r){
+                $entityManager->remove($r);
+            }
             $entityManager->remove($joueur);
             $entityManager->flush();
             $this->addFlash('info','Le joueur vien d etre Supprimer !');
