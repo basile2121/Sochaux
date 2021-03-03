@@ -4,9 +4,88 @@
 
     <div style="text-align: center; margin-left: 35%; margin-right: auto">
         {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
-            {{ form_widget(form) }}
+            <br>
+            <h3 style="color: black">Civilité</h3>
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                {{ form_label(form.nom, 'Nom de Famille *') }}
+            </div>
+            {{ form_widget(form.nom) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                {{ form_label(form.prenom, 'Prenom *') }}
+            </div>
+            {{ form_widget(form.prenom) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.nationalite, 'Nationalité *') }}
+            </div>
+            {{ form_widget(form.nationalite) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.age, 'Age *') }}
+            </div>
+            {{ form_widget(form.age) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.date_naissance, 'Date de Naissance *') }}
+            </div>
+            {{ form_widget(form.date_naissance) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.photo, 'Photo') }}
+            </div>
+            {{ form_widget(form.photo) }}
+            <br>
+            <p>_____________________________</p>
+            <br>
+            <h3 style="color: black">Informations Qualités Physiques</h3>
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.taille, 'Taille') }}
+            </div>
+            {{ form_widget(form.taille) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.poids, 'Poids') }}
+            </div>
+            {{ form_widget(form.poids) }}
+            <br>
+            <p>_____________________________</p>
+            <br>
+            <h3 style="color: black">Informations de Carriére</h3>
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.numero, 'Numéro *') }}
+            </div>
+            {{ form_widget(form.numero) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    Carriere Pro *
+            </div>
+            <br>
+            {{ form_widget(form.pro) }}
+            <br>
+            <p>_____________________________</p>
+            <br>
+            <h3 style="color: black">Coordonée</h3>
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.telephone, 'Telephone') }}
+            </div>
+            {{ form_widget(form.telephone) }}
+            <br>
+            <br>
             <button class="btn btn btn-success">{{ button_label|default('Ajouter') }}</button>
+            <br>
+            <br>
+            <a href="{{ path('joueurs_show') }}" class="btn btn-warning">Revenir a la liste des Joueurs</a>
+            <br>
+            <br>
+            <small>* Informations Obligatoire</small>
         {{ form_end(form) }}
+
+
     </div>
 
 {% endblock %}

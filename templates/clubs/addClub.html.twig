@@ -3,9 +3,9 @@
 {% block title %}Ajouter Club{% endblock %}
 
 {% block body %}
-    <h1 style="text-align: center">Crée un nouveau Club</h1>
+    <br>
+    <h1 style="text-align: center; color: black"><strong>Crée un nouveau Club</strong></h1>
 
     {{ include('clubs/_form.html.twig') }}
-    <br>
-    <a href="{{ path('clubs_show') }}" class="btn btn-warning">Revenir a la liste des Clubs</a>
+
 {% endblock %}

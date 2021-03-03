@@ -3,13 +3,9 @@
 {% block title %}Modifier le Club{% endblock %}
 
 {% block body %}
-    <h1 style="text-align: center">Modifier le Club</h1>
+    <br>
+    <h1 style="text-align: center; color: black"><strong>Modifier le Club</strong></h1>
 
     {{ include('clubs/_form.html.twig', {'button_label': 'Valider Modification'}) }}
-    <br>
-    <a href="{{ path('clubs_show') }}" class="btn btn-warning">Revenir à la liste des Clubs</a>
-    <br>
-    <br>
-    <br>
-    {{ include('clubs/deleteClub.html.twig') }}
+
 {% endblock %}

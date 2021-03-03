@@ -20,82 +20,82 @@ class Joueur
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 )
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 )
      */
     private $prenom;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $poids;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $taille;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $age;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean" , nullable=true)
      */
     private $pro;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $titulaire_nombre;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $nb_passe_decissive;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $nb_carton_rouge;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $nb_carton_jaune;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date" , nullable=true)
      */
     private $date_naissance;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $telephone;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $numero;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 , nullable=true)
      */
     private $photo;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     private $nb_but;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 , nullable=true)
      */
     private $nationalite;
 

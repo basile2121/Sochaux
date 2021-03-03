@@ -3,13 +3,9 @@
 {% block title %}Modifier le Tournoi{% endblock %}
 
 {% block body %}
-    <h1 style="text-align: center">Modifier le Tournoi</h1>
+    <h1 style="text-align: center; color: black"><strong>Modifier le Tournoi</strong></h1>
 
     {{ include('tournois/_form.html.twig', {'button_label': 'Valider Modification'}) }}
     <br>
-    <a href="{{ path('tournois_show') }}" class="btn btn-warning">Revenir à la liste des Tournois</a>
-    <br>
-    <br>
-    <br>
-    {{ include('tournois/deleteTournoi.html.twig') }}
+
 {% endblock %}

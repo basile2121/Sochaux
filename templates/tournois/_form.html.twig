@@ -1,10 +1,27 @@
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-    <div style="text-align: center; margin-left: 35%; margin-right: auto">
-        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
-            {{ form_widget(form) }}
+    <div style="text-align: center; margin-left: 33%; margin-right: auto">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-6' }}) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                {{ form_label(form.nom_tournoi, 'Nom du Tournoi *') }}
+            </div>
+            {{ form_widget(form.nom_tournoi) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                    {{ form_label(form.pays_tournoi, 'Pays du Tournoi *') }}
+            </div>
+            {{ form_widget(form.pays_tournoi) }}
+            <br>
             <button class="btn btn btn-success">{{ button_label|default('Ajouter') }}</button>
+            <br>
+            <br>
+            <a href="{{ path('tournois_show') }}" class="btn btn-warning">Revenir a la liste des Tournois</a>
+            <br>
+            <br>
+            <small>* Informations Obligatoire</small>
+            <br>
         {{ form_end(form) }}
     </div>
 {% endblock %}

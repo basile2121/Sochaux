@@ -20,22 +20,22 @@ class RapportSpecifique
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=2000 , nullable=true)
      */
     private $qualite_technique;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=2000 , nullable=true)
      */
     private $qualite_mentale;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=2000 , nullable=true)
      */
     private $qualite_physique;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=2000 , nullable=true)
      */
     private $qualite_tactique;
 
@@ -55,12 +55,12 @@ class RapportSpecifique
     private $commentes;
 
     /**
-     * @ORM\Column(type="date" , nullable=true)
+     * @ORM\Column(type="date" , nullable=true )
      */
     private $dateRapport;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=180, unique=true , nullable=true)
      */
     private $mailAgent;
 

@@ -3,8 +3,44 @@
 {% block body %}
     <div style="text-align: center; margin-left: 35%; margin-right: auto">
         {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
-            {{ form_widget(form) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                {{ form_label(form.joueur, 'Nom du Joueur *') }}
+            </div>
+            {{ form_widget(form.joueur) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                {{ form_label(form.club, 'Le Club *') }}
+            </div>
+            {{ form_widget(form.club) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                {{ form_label(form.prix, 'Prix du Contrat *') }}
+            </div>
+            {{ form_widget(form.prix) }}
+            <br>
+            <p>_________________</p>
+
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                {{ form_label(form.date_debut, 'Date De Debut de Contrat *') }}
+            </div>
+            {{ form_widget(form.date_debut) }}
+            <br>
+            <div style="color: #696969; font-size: 16px;">
+                {{ form_label(form.date_fin, 'Date De Fin de Contrat *') }}
+            </div>
+            {{ form_widget(form.date_fin) }}
+            <br>
+            <br>
             <button class="btn btn btn-success">{{ button_label|default('Ajouter') }}</button>
+            <br>
+            <br>
+            <a href="{{ path('contrats_show') }}" class="btn btn-warning">Revenir a la liste des Contrats</a>
+            <br>
+            <br>
+            <small>* Informations Obligatoire</small>
+            <br>
         {{ form_end(form) }}
     </div>
 {% endblock %}

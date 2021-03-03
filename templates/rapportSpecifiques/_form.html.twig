@@ -2,9 +2,100 @@
 
 {% block body %}
     <div style="text-align: center; margin-left: 35%; margin-right: auto">
-        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
-            {{ form_widget(form) }}
-            <button class="btn btn btn-success">{{ button_label|default('Ajouter') }}</button>
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-6' }}) }}
+        <br>
+        <br>
+        <h3 style="color: black">Informations de L'agent du Joueur</h3>
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.nom_agent, 'Nom de L\'agent *') }}
+        </div>
+        {{ form_widget(form.nom_agent) }}
+
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.mailAgent, 'Mail de L\'agent') }}
+        </div>
+        {{ form_widget(form.mailAgent) }}
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.telephoneAgent, 'Telephone de L\'agent') }}
+        </div>
+        {{ form_widget(form.telephoneAgent) }}
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.adresseAgent, 'Adresse de L\'agent') }}
+        </div>
+        {{ form_widget(form.adresseAgent) }}
+
+        <br>
+        <p>______________________________________________</p>
+        <br>
+        <h3  style="color: black" >Informations sur le Match</h3>
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.equipe1, 'Equipe 1 *') }}
+        </div>
+        {{ form_widget(form.equipe1) }}
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.equipe2, 'Equipe 2 *') }}
+        </div>
+        {{ form_widget(form.equipe2) }}
+        <br>
+        <p>______________________________________________</p>
+        <br>
+        <h3  style="color: black" >Le Joueur</h3>
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.joueur, 'Joueur Ciblé *') }}
+        </div>
+        {{ form_widget(form.joueur) }}
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.noteJoueur, 'Note /20 (1) *') }}
+        </div>
+        {{ form_widget(form.noteJoueur) }}
+        <br>
+        <p>_____________________</p>
+        <h4 style="color: black">Les Qualités</h4>
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.qualite_technique, 'Qualite Technique') }}
+        </div>
+        {{ form_widget(form.qualite_technique) }}
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.qualite_mentale, 'Qualite Mentale') }}
+        </div>
+        {{ form_widget(form.qualite_mentale) }}
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.qualite_physique, 'Qualite Physique') }}
+        </div>
+            {{ form_widget(form.qualite_physique) }}
+
+        <br>
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.qualite_tactique, 'Qualite Tactique') }}
+        </div>
+        {{ form_widget(form.qualite_tactique) }}
+        <br>
+
+        <br>
+        <button class="btn btn btn-success">{{ button_label|default('Ajouter') }}</button>
+        <br>
+        <br>
+        <a href="{{ path('rapportSpecifiques_show') }}" class="btn btn-warning">Revenir a la liste des rapports specifiques</a>
+        <br>
+        <br>
+        <small>* Informations Obligatoire</small>
+        <br>
+        <small>(1) Si la note est supérieur a 15, Une notification sera crée</small>
         {{ form_end(form) }}
     </div>
+
+
+
+
 {% endblock %}
