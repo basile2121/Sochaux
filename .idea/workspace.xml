@@ -19,19 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Correction Bug Suppresion">
-      <change afterPath="$PROJECT_DIR$/public/images/imageSochauxClub.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/joueurImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/rapportImage.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/rapportPlusieurs.png" afterDir="false" />
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Correction de nombreux Bugs + Ajout de page d'accueil">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JoueurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NotificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RapportSpecifique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +254,8 @@
       <workItem from="1614592729118" duration="506000" />
       <workItem from="1614593289751" duration="10841000" />
       <workItem from="1614668066432" duration="30230000" />
-      <workItem from="1614774772403" duration="9302000" />
+      <workItem from="1614774772403" duration="10788000" />
+      <workItem from="1615307167552" duration="65000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -434,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614782244598</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Correction de nombreux Bugs">
+      <created>1614790072797</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1614790072797</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +476,8 @@
     <MESSAGE value="Ajout du systeme de notification a la creation d'un rapport Specifique" />
     <MESSAGE value="Changement totale sur les Formulaires" />
     <MESSAGE value="Correction Bug Suppresion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction Bug Suppresion" />
+    <MESSAGE value="Correction de nombreux Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction de nombreux Bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

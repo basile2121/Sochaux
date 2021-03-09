@@ -53,20 +53,23 @@ class RapportSpecifiqueController extends AbstractController
         $rapportSpecifique = new RapportSpecifique();
         $rapportSpecifique->setDateRapport(new \DateTime());
 
-        //Creation de la notification associée au rapportSpecifique Crée
-        $notification = new Notification();
-        $notification->setDateEnvoie(new \DateTime());
-        $notification->setRapportSpecifique($rapportSpecifique);
-
         $form = $this->createForm(RapportSpecifiqueType::class, $rapportSpecifique);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($notification);
             $entityManager->persist($rapportSpecifique);
             $entityManager->flush();
             $this->addFlash('info','Le rapport specifique ' .$rapportSpecifique->getJoueur() . ' vien d etre ajouter !');
+
+            if ($rapportSpecifique->getNoteJoueur() >= 14){
+                //Creation de la notification associée au rapportSpecifique Crée
+                $notification = new Notification();
+                $notification->setDateEnvoie(new \DateTime());
+                $notification->setRapportSpecifique($rapportSpecifique);
+                $entityManager->persist($notification);
+                $entityManager->flush();
+            }
 
             return $this->redirectToRoute('rapportSpecifiques_show');
         }
