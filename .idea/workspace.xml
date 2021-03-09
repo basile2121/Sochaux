@@ -19,9 +19,122 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Correction de nombreux Bugs + Ajout de page d'accueil">
+    <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Correction Bugs">
+      <change afterPath="$PROJECT_DIR$/fpdf/FAQ.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/acceptpagebreak.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/addfont.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/addlink.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/addpage.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/aliasnbpages.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/cell.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/close.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/error.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/footer.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/fpdf.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/getstringwidth.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/getx.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/gety.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/header.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/image.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/line.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/link.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/ln.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/multicell.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/open.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/output.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/pageno.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/rect.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setauthor.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setautopagebreak.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setcompression.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setcreator.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setdisplaymode.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setdrawcolor.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setfillcolor.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setfont.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setfontsize.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setkeywords.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setleftmargin.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setlinewidth.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setlink.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setmargins.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setrightmargin.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setsubject.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/settextcolor.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/settitle.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/settopmargin.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setx.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/setxy.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/sety.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/text.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/doc/write.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/courier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/helvetica.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/helveticab.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/helveticabi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/helveticai.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/cp1250.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/cp1251.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/cp1252.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/cp1253.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/cp1254.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/cp1257.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/iso-8859-1.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/iso-8859-15.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/iso-8859-16.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/iso-8859-2.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/iso-8859-4.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/iso-8859-5.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/iso-8859-7.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/iso-8859-9.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/koi8-r.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/makefont/makefont.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/symbol.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/times.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/timesb.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/timesbi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/timesi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/font/zapfdingbats.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/fpdf.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/fpdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/histo.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/install.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/20k_c1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/20k_c2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/calligra.afm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/calligra.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/calligra.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/calligra.z" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/logo_pb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/makefont.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/pays.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto1.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto2.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto3.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto4.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto5.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto5.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto6.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto6.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto7.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fpdf/tutoriel/tuto7.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo_fc_sochaux.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/match.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/match.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RapportSpecifiqueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifique.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rapportSpecifiques/showRapportSpecifiques.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,10 +317,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\images" />
+      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\css" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\templates\rapportMatch\tactique" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\src\Form" />
-      <recent name="$PROJECT_DIR$/templates/matchs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\css\terrain2" />
@@ -255,7 +368,7 @@
       <workItem from="1614593289751" duration="10841000" />
       <workItem from="1614668066432" duration="30230000" />
       <workItem from="1614774772403" duration="10788000" />
-      <workItem from="1615307167552" duration="65000" />
+      <workItem from="1615307167552" duration="4401000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>
@@ -432,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614790072797</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Correction Bugs">
+      <created>1615307265917</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1615307265917</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club." />
     <MESSAGE value="Affichage / Creation / Modifcation d'un Contrat et d'un Club + Modification Fixtures" />
     <MESSAGE value="La connexion avec google est possible, ne pas oublier d'installer les bundle associé ainsi que de config le .env.test avec votre BDD (corriger bientot)&#10;+ Correction Bug de connexion&#10;+ Ajout Mineur" />
     <MESSAGE value="Ajout du detail Pour les Joueurs , COntrat et Club du cote back-End" />
@@ -477,7 +596,8 @@
     <MESSAGE value="Changement totale sur les Formulaires" />
     <MESSAGE value="Correction Bug Suppresion" />
     <MESSAGE value="Correction de nombreux Bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction de nombreux Bugs" />
+    <MESSAGE value="Correction Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction Bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
