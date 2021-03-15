@@ -1,93 +1,56 @@
 {% extends 'layout.html.twig' %}
 
+
 {% block title %}Joueur{% endblock %}
 
 {% block body %}
 
     <br>
     <br>
-    <a href="#" class="btn btn-info">Les Informations</a>
-    <a href="#" class="btn btn-info">Rapports spécifiques</a>
-    <a href="#" class="btn btn-info">Les Vidéos</a>
+
     <br>
     <br>
+    <div id="identityCard">
+        <div id="headerCard">
+            <div id="photoCard">
+                <td>
+                    <img style="width:60px;height:60px;border-radius: 2em;" alt="" src="{{ asset('images/') }}{{ joueur.photo }}">
+                </td>
+            </div>
+            <div id="texteCardHeader">
+                <div id="col1Card">
+                    {{ joueur.prenom }}<br>
+                    {{ joueur.nom }}<br>
+                    <div style="font-size: 20px" >{{ joueur.age }} ans</div><br>
+                </div>
+                <div id="col2Card">
+                    Date de naissance : {{ joueur.dateNaissance ? joueur.dateNaissance|date('Y-m-d') : '' }}<br>
+                    Nationalité : {{ joueur.nationalite }}<br>
+                    Professionnel {{ joueur.pro ? 'Oui' : 'Non' }}
+                </div>
+                <div id="col3Card">
+                    Poids : {{ joueur.poids }} kg <br>
+                    Taille : {{ joueur.taille }} cm <br>
+                </div>
+            </div>
+        </div>
+        <div id="infosCard">
+            <table>
+                Titulaire : {{ joueur.titulaireNombre }}<br>
+                Numéro : {{ joueur.numero }}<br>
+                Nombre de passes décisives : {{ joueur.nbPasseDecissive }}<br>
+                Nombre de cartons rouges : {{ joueur.nbCartonRouge }}<br>
+                Nombre de cartons jaunes : {{ joueur.nbCartonJaune }}<br>
+                Nombre de buts : {{ joueur.nbBut }}<br>
+                Numéro de téléphone : {{ joueur.telephone }}
+            </table>
+            <div id="separator">
+                <a href="#" id="boutonsJoueur" style="left: 20px;top:20px;position: relative" class="btn btn-info">Les Informations</a>
+                <a href="#" id="boutonsJoueur" style="left: 30px;top:20px;position: relative" class="btn btn-info">Rapports spécifiques</a>
+                <a href="#" id="boutonsJoueur" style="left: 40px;top:20px;position: relative" class="btn btn-info">Les Vidéos</a>
+            </div>
+        </div>
 
-    <table class="table">
-        <tbody>
-
-        <tr>
-            <th>Nom</th>
-            <td>{{ joueur.nom }}</td>
-        </tr>
-        <tr>
-            <th>Prenom</th>
-            <td>{{ joueur.prenom }}</td>
-        </tr>
-        <tr>
-            <th>Âge</th>
-            <td>{{ joueur.age }}</td>
-        </tr>
-        <tr>
-            <th>Status</th>
-            <td>{{ joueur.pro ? 'Oui' : 'Non' }}</td>
-        </tr>
-        <tr>
-            <th>Photo</th>
-            <td>
-                <img style="width:60px;height:60px;  "  alt="" src="{{ asset('images/') }}{{ joueur.photo }}">
-            </td>
-        </tr>
-        <tr>
-            <th>Poids</th>
-            <td>{{ joueur.poids }}</td>
-        </tr>
-        <tr>
-            <th>Taille</th>
-            <td>{{ joueur.taille }}</td>
-        </tr>
-        <tr>
-            <th>Âge</th>
-            <td>{{ joueur.age }}</td>
-        </tr>
-
-        <tr>
-            <th>Nombre de Titularisation</th>
-            <td>{{ joueur.titulaireNombre }}</td>
-        </tr>
-        <tr>
-            <th>Numéro de Maillot</th>
-            <td>{{ joueur.numero }}</td>
-        </tr>
-        <tr>
-            <th>Nombre de Passe Decisive</th>
-            <td>{{ joueur.nbPasseDecissive }}</td>
-        </tr>
-        <tr>
-            <th>Nombre de carton Rouge</th>
-            <td>{{ joueur.nbCartonRouge }}</td>
-        </tr>
-        <tr>
-            <th>Nombre de carton Jaune</th>
-            <td>{{ joueur.nbCartonJaune }}</td>
-        </tr>
-        <tr>
-            <th>Nombre de But</th>
-            <td>{{ joueur.nbBut }}</td>
-        </tr>
-
-        <tr>
-            <th>Date Naissance</th>
-            <td>{{ joueur.dateNaissance ? joueur.dateNaissance|date('Y-m-d') : '' }}</td>
-        </tr>
-        <tr>
-            <th>Téléphone</th>
-            <td>{{ joueur.telephone }}</td>
-        </tr>
-        <tr>
-            <th>Nationalité</th>
-            <td>{{ joueur.nationalite }}</td>
-        </tr>
-        </tbody>
-    </table>
+    </div>
 
 {% endblock %}

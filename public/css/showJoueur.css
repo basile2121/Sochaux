@@ -1,0 +1,69 @@
+#identityCard{
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 850px;
+    font-size: 20px;
+    left: 0px;
+    color: white;
+    height: 450px;
+    background-color: #22242a;
+    border: solid black 1px;
+}
+
+#headerCard{
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    height: 25%;
+    margin-top: 4%;
+    border-bottom: solid #e5c647 4px;
+}
+#photoCard{
+    left: 10px;
+    position: relative;
+    top: -10px;
+}
+#texteCardHeader{
+    top: -10px;
+    display: flex;
+    left: 15px;
+    position: relative;
+
+}
+#col1Card{
+    font-size: 28px;
+    position: relative;
+    left: 10px;
+    font-weight: bold;
+}
+#col2Card{
+    position: relative;
+    font-weight: bold;
+    left: 17%;
+}
+#col3Card{
+    position: relative;
+    font-weight: bold;
+    left: 25%;
+}
+#infosCard{
+    position: relative;
+    left: 20px;
+    font-weight: bold;
+    top: 20px;
+
+}
+#separator{
+    left: -20px;
+    top: 10px;
+    position: relative;
+    border-top: solid 4px #e5c647;
+    height: 100px;
+}
+#boutonsJoueur{
+    font-weight: bold;
+    background-color: #005cbf;
+    border-radius: 2em;
+    border: solid black 1px;
+}
