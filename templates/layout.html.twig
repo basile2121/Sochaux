@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style-responsive.css') }}">
 
+
     {% endblock %}
 
 </head>
@@ -32,7 +33,7 @@
 {% include('navBar.html.twig') %}
 <section id="container">
     <section id="main-content">
-        <section style="margin-left: 150px; width: 90%" class="wrapper">
+        <section style="width: 90%" class="wrapper">
 {% block body %}
     {% for message in app.flashes('info') %}
         <div class="alert alert-dismissible alert-warning">

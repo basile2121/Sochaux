@@ -48,7 +48,6 @@ class ContratType extends AbstractType
             ->add('date_debut', DateType::class , array(
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Saisir une date de Debut']),
-                    new Assert\Type(['type' => 'date', 'message' => 'La valeur saisie n\'est pas une date']),
                 ],
                 'format' => 'dd/MM/yyyy',
                 'required' => false,
@@ -58,7 +57,6 @@ class ContratType extends AbstractType
             ->add('date_fin', DateType::class , array(
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Saisir une date de Fin']),
-                    new Assert\Type(['type' => 'date', 'message' => 'La valeur saisie n\'est pas une date']),
                 ],
                 'format' => 'dd/MM/yyyy',
                 'required' => false,

@@ -98,15 +98,24 @@
                 </ul>
             </li>
             <li class="sub-menu">
-                <a href="javascript:;">
+                <a href="javascript:">
                     <i class="fa fa-th"></i>
                     <span>Contrats</span>
                 </a>
                 <ul class="sub">
                     <li><a href="{{ path('contrats_show') }}">Liste des Contrats</a></li>
-                    <li><a href="#">Contrats du club</a></li>
                 </ul>
             </li>
+            <li class="sub-menu">
+                <a href="javascript:">
+                    <i class="fa fa-th"></i>
+                    <span>Gestion Du Club</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('gestion_show') }}">Gérer les Joueurs</a></li>
+                </ul>
+            </li>
+
             <li class="sub-menu">
                 <a href="{{ path('notifications_show') }}"><strong>Notifications</strong></a>
             </li>

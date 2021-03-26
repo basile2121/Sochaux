@@ -19,6 +19,25 @@ class ContratRepository extends ServiceEntityRepository
         parent::__construct($registry, Contrat::class);
     }
 
+    public function findAllContrat(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT * FROM contrat c
+            inner join club 
+                on c.club_id = club.id
+            inner join joueur
+                on c.joueur_id = joueur.id
+            where club.nom_club = "Sochaux"
+            ORDER BY c.id ASC
+            ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        // returns an array of arrays (i.e. a raw data set)
+        return $stmt->fetchAllAssociative();
+    }
     // /**
     //  * @return Contrat[] Returns an array of Contrat objects
     //  */

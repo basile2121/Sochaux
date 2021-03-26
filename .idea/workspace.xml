@@ -20,10 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38095abd-f2f9-4735-ad88-6da217534621" name="Default Changelist" comment="Ajout du convertisseur en PDF d'un rapport Specifique (Robin) + modification pour Bug">
-      <change afterPath="$PROJECT_DIR$/public/css/showJoueur.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/83190c8082d11ff9c9e1e26f3d259036.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/GestionClubController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/gestionClub/showGestion.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/joueurs/showJoueur.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ContratType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContratType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ContratRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ContratRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contrats/showContrats.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrats/showContrats.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navBar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navBar.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +198,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/joueurs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -205,11 +211,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\templates\joueurs" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\images" />
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet" />
-      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\css" />
-      <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\templates\rapportMatch\tactique" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\basil\PhpstormProjects\SochauxProjet\public\css\terrain2" />
@@ -260,6 +266,7 @@
       <workItem from="1615307167552" duration="5110000" />
       <workItem from="1615819848693" duration="30000" />
       <workItem from="1615829094655" duration="524000" />
+      <workItem from="1616750913210" duration="5024000" />
     </task>
     <task id="LOCAL-00001" summary="Affichage / Creation / Modifcation d'un Joueur sans contrat ni club.">
       <created>1606322600547</created>

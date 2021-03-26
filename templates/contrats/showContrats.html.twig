@@ -25,8 +25,8 @@
                     <th>{{ contrat.joueur }}</th>
                     <td>{{ contrat.prix }} €</td>
                     <td>{{ contrat.club }}</td>
-                    <td>{{ contrat.dateDebut ? contrat.dateDebut|date('Y-m-d') : '' }}</td>
-                    <td>{{ contrat.dateFin ? contrat.dateFin|date('Y-m-d') : '' }}</td>
+                    <td>{{ contrat.dateDebut ? contrat.dateDebut|date('d/m/Y') : '' }}</td>
+                    <td>{{ contrat.dateFin ? contrat.dateFin|date('d/m/Y') : '' }}</td>
                     <td style="text-align:center;"><a class="btn btn-info" href="{{ path('contrat_show', {'id': contrat.id}) }}">Informations</a></td>
                     <td style="text-align:center;"><a  class="btn btn-info" href="{{ path('contrats_edit', {'id': contrat.id}) }}"><i class="fa fa-pencil"> Modifier</i></a></td>
                     <td style="text-align:center;">

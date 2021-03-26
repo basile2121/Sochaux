@@ -78,7 +78,7 @@ class AppFixtures extends Fixture
             [ 'nom' => 'Juventus Turin' , 'pays' => "Italie" , 'ville' => "Turin" ],
             [ 'nom' => 'FC Barcelone' , 'pays' => "Espagne" , 'ville' => "Barcelone"  ],
             [ 'nom' => 'Paris St Germain' , 'pays' => "France" , 'ville' => "Paris"],
-            [ 'nom' => 'Machester United' , 'pays' => "Anglettere" , 'ville' => "Manchester"  ],
+            [ 'nom' => 'Sochaux' , 'pays' => "Anglettere" , 'ville' => "Sochaux"  ],
         ];
 
         foreach ($club as $cl)
