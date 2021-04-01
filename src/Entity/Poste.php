@@ -39,6 +39,8 @@ class Poste
      */
     private $joueDans;
 
+
+
     public function __construct()
     {
         $this->joueurPostes = new ArrayCollection();

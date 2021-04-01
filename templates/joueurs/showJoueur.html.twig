@@ -25,29 +25,44 @@
                 </div>
                 <div id="col2Card">
                     Date de naissance : {{ joueur.dateNaissance ? joueur.dateNaissance|date('Y-m-d') : '' }}<br>
-                    Nationalité : {{ joueur.nationalite }}<br>
-                    Professionnel {{ joueur.pro ? 'Oui' : 'Non' }}
+                    Professionnel : {{ joueur.pro ? 'Oui' : 'Non' }}<br>
+                    Téléphone : {{ joueur.telephone }}
                 </div>
                 <div id="col3Card">
                     Poids : {{ joueur.poids }} kg <br>
                     Taille : {{ joueur.taille }} cm <br>
+                    Nationalité : {{ joueur.nationalite }}
                 </div>
             </div>
         </div>
         <div id="infosCard">
-            <table>
-                Titulaire : {{ joueur.titulaireNombre }}<br>
-                Numéro : {{ joueur.numero }}<br>
+            <div style="float: left">
+                <div id="cRouge">
+                    {% if joueur.nbCartonRouge > 0 %}
+                        {{ joueur.nbCartonRouge }} <img src="{{ asset('images/') }}cRouge.png" title="{{ joueur.nbCartonRouge }}" width="10px">
+                    {% else %}
+                        Aucun carton rouge
+                    {% endif %}
+                </div>
+                <br>
+                <div id="cJaune">
+                    {% if joueur.nbCartonJaune > 0 %}
+                        {{ joueur.nbCartonJaune }} <img src="{{ asset('images/') }}cJaune.png" title="{{ joueur.nbCartonJaune }}"  width="10px">
+                    {% else %}
+                        Aucun carton jaune
+                    {% endif %}
+                </div>
+                <br>
                 Nombre de passes décisives : {{ joueur.nbPasseDecissive }}<br>
-                Nombre de cartons rouges : {{ joueur.nbCartonRouge }}<br>
-                Nombre de cartons jaunes : {{ joueur.nbCartonJaune }}<br>
+            </div>
+            <div style="float: right">
+                Nombre de titularisation : {{ joueur.titulaireNombre }}<br><br>
+                Numéro : {{ joueur.numero }}<br><br>
                 Nombre de buts : {{ joueur.nbBut }}<br>
-                Numéro de téléphone : {{ joueur.telephone }}
-            </table>
+            </div>
+
             <div id="separator">
-                <a href="#" id="boutonsJoueur" style="left: 20px;top:20px;position: relative" class="btn btn-info">Les Informations</a>
-                <a href="#" id="boutonsJoueur" style="left: 30px;top:20px;position: relative" class="btn btn-info">Rapports spécifiques</a>
-                <a href="#" id="boutonsJoueur" style="left: 40px;top:20px;position: relative" class="btn btn-info">Les Vidéos</a>
+                <a href="{{ path('rapportSpecifiques_show' , {'searchBarre' : joueur.nom}) }}" id="boutonsJoueur" style="left: 0px;top:20px;position: relative;display: inherit" class="btn btn-info">Rapports spécifiques</a>
             </div>
         </div>
 

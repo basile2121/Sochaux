@@ -5,6 +5,8 @@
 {% block body %}
 
 
+
+
     <div>
         <br>
         <br>
@@ -14,7 +16,7 @@
             {{ include('rapportMatch/match/showMatch.html.twig') }}
          </div>
         <br>
-        {% if equipe2 is null and equipe1 is null  %}
+        {% if nomEquipe2 is null and nomEquipe1 is null  %}
             <a class="btn btn-warning center-block" href="{{ path('club_add_matchs' , {'id': match.id }) }}">Selectioner les équipes</a>
         {% else %}
             <a class="btn btn-success center-block" href="{{ path('club_add_matchs' , {'id': match.id }) }}">Modifier les équipes</a>
@@ -25,8 +27,8 @@
         <div style="background-color: #353b48;">
             <br>
             <h2 style="text-align: center; color: #F9F9FF; font-weight: bold">Equipe 1 :
-                {% if equipe1 is not null %}
-                    {{ equipe1.nomClub }}
+                {% if nomEquipe1 is not null %}
+                    {{ nomEquipe1.nomClub }}
                 {% else%}
                     Pas de Club
                 {% endif %}
@@ -37,93 +39,71 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        <table  style="background-color: snow; " class="table table-bordered table-striped table-condensed ">
+                        <table id="tableauE1" style="background-color: snow; " class="table table-bordered table-striped table-condensed ">
                             <thead>
+
                             <tr>
+                                <th>Photo</th>
                                 <th>Nom</th>
-                                <th class="numeric">Poste</th>
                                 <th class="numeric">Numéro</th>
-                                <th class="numeric">But</th>
-                                <th class="numeric">Passe D</th>
-                                <th class="numeric">Carton J</th>
-                                <th class="numeric">Carton R</th>
-                                <th class="numeric">Temps de Jeu</th>
+                                <th class="numeric">Buts</th>
+                                <th class="numeric">Passe Décisivies</th>
+                                <th class="numeric">Carton Jaunes</th>
+                                <th class="numeric">Carton Rouges</th>
+                                <th class="numeric">Nombre titulaire</th>
+                                <th>Ajouter un rapport</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Nom Prénom</td>
-                                <td class="numeric">Attaquant</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">19</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">34`</td>
-                            </tr>
-                            <tr>
-                                <td>Nom Prénom</td>
-                                <td class="numeric">Attaquant</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">19</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">34`</td>
-                            </tr>
-                            <tr>
-                                <td>Nom Prénom</td>
-                                <td class="numeric">Attaquant</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">19</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">34`</td>
-                            </tr>
-                            <tr>
-                                <td>Nom Prénom</td>
-                                <td class="numeric">Attaquant</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">19</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">34`</td>
-                            </tr>
+                            {% for joueur in equipe1 %}
+                                <tr>
+                                    <td id="source{{ joueur.id }}"><img draggable="true" ondragstart="dragstart_handler(event)" id="{{ joueur.id }}" onclick="dragWithoutMouseStarted(event)" src="{{ asset('images/') }}{{ joueur.photo }}" width="50px" height="50px" style="border-radius: 3em"></td>
+                                    <td>{{ joueur.nom }} {{ joueur.prenom }}</td>
+                                    <td class="numeric">{{ joueur.numero }}</td>
+                                    <td class="numeric">{{ joueur.nb_but }}</td>
+                                    <td class="numeric">{{ joueur.nb_passe_decissive }}</td>
+                                    <td class="numeric">{{ joueur.nb_carton_jaune }}</td>
+                                    <td class="numeric">{{ joueur.nb_carton_rouge }}</td>
+                                    <td class="numeric">{{ joueur.titulaire_nombre }}</td>
+                                    <td><a href="{{ path('match_rapportSpecifiques_add', {'id' : joueur.id}) }}" class="btn btn-warning center-block">+</td>
+                                </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
-                        <div>
-                            <button class="btn btn-warning">+</button>
-                            <label>Ajouter</label>
-                        </div>
                     </div>
                     <div class="col-lg-4" style="padding: 0">
                         <h4 style="text-align: center; color: #F9F9FF; font-weight: bold">Tactique :
-                            {% if tactique1 is not null %}
-                                {{ tactique1.nomTactique }}
-                                {% if tactique1 == "4 4 2" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1442.css') }}">
+                            <div id="tactique">
+                                {% if tactique1 is not null %}
+                                    {{ tactique1.nomTactique }}
+                                    {% if tactique1 == "4 4 2" %}
+                                        <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1442.css') }}">
+                                    {% endif %}
+                                    {% if tactique1 == "4 3 3" %}
+                                        <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1433.css') }}">
+                                    {% endif %}
+                                    {% if tactique1 == "5 4 1" %}
+                                        <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1541.css') }}">
+                                    {% endif %}
+                                    {% if tactique1 == "5 3 2" %}
+                                        <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1532.css') }}">
+                                    {% endif %}
+                                    {% if tactique1 == "4 4 1 1" %}
+                                        <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain14411.css') }}">
+                                    {% endif %}
+                                {% else%}
+                                    Pas de Tactique
                                 {% endif %}
-                                {% if tactique1 == "4 3 3" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1433.css') }}">
-                                {% endif %}
-                                {% if tactique1 == "5 4 1" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1541.css') }}">
-                                {% endif %}
-                                {% if tactique1 == "5 3 2" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain1532.css') }}">
-                                {% endif %}
-                                {% if tactique1 == "4 4 1 1" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain1/matchPosTerrain14411.css') }}">
-                                {% endif %}
-                            {% else%}
-                                Pas de Tactique
-                            {% endif %}
+                            </div>
                         </h4>
+
                         <div id="terrain1">
                             <img id="targets1" src="{{ asset('images/terrain.png') }}" alt="" style="width: 100%">
                         </div>
+                        <img id="annuler" title="Remettre le joueur à l'emplacement précèdent" src="{{ asset('images/') }}annuler.png" width="50xp" style="position: relative;left: 150px;visibility: hidden" onclick="cancelMove()">
+                        <img id="recharger" title="Remettre le joueur dans le tableau"  src="{{ asset('images/') }}recharger.png" width="50xp" style="position: relative;left: 150px;visibility: hidden" onclick="resetMove()">
+                        <img id="quit" title="Désélectionner le joueur" src="{{ asset('images/') }}quit.png" width="50xp" style="position: relative;left: 150px;visibility: hidden" onclick="quit()">
+                        <br><button id="reset" onclick="reset1()">Reset</button>
                     </div>
                 </div>
             </div>
@@ -131,8 +111,8 @@
             <br>
 
             <h2 style="text-align: center; color: #F9F9FF; font-weight: bold">Equipe 2 :
-                {% if equipe2 is not null %}
-                    {{ equipe2.nomClub }}
+                {% if nomEquipe2 is not null %}
+                    {{ nomEquipe2.nomClub }}
                 {% else%}
                     Pas de Club
                 {% endif %}
@@ -142,105 +122,83 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        <table  style="background-color: snow; " class="table table-bordered table-striped table-condensed ">
+                        <table id="tableauE2" style="background-color: snow; " class="table table-bordered table-striped table-condensed ">
                             <thead>
+
                             <tr>
+                                <th>Photo</th>
                                 <th>Nom</th>
-                                <th class="numeric">Poste</th>
                                 <th class="numeric">Numéro</th>
-                                <th class="numeric">But</th>
-                                <th class="numeric">Passe D</th>
-                                <th class="numeric">Carton J</th>
-                                <th class="numeric">Carton R</th>
-                                <th class="numeric">Temps Jeux</th>
+                                <th class="numeric">Buts</th>
+                                <th class="numeric">Passes Décisivies</th>
+                                <th class="numeric">Carton Jaunes</th>
+                                <th class="numeric">Carton Rouges</th>
+                                <th class="numeric">Nombre titulaire</th>
+                                <th>Ajouter un rapport</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Nom Prénom</td>
-                                <td class="numeric">Attaquant</td>
-                                <td>
-                                    <img class="element" draggable="true" ondragstart="dragstart_handler(event)" id="joueur8" style="width: 50px; height: 50px; " src="{{ asset('images/numero.png') }}" alt="">
-                                </td>
-                                <td class="numeric">19</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">34`</td>
-                            </tr>
-                            <tr>
-                                <td>Nom Prénom</td>
-                                <td class="numeric">Attaquant</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">19</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">34`</td>
-                            </tr>
-                            <tr>
-                                <td>Nom Prénom</td>
-                                <td class="numeric">Attaquant</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">19</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">34`</td>
-                            </tr>
-                            <tr>
-                                <td>Nom Prénom</td>
-                                <td class="numeric">Attaquant</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">19</td>
-                                <td class="numeric">2</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">0</td>
-                                <td class="numeric">34`</td>
-                            </tr>
+                            {% for joueur in equipe2 %}
+                                <tr>
+                                    <td id="source{{ joueur.id }}"><img draggable="true" ondragstart="dragstart_handler2(event)" id="{{ joueur.id }}" onclick="dragWithoutMouseStarted2(event)" src="{{ asset('images/') }}{{ joueur.photo }}" width="50px" height="50px" style="border-radius: 3em"></td>
+                                    <td>{{ joueur.nom }} {{ joueur.prenom }}</td>
+                                    <td class="numeric">{{ joueur.numero }}</td>
+                                    <td class="numeric">{{ joueur.nb_but }}</td>
+                                    <td class="numeric">{{ joueur.nb_passe_decissive }}</td>
+                                    <td class="numeric">{{ joueur.nb_carton_jaune }}</td>
+                                    <td class="numeric">{{ joueur.nb_carton_rouge }}</td>
+                                    <td class="numeric">{{ joueur.titulaire_nombre }}</td>
+                                    <td><a href="{{ path('match_rapportSpecifiques_add', {'id' : joueur.id}) }}" class="btn btn-warning center-block">+</td>
+                                </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
-                        <div>
-                            <button class="btn btn-warning">+</button>
-                            <label> Ajouter</label>
-                        </div>
                     </div>
 
                     <div class="col-lg-4" style="padding: 0">
                         <h4 style="text-align: center; color: #F9F9FF; font-weight: bold">Tactique :
-                            {% if tactique2 is not null %}
-                                {{ tactique2.nomTactique }}
-                                {% if tactique2 == "4 4 2" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2442.css') }}">
-                                {% endif %}
-                                {% if tactique2 == "4 3 3" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2433.css') }}">
-                                {% endif %}
-                                {% if tactique2 == "5 4 1" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2541.css') }}">
-                                {% endif %}
-                                {% if tactique2 == "5 3 2" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2532.css') }}">
-                                {% endif %}
-                                {% if tactique2 == "4 4 1 1" %}
-                                    <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain24411.css') }}">
-                                {% endif %}
-                            {% else%}
-                                Pas de Tactique
-                            {% endif %}
-                        </h4>
+                            <div id="tactique2">
+                                    {% if tactique2 is not null %}
+                                        {{ tactique2.nomTactique }}
+                                        {% if tactique2 == "4 4 2" %}
+                                            <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2442.css') }}">
+                                        {% endif %}
+                                        {% if tactique2 == "4 3 3" %}
+                                            <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2433.css') }}">
+                                        {% endif %}
+                                        {% if tactique2 == "5 4 1" %}
+                                            <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2541.css') }}">
+                                        {% endif %}
+                                        {% if tactique2 == "5 3 2" %}
+                                            <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain2532.css') }}">
+                                        {% endif %}
+                                        {% if tactique2 == "4 4 1 1" %}
+                                            <link rel="stylesheet" href="{{ asset('css/terrain2/matchPosTerrain24411.css') }}">
+                                        {% endif %}
+                                    {% else%}
+                                        Pas de Tactique
+                                    {% endif %}
+                            </div>
 
+                        </h4>
                         <body>
                         <div id="listeJoueurs">
                         </div>
-                        <button id="reset" onclick="reset()">Reset</button>
+                        <button id="reset" onclick="reset2()">Reset</button><br><br>
                         <div id="terrain2">
                             <img id="targets2" src="{{ asset('images/terrain.png') }}" alt="" style="width: 100%">
                         </div>
+                        <img id="annuler2" title="Remettre le joueur à l'emplacement précèdent" src="{{ asset('images/') }}annuler.png" width="50xp" style="position: relative;left: 150px;visibility: hidden" onclick="cancelMove2()">
+                        <img id="recharger2" title="Remettre le joueur dans le tableau" src="{{ asset('images/') }}recharger.png" width="50xp" style="position: relative;left: 150px;visibility: hidden" onclick="resetMove2()">
+                        <img id="quit2" title="Désélectionner le joueur"  src="{{ asset('images/') }}quit.png" width="50xp" style="position: relative;left: 150px;visibility: hidden" onclick="quit2()">
                         </body>
                     </div>
                 </div>
             </div>
+
+
+
+
         </div>
 
     <br>
@@ -277,10 +235,23 @@
                 </tbody>
             </table>
             <br>
+            <form name="essai" method="post" action="{{ path('match_genereRapportPDF' , {'id': match.id }) }}">
+                <input type="hidden"  id="ligne1E1" value="{%  if match.getLigne1E1() != null %}{% for joueur in match.getLigne1E1().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="ligne1E1">
+                <input type="hidden"  id="ligne2E1" value="{%  if match.getLigne2E1() != null %}{% for joueur in match.getLigne2E1().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="ligne2E1">
+                <input type="hidden"  id="ligne3E1" value="{%  if match.getLigne3E1() != null %}{% for joueur in match.getLigne3E1().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="ligne3E1">
+                <input type="hidden" id="ligne4E1" value="{%  if match.getLigne4E1() != null %}{% for joueur in match.getLigne4E1().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="ligne4E1">
+                <input type="hidden" id="gardienE1" value="{%  if match.getGardienE1() != null %}{% for joueur in match.getGardienE1().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="gardienE1">
+                <input type="hidden" id="ligne1E2" value="{%  if match.getLigne1E2() != null%}{% for joueur in match.getLigne1E2().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="ligne1E2">
+                <input type="hidden" id="ligne2E2" value="{%  if match.getLigne2E2() != null %}{% for joueur in match.getLigne2E2().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="ligne2E2">
+                <input type="hidden" id="ligne3E2" value="{%  if match.getLigne3E2() != null %}{% for joueur in match.getLigne3E2().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="ligne3E2">
+                <input type="hidden" id="ligne4E2" value="{%  if match.getLigne4E2() != null %}{% for joueur in match.getLigne4E2().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="ligne4E2">
+                <input type="hidden" id="gardienE2" value="{%  if match.getGardienE2() != null %}{% for joueur in match.getGardienE2().unwrap() %},{{ joueur.id }}{% endfor %}{% endif %}" name="gardienE2">
+                <center><input disabled id="valid" onclick="validate();validate2()" name="validForm" type="submit" class="btn btn-info" value="Convertir au format PDF"></center>
+            </form>
         </div>
     </div>
     <br>
-    <h2 style="text-align: center; width: 200px;  " class="btn btn-warning center-block size">Enregistrer le rapport</h2>
+
     <br>
     <br>
 

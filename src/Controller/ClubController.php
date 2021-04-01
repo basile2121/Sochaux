@@ -96,6 +96,18 @@ class ClubController extends AbstractController
      */
     public function delete(Request $request, Club $club): Response
     {
+        $contrats = $club->getContrats();
+        foreach ($contrats as $contrat){
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($contrat);
+            $entityManager->flush();
+        }
+        $participes = $club->getParticipes();
+        foreach ($participes as $participe){
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($participe);
+            $entityManager->flush();
+        }
         if ($this->isCsrfTokenValid('delete'.$club->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($club);

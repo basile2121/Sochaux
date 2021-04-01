@@ -33,16 +33,16 @@
 {% include('navBar.html.twig') %}
 <section id="container">
     <section id="main-content">
-        <section style="width: 90%" class="wrapper">
-{% block body %}
-    {% for message in app.flashes('info') %}
-        <div class="alert alert-dismissible alert-warning">
-            <button type="button" class="close" data-dismiss="alert"></button>
-            <strong> {{ message }}</strong>
-        </div>
-    {% endfor %}
+        <section style="width: 100%" class="wrapper">
+            {% block body %}
+                {% for message in app.flashes('info') %}
+                    <div class="alert alert-dismissible alert-warning">
+                        <button type="button" class="close" data-dismiss="alert"></button>
+                        <strong> {{ message }}</strong>
+                    </div>
+                {% endfor %}
 
-{% endblock %}
+            {% endblock %}
         </section>
     </section>
 </section>
@@ -70,7 +70,9 @@
     <script>
         afficheTargetsTerrain1();
         afficheTargetsTerrain2();
-        afficheJoueurs();
+        loadTerrain1();
+        loadTerrain2();
+        verif();
     </script>
 
 

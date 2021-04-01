@@ -5,10 +5,10 @@ namespace App\Controller;
 
 
 namespace App\Controller;
-define("FPDF_FONTPATH","fpdf/font/");
-require("../fpdf/fpdf.php");
+
 use App\Data\SearchData;
 use App\Entity\Notification;
+use App\Entity\Joueur;
 use App\Entity\RapportSpecifique;
 use App\Form\RapportSpecifiqueType;
 use App\Form\RapportsSearchType;
@@ -19,6 +19,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Date;
 
 class RapportSpecifiqueController extends AbstractController
 {
@@ -47,6 +48,41 @@ class RapportSpecifiqueController extends AbstractController
 
         return $this->render('rapportSpecifiques/showRapportSpecifique.html.twig', [
             'rapportSpecifique' => $rapportSpecifique,
+        ]);
+    }
+    /**
+     * @Route("/match/createRapportSpecifique/{id}", name="match_rapportSpecifiques_add", methods={"GET","POST"})
+     */
+    public function newRJ(Request $request,Joueur $joueur): Response
+    {
+        $rapportSpecifique = new RapportSpecifique();
+        $rapportSpecifique->setJoueur($joueur);
+        $rapportSpecifique->setDateRapport(new \DateTime());
+
+        $form = $this->createForm(RapportSpecifiqueType::class, $rapportSpecifique);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($rapportSpecifique);
+            $entityManager->flush();
+            $this->addFlash('info','Le rapport specifique ' .$rapportSpecifique->getJoueur() . ' vien d etre ajouter !');
+
+            if ($rapportSpecifique->getNoteJoueur() >= 14){
+                //Creation de la notification associée au rapportSpecifique Crée
+                $notification = new Notification();
+                $notification->setDateEnvoie(new \DateTime());
+                $notification->setRapportSpecifique($rapportSpecifique);
+                $entityManager->persist($notification);
+                $entityManager->flush();
+            }
+
+            return $this->redirectToRoute('rapportSpecifiques_show');
+        }
+
+        return $this->render('rapportSpecifiques/addRapportSpecifique.html.twig', [
+            'rapportSpecifique' => $rapportSpecifique,
+            'form' => $form->createView(),
         ]);
     }
     /**
@@ -91,6 +127,7 @@ class RapportSpecifiqueController extends AbstractController
      */
     public function edit(Request $request, RapportSpecifique $rapportSpecifique): Response
     {
+
         $form = $this->createForm(RapportSpecifiqueType::class, $rapportSpecifique);
         $form->handleRequest($request);
 
@@ -132,6 +169,8 @@ class RapportSpecifiqueController extends AbstractController
      */
     public function genereRapportPDF(RapportSpecifique $rapportSpecifique): Response
     {
+        define("FPDF_FONTPATH","fpdf/font/");
+        require("../fpdf/fpdf.php");
         $pdf = new \FPDF("P","pt","A4");
         $pdf ->Open(); //indique que l'on crée un fichier PDF
         $pdf ->AddPage(); //permet d'ajouter une page
@@ -162,7 +201,7 @@ class RapportSpecifiqueController extends AbstractController
         $pdf->Ln();
         $pdf->SetX(70);
         $pdf->Cell(188,40,utf8_decode("Mail Agent"),1,0,'C',0);
-        $pdf ->Cell(288,40,utf8_decode($rapportSpecifique->getMailAgent()),1,0,'C',0); //insertion d'une ligne
+        $pdf->Cell(288,40,utf8_decode($rapportSpecifique->getMailAgent()),1,0,'C',0); //insertion d'une ligne
         $pdf->Ln();
         $pdf->SetX(70);
         $pdf->Cell(188,40,utf8_decode("Telephone Agent"),1,0,'C',0);
@@ -183,7 +222,8 @@ class RapportSpecifiqueController extends AbstractController
         $pdf->SetY(305);
         $pdf->SetX(70);
         $pdf->Cell(188,40,"Date Rapport",1,0,'C',0);
-        $date = $rapportSpecifique->getDateRapport()->format('d/m/Y');
+        $date = $rapportSpecifique->getDateRapport();
+        $date = $date->format('d/m/Y');
         $pdf ->Cell(288,40, $date,1,0,'C',0); //insertion d'une ligne
         $pdf->Ln();
         $pdf->SetX(70);

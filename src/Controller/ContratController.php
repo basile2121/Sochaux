@@ -86,6 +86,7 @@ class ContratController extends AbstractController
      */
     public function delete(Request $request, Contrat $contrat): Response
     {
+
         if ($this->isCsrfTokenValid('delete'.$contrat->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($contrat);

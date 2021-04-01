@@ -51,7 +51,6 @@ class JoueurType extends AbstractType
             ->add('telephone', NumberType::class, array(
                 'attr' => ['placeholder' => "Entrer le téléphone du Joueur"],
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Saisir le téléphone du Joueur ']),
                     new Assert\Type(['type' => 'numeric', 'message' => 'La valeur saisie n\'est pas un chiffre']),
                     new Assert\Regex([
                         'pattern' => "/^[0-9]{1,}\.{0,1}[0-9]{0,}$/", 'message' => "Seulement un entier positif."
@@ -73,7 +72,6 @@ class JoueurType extends AbstractType
             ->add('poids', NumberType::class, array(
                 'attr' => ['placeholder' => "Entrer le poids du Joueur"],
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Saisir le poids du Joueur']),
                     new Assert\Type(['type' => 'numeric', 'message' => 'La valeur saisie n\'est pas un chiffre']),
                     new Assert\Regex([
                         'pattern' => "/^[0-9]{1,}\.{0,1}[0-9]{0,}$/", 'message' => "Seulement un entier positif."
@@ -84,7 +82,6 @@ class JoueurType extends AbstractType
             ->add('taille', NumberType::class, array(
                 'attr' => ['placeholder' => "Entrer la taille Du Joueur"],
                 'constraints' => [
-                    new Assert\NotBlank(['message' => 'Saisir la taille Du Joueur']),
                     new Assert\Type(['type' => 'numeric', 'message' => 'La valeur saisie n\'est pas un chiffre']),
                     new Assert\Regex([
                         'pattern' => "/^[0-9]{1,}\.{0,1}[0-9]{0,}$/", 'message' => "Seulement un entier positif."
@@ -107,6 +104,7 @@ class JoueurType extends AbstractType
             ->add('photo' , FileType::class , [
                 'label' => 'photo',
             ])
+
         ;
     }
 

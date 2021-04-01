@@ -22,7 +22,6 @@
                         <th scope="col">Âge</th>
                         <th scope="col">Pro</th>
                         <th scope="col">Photo</th>
-                        <th scope="col">Club</th>
                         <th scope="col">Rapports</th>
                         <th scope="col">Details</th>
                         <th scope="col">Modification</th>
@@ -41,10 +40,7 @@
                                 <img style="width:60px;"  alt="" src="{{ asset('images/') }}{{ joueur.photo }}">
                             </td>
                             <td>
-                                Contrat
-                            </td>
-                            <td>
-                                <a class="btn btn-info" href="{{ path('joueur_rapportSpecifique_show' , {'id' : joueur.id}) }}">Rapports</a>
+                                <center><a class="btn btn-info" href="{{ path('joueur_rapportSpecifique_show' , {'id' : joueur.id}) }}">Rapports</a></center>
                             </td>
                             <td style="text-align:center;" >
                                 <a class="btn btn-info" href="{{ path('joueur_show', {'id': joueur.id}) }}">Informations</a>

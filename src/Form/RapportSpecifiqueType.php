@@ -45,7 +45,6 @@ class RapportSpecifiqueType extends AbstractType
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Choisir une équipe']),
                 ],
-                'required' => false,
                 'class' => Club::class,
                 'placeholder' => 'Chosir Equipe 1 ',
             ))
@@ -53,7 +52,6 @@ class RapportSpecifiqueType extends AbstractType
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Choisir une équipe']),
                 ],
-                'required' => false,
                 'class' => Club::class,
                 'placeholder' => 'Chosir Equipe 2',
             ))
@@ -62,7 +60,6 @@ class RapportSpecifiqueType extends AbstractType
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Choisir un Joueur']),
                 ],
-                'required' => false,
                 'class' => Joueur::class,
                 'placeholder' => 'Chosir un Joueur',
             ))

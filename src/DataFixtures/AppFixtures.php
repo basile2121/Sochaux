@@ -439,7 +439,7 @@ class AppFixtures extends Fixture
             $new_rp->setQualiteTactique($rp['qualite_tactique']);
             $new_rp->setNomAgent($rp['nom_agent']);
             try {
-                $new_rp->setDateRapport(new \DateTime($rp['date_rapport']));
+                $new_rp->setDateRapport(new \DateTime($rp['date_rapport ']));
             } catch (\Exception $e) {
             }
 

@@ -17,4 +17,9 @@
     position: relative;
     z-index: 1;
 }
-
+img:hover{
+    opacity: 100%;
+}
+img{
+    opacity: 75%;
+}

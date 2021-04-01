@@ -1,0 +1,22 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% extends 'layout.html.twig' %}
+{% block body %}
+
+    <div style="text-align: center; margin-left: 35%; margin-right: auto">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'col-lg-5' }}) }}
+        <br>
+
+        <div style="color: #696969; font-size: 16px;">
+            {{ form_label(form.video, 'Vidéo') }}
+        </div>
+
+        <br>
+
+        <video controls>
+            <source src="{{ asset('videos/') }}{{ joueur.video }}" type="video/mp4">
+            <p>Votre navigateur ne prend pas en charge les vidéos HTML5.
+                Voici <a href="myVideo.mp4">un lien pour télécharger la vidéo</a>.</p>
+        </video>
+    </div>
+
+{% endblock %}

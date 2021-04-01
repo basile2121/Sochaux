@@ -27,7 +27,16 @@ class JoueurRepository extends ServiceEntityRepository
         parent::__construct($registry, Joueur::class);
         $this->paginator = $paginator;
     }
+    public function findJoinClub($nomEquipe){
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = '
+            SELECT * FROM joueur join contrat on joueur.id = contrat.id JOIN club on club.id = contrat.id   WHERE nom_club ="'.$nomEquipe.'"
+            ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
 
+        return $stmt->fetchAllAssociative();
+    }
 
     public function findSearch(SearchData $data): PaginationInterface
     {

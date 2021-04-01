@@ -88,8 +88,19 @@ class TournoiController extends AbstractController
      */
     public function delete(Request $request, Tournoi $tournoi): Response
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $matchs = $tournoi->getMatchs();
+        foreach ($matchs as $match ){
+            $commentaires = $match->getCommentaires();
+            foreach ($commentaires as $c){
+                $entityManager->remove($c);
+                $entityManager->flush();
+            }
+            $entityManager->remove($match);
+            $entityManager->flush();
+        }
+
         if ($this->isCsrfTokenValid('delete'.$tournoi->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($tournoi);
             $entityManager->flush();
             $this->addFlash('info','Le tournoi vien d etre Supprimer !');

@@ -28,11 +28,13 @@ class JoueurController extends AbstractController
      */
     public function index(JoueurRepository $joueurRepository , Request $request): Response
     {
+
         $data = new SearchData();
         $data->page = $request->get('page' , 1);
         $form= $this->createForm(JoueursSearchType::class , $data);
         $form->handleRequest($request);
         $joueurs = $joueurRepository->findSearch($data);
+
         //$joueurs = $joueurRepository->findBy([],['nom' => 'DESC']);
         return $this->render('joueurs/showJoueurs.html.twig', [
             'joueurs' => $joueurs,
@@ -102,6 +104,7 @@ class JoueurController extends AbstractController
      */
     public function edit(Request $request, Joueur $joueur): Response
     {
+
         $joueur->setPhoto(
             new File($this->getParameter('images_directory').'/'.$joueur->getPhoto()
             ));
